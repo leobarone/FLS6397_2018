@@ -11,7 +11,7 @@ Este curso pretende preencher uma lacuna de formação comum em alunas e alunos 
 
 O curso está dividido em duas partes. A primeira parte do curso foca na preparação do ambiente computacional, apresentação de ferramentas e "alfabetização" e nas linguagens de programação utilizadas no curso -- R, Git, SQL, Markdown, etc. A segunda parte foca em aplicações das habilidades desenvolvidas a problemas de manipulação de grandes bases de dados, coleta de dados na internet e via uso de APIs de terceiros, organização de documentos para análise textual, confecção de gráficos e mapas ou demais tópicos de interesse da turma.
 
-- [Informações básicas](https://github.com/leobarone/FLS6397/blob/master/info_basica.md)
+- [Informações básicas](https://github.com/leobarone/FLS6397_2018/blob/master/info_basica.md)
 - [Syllabus] - Em breve
 - Página da disciplina no sistema [Janus](https://uspdigital.usp.br/janus/componente/catalogoDisciplinasInicial.jsf?action=3&sgldis=FLS6397).
 
@@ -19,7 +19,7 @@ O curso está dividido em duas partes. A primeira parte do curso foca na prepara
 
 Calendário e tópicos sujeitos a alteração
 
-- 19/03/2018 - [Aula 1](https://github.com/leobarone/FLS6397/blob/master/classes/class1.md) - Introdução ao curso e R Básico.
+- 19/03/2018 - [Aula 1](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class1.md) - Introdução ao curso e R Básico.
 - 02/04/2018 - [Aula 2] - Do básico ao intermediário.
 - 09/04/2018 - [Aula 3] - Abrindo e manipulando _data frames_
 - 16/04/2018 - [Aula 4] - Primeiros passos no _tidyverse_
