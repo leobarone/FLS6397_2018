@@ -19,7 +19,7 @@ O curso está dividido em duas partes. A primeira parte do curso foca na prepara
 
 Calendário e tópicos sujeitos a alteração
 
-- 19/03/2018 - [Aula 1](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class1.md) - Introdução ao curso e R Básico.
+- 19/03/2018 - [Aula 1](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class01.md) - Introdução ao curso e R Básico.
 - 02/04/2018 - [Aula 2] - Do básico ao intermediário.
 - 09/04/2018 - [Aula 3] - Abrindo e manipulando _data frames_
 - 16/04/2018 - [Aula 4] - Primeiros passos no _tidyverse_
