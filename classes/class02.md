@@ -19,13 +19,13 @@ Como ainda estamos "calibrando" o curso para a turma atual, pode ser que alguns 
 
 Se você ficou um pouco insegura(o) na aula passada, comece em:
 
-0- Revise rapidamente o Tutorial 1, da aula passada ([versão web](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial1.Rmd) ou [versão pdf](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial1.pdf)).
+0- Revise rapidamente o Tutorial 1, da aula passada ([versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial01.Rmd) ou [versão RPubs](http://rpubs.com/leobarone/FSL6397_2018_tutorial01)).
 
 Se a aula passada está clara para você, vá para:
 
-1- Tutorial 2 assim que chegar em sala de aula [versão web](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial2.Rmd) ou [versão pdf](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial2.pdf). Siga o seu próprio ritmo.
+1- Tutorial 2 assim que chegar em sala de aula [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial02.Rmd) ou [versão RPubs](http://rpubs.com/leobarone/FSL6397_2018_tutorial02). Siga o seu próprio ritmo.
 
-2- A seguir, façao o Tutorial 3 [versão web](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial3.Rmd) ou [versão pdf](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial3.pdf). Não se preocupe se não acabar em sala de aula.
+2- A seguir, façao o Tutorial 3 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial03.Rmd) ou [versão RPubs](http://rpubs.com/leobarone/FSL6397_2018_tutorial01). Não se preocupe se não acabar em sala de aula.
 
 ### Roteiro pós-aula
 
