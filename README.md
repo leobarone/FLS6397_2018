@@ -24,13 +24,13 @@ Calendário e tópicos sujeitos a alteração
 - 09/04/2018 - [Aula 3] - Abrindo e manipulando _data frames_
 - 16/04/2018 - [Aula 4] - Primeiros passos no _tidyverse_
 - 23/04/2018 - [Aula 5] - RMarkdown, git, e integração R e servidores SQL
-- 07/05/2018 - [Aula 6] - Visualização de dados e a gramática de gráficos _ggplot2_
-- 14/05/2018 - [Aula 7] - Introdução à programação funcional
-- 21/05/2018 - [Aula 8] - Raspagem de dados na internet com R
-- 28/05/2018 - [Aula 9] - Mapas e GIS com R
-- 04/06/2018 - [Aula 10] - Strings e Mineração de Textos com R
-- 11/06/2018 - [Aula 11] - Tópicos Avançados de programação em R
+- 14/05/2018 - [Aula 6] - Visualização de dados e a gramática de gráficos _ggplot2_
+- 21/05/2018 - [Aula 7] - Introdução à programação funcional
+- 28/05/2018 - [Aula 8] - Raspagem de dados na internet com R
+- 04/06/2018 - [Aula 9] - Mapas e GIS com R
+- 11/06/2018 - [Aula 10] - Strings e Mineração de Textos com R
 - 18/06/2018 - [Aula 11] - Tópicos Avançados de programação em R
+- 25/06/2018 - [Aula 12] - Tópicos Avançados de programação em R
 
 ## Referências bibliográficas
 
@@ -52,8 +52,8 @@ Calendário e tópicos sujeitos a alteração
 
 ### Projetos
 
-- 14/05/2018 - Discussão em aula sobre projetos em grupo
-- 04/06/2018 - Entrega do projeto em grupo
-- 11/05/2018 - Discussão em aula sobre projeto final individual
+- 21/05/2018 - Discussão em aula sobre projetos em grupo
+- 11/06/2018 - Entrega do projeto em grupo
+- 18/06/2018 - Discussão em aula sobre projeto final individual
 - ?/07/2018 - Entrega do projeto final individual
 
