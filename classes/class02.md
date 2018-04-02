@@ -33,3 +33,6 @@ Siga com a leitura do livro _Hands-on Programming With R_, de Garret Grolemund. 
 
 ### Recurso para auto-estudo
 
+Continua valendo a dica do curso "[Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r)" no site Datacamp para reforçar o que foi aprendido nas duas primeiras aulas. O Tutorial 2 segue este curso como modelo.
+
+Se você quiser estudar um pouco mais sobre operadores e condicionais no R, recomendamos fazer o primeiro capítulo do curso "[Intermedtiante R](https://www.datacamp.com/courses/intermediate-r)" (apenas o primeiro capítulo é gratuito).
