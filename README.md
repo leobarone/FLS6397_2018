@@ -44,16 +44,17 @@ Calendário e tópicos sujeitos a alteração
 
 ### Desafios
 
-- 20/04/2018 - [Desafio 1](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallange1.md)
-- ? - Desafio 2
-- ? - Desafio 3
-- ? - Desafio 4
-- ? - Desafio 5
+- 20/04/2018 - [Desafio 1](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallange1.md) - R base
+- 04/05/2018 - Desafio 2 - Manipulação de dados com dplyr
+- 25/05/2018 - Desafio 3 - Gráficos com ggplot2 
+- 18/06/2018 - Desafio 4 - Mapas (requisito: desafio 2)
+- 25/06/2018 - Desafio 5 - Raspagem de dados e mineração de texto
 
 ### Projetos
 
 - 21/05/2018 - Discussão em aula sobre projetos em grupo
 - 11/06/2018 - Entrega do projeto em grupo
 - 18/06/2018 - Discussão em aula sobre projeto final individual
-- ?/07/2018 - Entrega do projeto final individual
+- 31/07/2018 - Entrega do projeto final individual
+
 
