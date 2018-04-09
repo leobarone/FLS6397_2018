@@ -44,7 +44,7 @@ Calendário e tópicos sujeitos a alteração
 
 ### Desafios
 
-- 20/04/2018 - [Desafio 1](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge1.md)
+- 20/04/2018 - [Desafio 1](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallange1.md)
 - ? - Desafio 2
 - ? - Desafio 3
 - ? - Desafio 4
