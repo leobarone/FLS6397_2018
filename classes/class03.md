@@ -21,7 +21,7 @@ Nessa aula começaremos a fazer alguns desafios (sem a finalidade de avaliação
 
 ### Desafio 1
 
-A partir de hoje começaremos a produzir código. Vá para o [Desafio 1](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge1.md) e siga as instruções. A data limite para a entrega do desafio é 20/04/2018.
+A partir de hoje começaremos a produzir código. Vá para o [Desafio 1](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallange1.md) e siga as instruções. A data limite para a entrega do desafio é 20/04/2018.
 
 ### Roteiro pós-aula
 
