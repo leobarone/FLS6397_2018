@@ -10,7 +10,7 @@ Data: 20/04
 
 Formato: RScript (arquivo .R)
 
-Via: e-mail com título "[FLS6397] - D1".
+Via: e-mail com título "[FLS6397] - D1" para leobarone@gmail.com e jonnyphillips@gmail.com.
 
 ## Instruções para a atividade
 
