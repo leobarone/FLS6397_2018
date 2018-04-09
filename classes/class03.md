@@ -15,9 +15,13 @@ Nessa aula começaremos a fazer alguns desafios (sem a finalidade de avaliação
 
 0- Termine ou revise os tutoriais anteriores, se precisar.
 
-1- Tutorial 4 assim que chegar em sala de aula [versão github]((https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial04.Rmd) ou [versão RPubs](). Siga o seu próprio ritmo.
+1- Tutorial 4 assim que chegar em sala de aula [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial04.Rmd) ou [versão RPubs](). Siga o seu próprio ritmo.
 
-2- A seguir, façao o Tutorial 5 [versão github]((https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial05.Rmd)) ou [versão RPubs](). Não se preocupe se não acabar em sala de aula.
+2- A seguir, façao o Tutorial 5 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial05.Rmd) ou [versão RPubs](). Não se preocupe se não acabar em sala de aula.
+
+### Desafio 1
+
+A partir de hoje começaremos a produzir código. Vá para o [Desafio 1](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge1.md) e siga as instruções. A data limite para a entrega do desafio é 20/04/2018.
 
 ### Roteiro pós-aula
 
