@@ -29,4 +29,4 @@ Veremos nos tutoriais desta aula um símbolo novo, `r %>%`, que altera o estilo 
 
 ### Recurso para auto-estudo
 
-Recomendo como material de suporte a leitura da página [Introduction to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html). Outro recurso bem legal para trabalhar com _dplyr_ e _readr_ são as ["colinhas" ("cheatsheets") da RStudio](file:///C:/Users/Jonny/Downloads/data-transformation%20(2).pdf).
+Recomendo como material de suporte a leitura da página [Introduction to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html). Outro recurso bem legal para trabalhar com _dplyr_ e _readr_ são as "colinhas" ("cheatsheets") da RStudio, por exemplo [Data Transformation with dplyr](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf).
