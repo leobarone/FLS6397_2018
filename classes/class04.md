@@ -1,7 +1,7 @@
 #  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
 
 - Responsáveis: Jonathan Phillips
-- Data: 06/04/2017
+- Data: 16/04/2018
 
 ## Aula 4 - Primeiros passos no tidyverse
 
@@ -15,7 +15,7 @@ Para quem nunca trabalhou com bases de dados relacionais, essa aula pode ser um 
 
 ### Roteiro para a aula
 
-0 - Se você teve dúvidas ou problemas para resolver o Desafio 1, aprensentado da semana anterior, o começo da aula é um bom momento para conversarmos.
+0 - Se você teve dúvidas ou problemas nos tutoriais anteriores, o começo da aula é um bom momento para conversarmos.
 
 1- Comece o Tutorial 6 assim que chegar em sala de aula [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial06.Rmd) ou [versão RPubs](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial6.pdf). Este tutorial trata da manipulação de dados com as funções do pacote _dplyr_.
 
@@ -29,4 +29,4 @@ Veremos nos tutoriais desta aula um símbolo novo, `r %>%`, que altera o estilo 
 
 ### Recurso para auto-estudo
 
-Recomendo como material de suporte a leitura da página [Introduction to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html). Outro recurso bem legal para trabalhar com _dplyr_ e _readr_ são as ["colinhas" ("cheatsheets") da RStudio](https://www.rstudio.com/resources/cheatsheets/).
+Recomendo como material de suporte a leitura da página [Introduction to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html). Outro recurso bem legal para trabalhar com _dplyr_ e _readr_ são as ["colinhas" ("cheatsheets") da RStudio](file:///C:/Users/Jonny/Downloads/data-transformation%20(2).pdf).
