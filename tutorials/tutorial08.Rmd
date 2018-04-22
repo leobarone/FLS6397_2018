@@ -1,0 +1,245 @@
+---
+title: "R Markdown"
+author: "Leonardo Sangali Barone e Jonathan Phillips"
+date: "April 16, 2018"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+```
+
+# Código e análise de dados reproduzívies
+
+Como sabemos que o seu código não contém um erro? Como podemos provar que não manipulamos a análise de um paper? Como contribuimos para um projeto comparthilado? A reprodutibilidade de nossos scripts (e os outputs que eles geram) é central para programação e pesquisa. Nesse tutorial, vamos explorar várias ferramentas para apoiar a reprodutibilidade. 
+
+1. **Projetos em R** - pastas para organizar os nossos inputs, scripts e outputs
+2. **R Markdown** - um outro outro tipo de script que transforma seu código de R em documentos finais (PDF, Word, HTML)
+3. **Checkpoint** - um pacote de r que garante que as funções/bibliotecas que você usa estejam disponíveis para outras pessoas sem conflitos
+4. **Git** - sistema de controle de versão e compartilhamento de projeto (próximo tutorial)
+
+# Projetos em R
+
+Até agora, trabalhamos com arquivos de R individuais. Uma desvantagem disso é que temos que especificar referências longas para os arquivos de inputs e outputs. Isso é chato, porque é fácil cometer um erro e fácil perder seus arquivos. Além disso, quando você manda seu código para outra pessoa, ele não é reproduzível porque a estrutura de arquivo deles será diferente da sua.
+
+Projetos em R ajuda resolver este problema. um projeto em R é simplesmente uma pasta contendo vários arquivos: um arquivo genérico de ".Rproj" que o Rstudio abre, todos os nossos scripts, os nossos arquivos de input, e os nossos outputs. Crucialmente, quando quisemos abrir um ".csv" dentro dessa pasta, não precisamos especificar a referência completa do arquivo, apenas o nome do arquivo. Em termos técnicos, o diretório de trabalho é automaticamente a pasta do projeto atual. Por exemplo podemos substituir:
+
+```{r, eval=FALSE}
+pasta <- "C:\\User\\Name\\Projects\\New\\Political Science\\2018\\Examples\\"
+path_file1 <- file.path(pasta, "file1.txt")
+dados <- read.table(file1, header = T, sep = ",")
+```
+por:
+```{r, eval=FALSE}
+dados <- read.table("file1.txt", header = T, sep = ",")
+```
+
+A outra vantagem de trabalhar em projetos é que eles facilitam o uso do controle de versão de Git dentro do Rstudio (veja o próximo tutorial).
+
+Para abrir um projeto, simplesmente escolhe File -> New Project -> New Directory -> New Project e digite o nome desejado da pasta do projeto. Dado que um projeto é apenas uma pasta, em seguida precisamos abrir um script novo e salve-lo na mesma pasta. 
+
+# Produzindo 'outputs' profissionais com o R Markdown
+
+Agora, sabemos como a executar um análise de dados na linguagem de R. Mas o nosso objetivo geralmente não é apenas executar algum código, mas produzir uma tabela, um gráfico, um relatório, um documento ou um site. Como podemos comunicar o nosso análise numa forma profissional, documentada e reproduzivel? Vamos usar o R Markdown: um tipo de arquivo compatível com o RStudio e uma linguagem bem fácil e flexível para formatar documentos.
+
+Um script em R tem a extensão de arquivo ".R"; um arquivo de R Markdown tem uma extensão de arquivo ".Rmd". Com o mesmo arquivo ".Rmd" podemos criar três tipos de documentos sem mudar nada: um PDF, um Documento de Word e um site de HTML. Então podemos compartilhar os nossos resultados com tudo mundo, evitando a duplicação de códigos e arquivos. Só uma dica: Todos podem criar outputs em HTML e Word. Para criar PDFs precisa instalar [LATEX](https://miktex.org/download).
+
+Na verdade, este tutorial não foi feito por mágica, mas por R Markdown!
+
+# Abrindo um arquivo de R Markdown
+Em geral, é melhor começar abrindo um 'projeto' em R (veja o tutorial anterior). Depois, abrimos um arquivo de R Markdown: Clique File -> New File -> R Markdown. Escolhe 'documento' na esquerda, digite um título e autor, e escolhe o formato *default* para o output final (podemos mudar em qualquer momento). Salve o novo script. 
+
+O conteúdo default contém um exemplo, mas pode apagar tudo exceto o 'header', que parece assim:
+
+`---`    
+`title: "Example Document"`  
+`author: "Jonathan"`  
+`date: "April 19, 2018"`  
+`output: pdf_document`  
+`---`
+
+# Misturando código, outputs e documentação/explicação
+
+Trabalhamos com vários tipos de conteúdo dia-a-dia e queremos integrar todos num documento sem confusão: texto básico, código de análise, tabelas, gráficos e equações. Em R Markdown, separamos eles em dois lugares dentro de nosso arquivo ".Rmd" : (i) no corpo do script, onde pode digitar como está usando Microsoft Word, e (ii) num 'chunk' de código, onde pode digitar código como num script ".R".
+
+Digite no corpo                | Digite num 'chunk'
+-------------------------------|-------------------
+Texto explicativo              | Código de R
+Equações (na sintaxe do Latex) | Tabelas criados com código de R
+                               | Gráficos criados com código de R
+
+Para inserir um chunk, clique: Insert -> R (ou toque Ctrl+Alt+I). Aparece uma caixa cinza onde podemos colocar o nosso código:
+
+````
+```{r}`r ''`
+x <- 1 + 1
+```
+````
+
+Você pode incluir todas as funções que você conhece nesses chunks. Qualquer objeto criado está disponível para chunks debaixo, mas lembre-se que chunks serão executados na ordem em que aparecem no documento.
+
+# Produzindo um documento final
+
+Para transformar o nosso script ".Rmd" para um PDF, clique no botão "Knit". Feito. Para criar um outro formato de documento, clique a flecha ao lado de "Knit" e eschole o formato preferido. 
+
+O RStudio abre uma nova janela "R Markdown" que mostra o progresso e descreve os erros. 
+
+# Formatação de texto básico
+
+Em contraste de Microsoft Word, formatando texto em R Markdown não depende de clicar nos botões - precisamos incluir caracteres no script para indicar a formatação que queremos. 
+
+*Italic* - `*Italic*`  
+**Bold** - `**Bold**`  
+
+# Big Header  
+ `# Big Header`  
+ 
+## Sub-Header 
+ `## Sub-Header`  
+ 
+### Sub-Sub-Header 
+ `### Sub-Sub-Header`  
+
+[link](www.google.com) - `[link](www.google.com)`
+
+* Bullets  
+    * Sub-Bullets
+
+`* Bullets`  
+`    * Sub-Bullets`
+    
+1. Numbered List  
+    1. Sub-numbered list
+    
+`1. Numbered List`  
+`    1. Numbered List`
+
+Para mais detalhes veja [O Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
+
+# Equações
+Podemos escrever equações com a linguagem de Latex. Dentro de uma frase, use `$ equation $`, e para centralizar numa nova linha use `$$ big equation $$`. A sintaxe é assim:
+
+`$$\alpha^2 + \beta^2 = \chi^2$$` $$\alpha^2 + \beta^2 = \chi^2$$
+`$$\frac{\sqrt{1}}{2} * \frac{a}{2b} = \frac{a}{4b}$$` $$\frac{\sqrt{1}}{2} * \frac{a}{2b} = \frac{a}{4b}$$
+`$$\sum_0^{10} x = ...$$` $$\sum_0^{10} x = ...$$
+
+Mais detalhes [aqui](https://reu.dimacs.rutgers.edu/Symbols.pdf).
+
+# Exercício
+Começando com um novo projeto e um novo arquivo markdown, crie um PDF (ou HTML se não tem Latex) que inclui apenas texto (sem chunks de código) com ao menos cinco das formatações acima e a famosa equação de Einstein.
+
+# 'In-line' Code: Incluindo valores simples do código
+Podemos fazer um análise num chunk de código e atribuir/salvar o resultado como um objeto de R. Por exemplo, calculamos a área de um triângulo de raio 20 com o chunk debaixo: 
+
+````
+```{r}`r ''`
+raio <- 20
+area <- pi * raio^2
+```
+````
+
+```{r, echo=FALSE}
+raio <- 20
+area <- pi * raio^2
+```
+
+Como incluimos o resultado numérico `area` dentro de uma frase em nosso texto? Podemos usar "in-line code" para exibir um valor simples no documento final. O formato é assim:
+
+A área de um círculo de raio 20 é `` `r
+area` ``. 
+
+A área de um círculo de raio 20 é `r area`. 
+
+# Exercício
+O volume de uma esfera é $A=\frac{4}{3} \pi r^3$. Use um chunk para calcular a área de uma esfera de raio 7 e relate o resultado numérico dentro ('in-line') de uma frase explicativa. Crie um documento PDF (ou HTML se não tem Latex).
+
+# Tabelas
+
+Qual é a diferença entre uma tabela num documento e um data.frame (/tibble) em R? Por nós, nada exceto formatação! Então podemos facilmente transformar nossos data.frames em tabelas para exibir para os leitores. Podemos criar um data.frame usando as nossas ferramentas existentes dentro de um chunk. Depois, temos várias funções que nos ajudam a formatar essas tabelas. Para tabelas simples, podemos usar a função `kable()` (para tabelas de regressão podemos usar `stargazer()`). Note que não fazemos nada fora de chunk - o R Markdown exibe o código **e** o resultado da execução do código desde que não atribuamos / salve o resultado.
+
+Vamos abrir um banco de dados simples, manipular a estrutura, e mandar para `kable()` para criar uma tabela.
+
+```{r}
+library(tidyverse)
+library(knitr)
+
+file1 <- "https://raw.githubusercontent.com/leobarone/ifch_intro_r/master/data/bf_amostra_hv.csv"
+dados <- read.table(file1, header = T, sep = ",")
+
+dados %>% group_by(uf) %>%
+  summarize(mean_valor=mean(valor)) %>% 
+  kable()
+```
+
+Podemos especificar os parâmetros de `kable()` para controlar a formatação do resultado. Por exemplo: 
+
+```{r}
+dados %>% group_by(uf) %>%
+  summarize(mean_valor=mean(valor)) %>% 
+  kable(caption="A minha tabela",align="cr",digits=1,col.names=c("Estado","Valor Media"), format.args=list(big.mark=","))
+```
+
+# Gráficos
+Os gráficos seguem a mesma lógica que usamos para tabelas. Criamos o nosso gráfico e manda para um `plot`/`ggplot` (que vamos explorar mais a semana que vem). 
+
+```{r}
+dados %>% group_by(uf) %>%
+  summarize(valor_total=sum(valor)) %>%
+  ggplot() +
+  geom_col(aes(x=uf,y=valor_total))
+```
+
+# Exercício
+Usando o link acima para os dados de Bolsa família, criar uma tabela dos cinco maiores valores recebidos, formate-lo com um título, nomes de colunas e o número apropriado de dígitos, e 'knit' para um PDF (ou HTML se não tem Latex). 
+
+# Parâmetros de Chunks
+Agora você pode produzir quase todo tipo de conteúdo. Mas agora estamos provavalmente estamos produzindo *demais* conteúdo para nosso documento - por exemplo, o chunk acima produziu linhas de código e um gráfico. Para tutoriais, podemos querer incluir o código no documento final (como aqui), mas, para os relatórios, queremos focar no gráfico. Como controlamos quais tipos de conteúdo são traduzidos de chunks para o documento final? Usamos parâmetros no começo de cada chunk.
+
+Por exemplo, `echo=F` vai prevenir o código bruto aparecendo no documento final:
+
+````
+```{r, echo=F}`r ''`
+dados %>% group_by(uf) %>%
+  summarize(valor_total=sum(valor)) %>%
+  ggplot() +
+  geom_col(aes(x=uf,y=valor_total))
+```
+````
+
+```{r, echo=F}
+dados %>% group_by(uf) %>%
+  summarize(valor_total=sum(valor)) %>%
+  ggplot() +
+  geom_col(aes(x=uf,y=valor_total))
+```
+
+Pode usar `eval=F` para prevenir a execução do código, por exemplo se você quiser criar um tutorial.
+
+Também, normalmente queremos definir `warning=F` e `message=F` para prevenir a exibição de mensagems de pacotes. 
+
+Mais um parâmetro útil: às vezes nosso código dura muito tempo para executar e podemos gravar os objetos criados dentro de um chunk se especificamos `cache=TRUE`. 
+
+Dado que queremos especificar estas opções para cada chunk, podemos usar um 'shortcut' para definir os defaults. Num chunk preliminar, colocamos por exemplo: 
+
+````
+```{r, echo=FALSE}`r ''`
+knitr::opts_chunk$set(echo = F, warning=F, message=F)
+```
+````
+# Checkpoint
+O que vai acontecer se mandamos o nosso script ou arquivo de R Markdown para uma colega? Vai funciona? Será reprodutível? Freqüentemente não. Mesmo que eles tem exatamente os mesmos arquivos, e usa a mesma versão de R e RStudio, não podemos garantir que eles terão acesso às mesmas funções que usamos para fazer nosso script. Lembre-se que tivemos que instalar cada um dos nossos pacotes (`install.packages()`) - se o receptor não tiver feito o mesmo ou tiver uma versão diferente de um pacote, nosso código vai quebrar.
+
+Para resolver isso, vamos usar o pacote `checkpoint` para garantir reprodutibilidade de pacotes. Num site online, o checkpoint salva cada dia todos os pacotes disponível em R (de CRAN). Nós só precisamos escolher uma data para o nosso código para que ele use o conjunto consistente de pacotes salvos nessa data sempre que o código é executado. Como aproveitamos? Apenas coloque o seguinte código (com sua data preferida) no início do seu código:
+
+```{r, eval=FALSE}
+install.packages("checkpoint")
+library(checkpoint)
+checkpoint("2018-04-19")
+```
+
+Desde que o checkpoint vai salvar uma copia dos pacotes localmente, funciona melhor dentro de um projeto de R.
+
+# Exercício
+Vamos limpar e organizar o script com quem você está trabalhando para criar um documento PDF profissional. Especifique parâmetros de cada chunk para tirar todos os mensagens, warnings e código bruto do documento final. O seu PDF deve conter apenas o seu texto explicativo, 'in-line' código, e tabelas/gráficos.
