@@ -1,11 +1,11 @@
 ---
 title: "Manipulação de dados em R"
 author: "Leonardo Sangali Barone"
-date: "April 03, 2017"
+date: "April 16, 2018"
 output: pdf_document
 ---
   
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -15,14 +15,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Nosso primeiro exemplo será a base de dados dos saques efetuados pelos beneficiários do Bolsa Família em janeiro de 2017. Em primeiro lugar, podemos ir ao [portal da transparência](http://www.portaldatransparencia.gov.br/downloads/mensal.asp?c=BolsaFamiliaSacado#exercicios2017).
 
-O arquivo de 2017 contém 1.6Gb. É um arquivo bastante grande, com 14 variáveis (colunas) e mais de 12 milhões de linhas. Arquivos grandes podem ser abertos no R usando a função _fread_, disponível no pacote _data.table_. Num futuro breve veremos o que são funções e pacotes. Por enquanto, basta saber que tornamos as funções de um pacote disponíveis se importarmos o pacote para nossa biblioteca usando a função _library_.
+O arquivo de janeiro 2017 contém 1.6GB. É um arquivo grande, com 14 variáveis (colunas) e mais de 12 milhões de linhas. Arquivos grandes podem ser abertos no R usando a função _fread_, disponível no pacote _data.table_. 
 
 ```{r}
 library(data.table)
 library(dplyr)
 ```
 
-Vamos agora abrir os dados com a função _fread_, que vimos em tutoriais passados.
+Vamos agora baixar o arquivo de janeiro 2017 e abrir os dados com a função _fread_, que vimos em tutoriais passados, substituindo com a pasta relevante no seu computador.
 
 ```{r, include = F}
 saques <- fread("/home/acsa/Downloads/201701_BolsaFamiliaSacado.csv", encoding = "Latin-1")
@@ -65,7 +65,8 @@ Agora que as variáveis têm nomes mais curtos e fáceis de trabalhar e a coluna
 Primeiro, a tabela que contém a contagem por UF de todos os beneficiários que sacaram em janeiro de 2017:
   
 ```{r}
-saques %>% group_by(uf) %>% summarise(contagem = n())
+saques %>% group_by(uf) %>% 
+  summarise(contagem = n())
 ```
 
 Vejamos agora a distribuição de valores sacados em janeiro de 2017 em um histograma:
@@ -76,10 +77,11 @@ hist(saques$valor, main = "Distribuição dos valores sacados em jan/2017", xlab
 
 Legal, não?
 
-Finalmente, vamos fazer o somatório dos valores sacado por UF em 2017:
+Finalmente, vamos fazer o somatório dos valores sacado por UF em janeiro 2017:
   
 ```{r}
-saques %>% group_by(uf) %>% summarise(valores = sum(valor))
+saques %>% group_by(uf) %>% 
+  summarise(valores = sum(valor))
 ```
 
 Note que com poucas linhas de código processamos um bocado de dados e geramos informações úteis para a compreensão do programa bolsa família. Em um futuro breve, veremos como organizar, manipular e "misturar" bases de dados volumosas e extrair informações delas.
@@ -115,19 +117,6 @@ O primeiro argumento da função _rename_ deve ser a base de dados cujos nomes d
 saques_amostra_201701 <- rename(saques_amostra_201701, uf = UF, munic = `Nome Município`)
 ```
 
-## Exercício
-
-Renomeie as variáveis "Código SIAFI Município", "Nome Favorecido", "Valor Parcela", "Mês Competência" e "Data do Saque" como "cod_munic", "nome", "valor", "mes", "data_saque", respectivamente.
-
-```{r, include = F}
-saques_amostra_201701 <- saques_amostra_201701 %>% 
-  rename(cod_munic = `Código SIAFI Município`,
-          nome = `Nome Favorecido`, 
-          valor = `Valor Parcela`, 
-          mes = `Mês Competência`,
-          data_saque = `Data do Saque`)
-```
-
 ## Uma gramática, duas formas
 
 Se voltarmos ao exemplo do começo da apostila, veremos que usamos uma sintaxe ligeiramente diferente para a mesma tarefa, renomear variáveis. Vamos olhar para ela:
@@ -137,6 +126,19 @@ saques_amostra_201701 <- saques_amostra_201701 %>% rename(uf = UF, munic = `Nome
 ```
 
 Usando o operador %>%, denominado _pipe_, retiramos de dentro da função _rename_ o banco de dados cujas variáveis serão renomeadas. Essa outra sintaxe tem uma vantagem grande sobre a anterior: ela permite emendar uma operação de transformação do banco de dados na outra. Veremos adiante como fazer isso. Por enquanto, tenha em mente que o resultado é o mesmo para qualquer uma das duas formas.
+
+## Exercício
+
+Renomeie as variáveis "Código SIAFI Município", "Nome Favorecido", "Valor Parcela", "Mês Competência" e "Data do Saque" como "cod_munic", "nome", "valor", "mes", "data_saque", respectivamente.
+
+```{r, include = F, echo=F}
+saques_amostra_201701 <- saques_amostra_201701 %>% 
+  rename(cod_munic = `Código SIAFI Município`,
+          nome = `Nome Favorecido`, 
+          valor = `Valor Parcela`, 
+          mes = `Mês Competência`,
+          data_saque = `Data do Saque`)
+```
 
 ## Selecionando colunas
 
@@ -183,7 +185,7 @@ dim(saques_amostra_201701)
 
 ## Transformando variáveis
 
-Vimos no exemplo que a variável valor, apesar de conter números, foi lida como texto. Isso ocorre por que o R não entende o uso da vírgula como separador de mlhar. Como resolver um problema desses?
+Vimos no exemplo que a variável valor, apesar de conter números, foi lida como texto. Isso ocorre por que o R não entende o uso da vírgula como separador de milhar. Como resolver um problema desses?
 
 Usaremos a função _mutate_ para operar transformações nas variáveis existentes e criar variáveis novas. Há inúmeras transformações possíveis e elas lembram bastante as funções de outros softwares, como MS Excel. Vamos ver algumas das mais importantes.
 
@@ -228,7 +230,7 @@ Vamos ver um novo exemplo. Faremos agora duas operações separadas, cada uma re
 
 ```{r}
 saques_amostra_201701 <- saques_amostra_201701 %>% 
-  mutate(valor_dolar = valor / 3.2, valor10 = valor_num + 10)
+  mutate(valor_dolar = valor_num / 3.2, valor10 = valor_num + 10)
 ```
 
 Use o comando _View_ para ver as novas variáveis no banco de dados.
@@ -300,7 +302,7 @@ Vamos supor agora que apenas os estados do Centro-Oeste nos interessam. Vamos cr
 
 ```{r}
 saques_amostra_CO <- saques_amostra_201701 %>% 
-  filter(uf == "MT" | uf == "MS" | uf == "Df" | uf == "GO")
+  filter(uf == "MT" | uf == "MS" | uf == "DF" | uf == "GO")
 ```
 
 Note que, para dizer que queremos as quatro condições atendidas, utilizamos uma barra vertical. A barra é o símbolo "ou", e indica que todas as observações que atenderem a uma ou outra condição serão incluídas.
@@ -355,7 +357,7 @@ valores_uf <- saques_amostra_201701 %>%
 
 Use _View_ para observar o resultado.
 
-A sessão _Useful Summary Functions_ do livro _R for Data Science_ traz uma relação mais completa de funçoes que podem ser usandas com _summarise_. O ["cheatsheet" da RStudio](https://github.com/rstudio/cheatsheets/raw/master/source/pdfs/data-transformation-cheatsheet.pdf) oferece uma lista para uso rápido.
+A sessão [_Useful Summary Functions_](http://r4ds.had.co.nz/transform.html#summarise-funs) do livro _R for Data Science_ traz uma relação mais completa de funçoes que podem ser usandas com _summarise_. O ["cheatsheet" da RStudio](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) oferece uma lista para uso rápido.
 
 ## Exercício
 
@@ -382,18 +384,6 @@ valores_uf_mes <- saques_amostra_201701 %>%
             soma = sum(valor),
             media = mean(valor),
             desvio = sd(valor))
-```
-
-## Novo _data frame_ ou tabela para análise?
-
-O uso das funções _group\_by_ e _summarise_ pode ter 2 propósitos: produzir uma tabela para análise, como fizemos acima, ou gerar um novo _data frame_. Basicamente, os usos dependem do tamanho redução que geramos no banco de dados. Por exemplo, podemos gerar os totais de valores transferidos para cada município (que, se tivessemos o banco completo, geraria um banco de aprox. 5,5 mil linhas) para, a seguir, inserí-lo nos dados originais como coluna. Por enquanto, ainda não aprendemos a relacionar dois _data frames_ entre si, mas vejamos como seria a base de dados com municípios como linhas:
-
-```{r}
-saques_amostra_munic <- saques_amostra_201701 %>% 
-  group_by(munic) %>% 
-  summarise(contagem = n(),
-            soma = sum(valor),
-            media = mean(valor))
 ```
 
 ## Ordenando a base de dados

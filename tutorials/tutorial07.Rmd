@@ -1,17 +1,17 @@
 ---
 title: "Manipulação de dados em R"
 author: "Leonardo Sangali Barone"
-date: "April 03, 2017"
+date: "April 16, 2018"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Bases de dados relacionais com a gramática básica do pacote dplyr
+# Bases de dados relacionais com a gramática básica do pacote dplyr 
 
-Até agora, partimos de uma única base de dados e fizemos diversas transformações: mudamos de nomes de variáveis, computamos novas variáveis, selecionamos linhas e colunas, agrupamos e ordenamos. A partir de agora vamos aprender a combinar _data frames_ diferentes usando as funções do tipo __join__ do pacote _dplyr_. Vamos começar carregando o pacote:
+Até agora, partimos de uma única base de dados e fizemos diversas transformações: mudamos de nomes de variáveis, computamos novas variáveis, selecionamos linhas e colunas, agrupamos e ordenamos. A partir de agora vamos aprender a combinar _data frames_ diferentes usando as funções do tipo __join__ do pacote _dplyr_. Vamos começar abrindo o pacote:
 
 ```{r}
 library(dplyr)
@@ -40,7 +40,7 @@ Como descobrir tais mudanças? Como saber quem estava em 2011 e também em 2017?
 Examine as bases de dados "pagamentos11" e "pagamentos17" antes de começarmos a trabalhar com elas. Faça também as seguintes alterações:
 
 - Renomeie as variáveis "NIS Favorecido", "Nome Favorecido" e "Valor Parcela" para "nis", "nome" e "valor", repectivamente.
-- Transforme a variável valor em numérica.
+- Transforme a variável "valor" em numérica.
 - Selecione apenas as três variáveis renomeadas.
 - Quantas linhas tem cada base de dados?
 
@@ -64,7 +64,7 @@ pagamentos17 <- pagamentos17 %>%
 
 Tendo as bases preparadas e sabendo que os beneficiários variam entre os anos, podemos começar a "juntá-las".
 
-O elemento essencial dos "joins", ou seja, das combinações de bases de dados, é que haja uma variável que associe observações em uma base com observações em outras. Algumas variáveis costumam ser candidatas naturais para tal tarefa: CPF, NIS e Título de Eleitor, para indíduos e Código de município e UF para unidades político-administrativas. Mas, veremos adiante, podemos ser criativos e utilizar diversas outras "chaves" para conectar tabelas. O identificador que temos disponível em nossos dados é o NIS.
+O elemento essencial dos "joins", ou seja, das combinações de bases de dados, é que haja (ao menos) uma variável que associe observações em uma base com observações em outras. Algumas variáveis costumam ser candidatas naturais para tal tarefa: CPF, NIS e Título de Eleitor, para indíduos e Código de município e UF para unidades político-administrativas. Mas, veremos adiante, podemos ser criativos e utilizar diversas outras "chaves" para conectar tabelas. O identificador que temos disponível em nossos dados é o NIS.
 
 "Letf join" e "right join" são os nomes dados às combinações que mantém todas as linhas de uma das bases de dados, mesmo sem haver correspondente na outra tabela, e inclui apenas os dados da segunda base que encontram correspondência na primeira tabela.
 
@@ -150,22 +150,15 @@ comb_anti <- anti_join(pagamentos11, pagamentos17, by = "nis")
 comb_left <- pagamentos11 %>% left_join(pagamentos17, by = "nis")
 ```
 
-## Exercício
-
 Respire fundo e gaste um tempo refletindo sobre os "joins". Você acabou de aprender como operar bancos de dados relacionais e pode parecer bastante difícil num primeiro momento.
 
-## Combinação de tabela e agregações cumulativas
+## Exercício: Combinação de tabela e agregações cumulativas
 
-Vamos supor que queremos calcular os valores total, médio, máximo, etc, por município e, a seguir, apresentar esses valores como colunas para cada observação. Uma maneira eficiente de fazer isso é a usando a combinação de tabelas. Vamos er como voltando ao exemplo da amostra de saques do Programa Bolsa Família em 2017.
-
-## Exercício
+Vamos supor que queremos calcular os valores total, médio, máximo, etc, por município e, a seguir, apresentar esses valores como colunas para cada observação. Uma maneira eficiente de fazer isso é a usando a combinação de tabelas. Vamos ver como voltando ao exemplo da amostra de saques do Programa Bolsa Família em 2017.
 
 Abra a base de dados e faça as transformações necessárias (renomear variáveis e transformar a variável valor em numérica) antes de prosseguir. Tente fazê-lo sem olhar a resposta abaixo.
 
-## Resposta ao exercício anterior
-
 ```{r}
-library(readr)
 saques_amostra_201701 <- read_delim("https://raw.githubusercontent.com/leobarone/FLS6397/master/data/saques_amostra_201701.csv", delim = ";", col_names = T)
 
 saques_amostra_201701 <- saques_amostra_201701 %>% 
@@ -180,10 +173,7 @@ saques_amostra_201701 <- saques_amostra_201701 %>%
   mutate(valor_num = as.numeric(gsub(",", "", valor)))
 ```
 
-
-## Pasos para agregações cumulativas
-
-Em primeiro lugar, vamos construir uma tabela agrupada por município usando _group\_by_ e _summarise_:
+Para criar agregações cumulativas, vamos construir uma tabela agrupada por município usando _group\_by_ e _summarise_:
 
 ```{r}
 valores_munic <- saques_amostra_201701 %>% 

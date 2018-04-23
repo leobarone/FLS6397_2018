@@ -27,7 +27,7 @@ As primeiras linhas do seu script devem conter suas informações pessoais como 
 
 ## Roteiro da atividade
 
-1- Vá ao [Repositório de Dados Eleitorais do TSE](http://www.tse.jus.br/eleicoes/estatisticas/repositorio-de-dados-eleitorais). Faça o download do arquivo de resultados de 2016 e descompacte-o. Você pode fazer tudo à mão se tiver dificuldade de copiar o modelo do [tutorial 4](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial04.Rmd), em que abrimos os dados da MUNIC 2005. (Nome do arquivo: "Votação nominal por município e zona")
+1- Vá ao [Repositório de Dados Eleitorais do TSE](http://www.tse.jus.br/eleitor-e-eleicoes/estatisticas/repositorio-de-dados-eleitorais-1/repositorio-de-dados-eleitorais). Na página "Resultados" e no ano 2016, faça o download do arquivo "Votação nominal por município e zona" e descompacte-o. Você pode fazer tudo à mão se tiver dificuldade de copiar o modelo do [tutorial 4](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial04.Rmd), em que abrimos os dados da MUNIC 2005. 
 
 2- Importe para o R os resultados eleitorais dos 3 estados do Sul.
 
