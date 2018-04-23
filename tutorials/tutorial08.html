@@ -191,8 +191,7 @@ dados &lt;- read.table(file1, header = T, sep = &quot;,&quot;)</code></pre>
 </tbody>
 </table>
 <p>Para inserir um chunk, clique: Insert -&gt; R (ou toque Ctrl+Alt+I). Aparece uma caixa cinza onde podemos colocar o nosso código:</p>
-<pre><code>
-```r
+<pre><code>```{r}`r``
 x &lt;- 1 + 1
 ```</code></pre>
 <p>Você pode incluir todas as funções que você conhece nesses chunks. Qualquer objeto criado está disponível para chunks debaixo, mas lembre-se que chunks serão executados na ordem em que aparecem no documento.</p>
@@ -252,8 +251,7 @@ x &lt;- 1 + 1
 <div id="in-line-code-incluindo-valores-simples-do-codigo" class="section level1">
 <h1>‘In-line’ Code: Incluindo valores simples do código</h1>
 <p>Podemos fazer um análise num chunk de código e atribuir/salvar o resultado como um objeto de R. Por exemplo, calculamos a área de um círculo de raio 20 com o chunk debaixo:</p>
-<pre><code>
-```r
+<pre><code>```{r}`r``
 raio &lt;- 20
 area &lt;- pi * raio^2
 ```</code></pre>
