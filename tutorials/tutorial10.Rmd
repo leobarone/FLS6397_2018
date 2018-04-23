@@ -8,7 +8,7 @@
 
 ## Tarefa 1 - Fork e clone
 
-4- Vá para sua conta no github e faça login: [https://github.com/leobarone/repositorio_clone](https://github.com/leobarone/repositorio_clone)
+4- Vá para sua conta no github e faça login. Famos "forkar" o repositório: [https://github.com/leobarone/repositorio_clone](https://github.com/leobarone/repositorio_clone)
 
 5- Clonar o repositório (alterar "SEULOGIN" para o seu nome de usuário no github):https://github.com/SEULOGIN/repositorio_clone
 
