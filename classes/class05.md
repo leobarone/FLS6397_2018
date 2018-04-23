@@ -35,6 +35,8 @@ LEIA COM CUIDADO E ATÉ O FINAL O ROTEIRO DE HOJE ANTES DE COMEÇAR.
 
 7- Às 11h30 faremos uma exposição sobre a integração git, github e RStudio.
 
+8- Usaremos o [Tutorial 10](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial010.Rmd) de guia.
+
 ### Roteiro pós-aula
 
 Ficaremos 2 semanas sem nos encontrarmos novamente. Nesse período você deverá realizar o Desafio 2, que irá ao ar a partir de amanhã a noite e com entrega agendada para 04/05, e finalizar a leitura dos capítulos 1 (_Introduction_) a 18 (_Pipes_, no início da parte III) e 26 a 30 (parte V) do livro do livro _R for Data Science_, [aqui](http://r4ds.had.co.nz/).
