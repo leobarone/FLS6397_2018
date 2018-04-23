@@ -1,4 +1,4 @@
-# Tutorial B1 - R, dplyr e SQL
+# R, dplyr e SQL
 
 # MySQL e dplyr
 
