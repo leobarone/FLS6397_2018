@@ -6,7 +6,7 @@
 
 3- Opcionalmente, você pode instalar o Github Desktop em seu computador. Não utilizaremos em sala de aula, mas é uma ferramenta interessante: [https://desktop.github.com/](https://desktop.github.com/)
 
-## Tarefa 1
+## Tarefa 1 - Fork e clone
 
 4- Vá para sua conta no github e faça login: [https://github.com/leobarone/repositorio_clone](https://github.com/leobarone/repositorio_clone)
 
@@ -26,7 +26,7 @@ plot(density(idade))
 
 9- Add, commit e push usando a interface do RStudio.
 
-## Tarefa 2
+## Tarefa 2 - Criando um novo projeto
 
 10- Criar um repositório novo diretamente no github.
 

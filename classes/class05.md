@@ -35,7 +35,7 @@ LEIA COM CUIDADO E ATÉ O FINAL O ROTEIRO DE HOJE ANTES DE COMEÇAR.
 
 7- Às 11h30 faremos uma exposição sobre a integração git, github e RStudio.
 
-8- Usaremos o [Tutorial 10](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial010.Rmd) de guia.
+8- Usaremos o [Tutorial 10](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial10.Rmd) de guia.
 
 ### Roteiro pós-aula
 
