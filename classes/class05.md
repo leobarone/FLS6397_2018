@@ -27,7 +27,7 @@ LEIA COM CUIDADO E ATÉ O FINAL O ROTEIRO DE HOJE ANTES DE COMEÇAR.
 
 3- Às 10h faremos uma exposição sobre RMarkdown.
 
-4- Se tiver terminado o Tutorial 9, vá para o Tutorial 8, [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial08.Rmd), sobre RMarkdown.
+4- Se tiver terminado o Tutorial 9, vá para o Tutorial 8, [versão github](http://htmlpreview.github.io/?https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial08.html), sobre RMarkdown.
 
 5- Se houver tempo em sala, leia os capítulos 26 a 30 so livro _R for Data Science_. Esta é a seção do livro sobre Comunicação Científica e a maioria deles trata de RMarkdown.
 
