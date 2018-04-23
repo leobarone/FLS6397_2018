@@ -44,7 +44,7 @@ Para abrir um projeto, simplesmente escolhe File -> New Project -> New Directory
 
 Agora, sabemos como a executar um análise de dados na linguagem de R. Mas o nosso objetivo geralmente não é apenas executar algum código, mas produzir uma tabela, um gráfico, um relatório, um documento ou um site. Como podemos comunicar o nosso análise numa forma profissional, documentada e reproduzivel? Vamos usar o R Markdown: um tipo de arquivo compatível com o RStudio e uma linguagem bem fácil e flexível para formatar documentos.
 
-Um script em R tem a extensão de arquivo ".R"; um arquivo de R Markdown tem uma extensão de arquivo ".Rmd". Com o mesmo arquivo ".Rmd" podemos criar três tipos de documentos sem mudar nada: um PDF, um Documento de Word e um site de HTML. Então podemos compartilhar os nossos resultados com tudo mundo, evitando a duplicação de códigos e arquivos. Só uma dica: Todos podem criar outputs em HTML e Word. Para criar PDFs precisa instalar [LATEX](https://miktex.org/download).
+Um script em R tem a extensão de arquivo ".R"; um arquivo de R Markdown tem uma extensão de arquivo ".Rmd". Com o mesmo arquivo ".Rmd" podemos criar três tipos de documentos sem mudar nada: um PDF, um Documento de Word e um site de HTML. Então podemos compartilhar os nossos resultados com tudo mundo, evitando a duplicação de códigos e arquivos. Só uma dica: Todos podem criar outputs em HTML e Word. Para criar PDFs precisa instalar [LATEX for Windows Complete](http://linorg.usp.br/CTAN/systems/win32/miktex/setup/windows-x64/setup-2.9.6637-x64.exe).
 
 Na verdade, este tutorial não foi feito por mágica, mas por R Markdown!
 
@@ -157,9 +157,9 @@ O volume de uma esfera é $A=\frac{4}{3} \pi r^3$. Use um chunk para calcular a 
 
 # Tabelas
 
-Qual é a diferença entre uma tabela num documento e um data.frame (/tibble) em R? Por nós, nada exceto formatação! Então podemos facilmente transformar nossos data.frames em tabelas para exibir para os leitores. Podemos criar um data.frame usando as nossas ferramentas existentes dentro de um chunk. Depois, temos várias funções que nos ajudam a formatar essas tabelas. Para tabelas simples, podemos usar a função `kable()` (para tabelas de regressão podemos usar `stargazer()`). Note que não fazemos nada fora de chunk - o R Markdown exibe o código **e** o resultado da execução do código desde que não atribuamos / salve o resultado.
+Qual é a diferença entre uma tabela num documento, e um data.frame (/tibble) em R? Por nós, nada exceto formatação! Então podemos facilmente transformar nossos data.frames em tabelas para exibir para os leitores. Podemos criar um data.frame usando as nossas ferramentas existentes dentro de um chunk. Depois, temos várias funções que nos ajudam a formatar essas tabelas. Para tabelas simples, podemos usar a função `kable()` (e para tabelas de regressão podemos usar `stargazer()`). Note que não fazemos nada fora de chunk - o R Markdown exibe o código **e** o resultado da execução do código assim que não atribuamos / salve o resultado.
 
-Vamos abrir um banco de dados simples, manipular a estrutura, e mandar para `kable()` para criar uma tabela.
+Vamos abrir um banco de dados simples, manipular a estrutura, e mandar para `kable()` para criar uma tabela.  
 
 ```{r}
 library(tidyverse)
@@ -195,7 +195,7 @@ dados %>% group_by(uf) %>%
 Usando o link acima para os dados de Bolsa família, criar uma tabela dos cinco maiores valores recebidos, formate-lo com um título, nomes de colunas e o número apropriado de dígitos, e 'knit' para um PDF (ou HTML se não tem Latex). 
 
 # Parâmetros de Chunks
-Agora você pode produzir quase todo tipo de conteúdo. Mas agora estamos provavalmente estamos produzindo *demais* conteúdo para nosso documento - por exemplo, o chunk acima produziu linhas de código e um gráfico. Para tutoriais, podemos querer incluir o código no documento final (como aqui), mas, para os relatórios, queremos focar no gráfico. Como controlamos quais tipos de conteúdo são traduzidos de chunks para o documento final? Usamos parâmetros no começo de cada chunk.
+Agora você pode produzir quase todo tipo de conteúdo. Mas agora estamos provavalmente produzindo *demais* conteúdo para nosso documento - por exemplo, o chunk acima produziu linhas de código e um gráfico. Para tutoriais, podemos querer incluir o código no documento final (como aqui), mas, para os relatórios, queremos focar no gráfico. Como controlamos quais tipos de conteúdo são traduzidos de chunks para o documento final? Usamos parâmetros no começo de cada chunk.
 
 Por exemplo, `echo=F` vai prevenir o código bruto aparecendo no documento final:
 
@@ -219,7 +219,7 @@ Pode usar `eval=F` para prevenir a execução do código, por exemplo se você q
 
 Também, normalmente queremos definir `warning=F` e `message=F` para prevenir a exibição de mensagems de pacotes. 
 
-Mais um parâmetro útil: às vezes nosso código dura muito tempo para executar e podemos gravar os objetos criados dentro de um chunk se especificamos `cache=TRUE`. 
+Mais um parâmetro útil: às vezes nosso código dura muito tempo para executar e podemos gravar os objetos criados dentro de um chunk se especificamos `cache=TRUE`. Mas tome cuidado que todo o seu código é atualizada se muda uma linha acima de chunk com cache.
 
 Dado que queremos especificar estas opções para cada chunk, podemos usar um 'shortcut' para definir os defaults. Num chunk preliminar, colocamos por exemplo: 
 
@@ -229,9 +229,9 @@ knitr::opts_chunk$set(echo = F, warning=F, message=F)
 ```
 ````
 # Checkpoint
-O que vai acontecer se mandamos o nosso script ou arquivo de R Markdown para uma colega? Vai funciona? Será reprodutível? Freqüentemente não. Mesmo que eles tem exatamente os mesmos arquivos, e usa a mesma versão de R e RStudio, não podemos garantir que eles terão acesso às mesmas funções que usamos para fazer nosso script. Lembre-se que tivemos que instalar cada um dos nossos pacotes (`install.packages()`) - se o receptor não tiver feito o mesmo ou tiver uma versão diferente de um pacote, nosso código vai quebrar.
+O que vai acontecer se mandamos o nosso script ou arquivo de R Markdown para uma colega? Vai funciona? Será reprodutível? Freqüentemente não. Mesmo que eles tem exatamente os mesmos arquivos e usa a mesma versão de R e RStudio, não podemos garantir que eles terão acesso às mesmas funções que usamos para fazer nosso script. Lembre-se que tivemos que instalar cada um dos nossos pacotes (`install.packages()`) - se o receptor não tiver feito o mesmo ou tiver uma versão diferente de um pacote, nosso código vai quebrar.
 
-Para resolver isso, vamos usar o pacote `checkpoint` para garantir reprodutibilidade de pacotes. Num site online, o checkpoint salva cada dia todos os pacotes disponível em R (de CRAN). Nós só precisamos escolher uma data para o nosso código para que ele use o conjunto consistente de pacotes salvos nessa data sempre que o código é executado. Como aproveitamos? Apenas coloque o seguinte código (com sua data preferida) no início do seu código:
+Para resolver isso, vamos usar o pacote `checkpoint` para garantir reprodutibilidade de pacotes. Num site online, o checkpoint salva cada dia todos os pacotes disponível em R (de CRAN). Nós só precisamos escolher uma data para o nosso código para que ele use o conjunto consistente de pacotes salvos nessa data sempre que o código seja executado. Como aproveitamos? Apenas coloque o seguinte código (com sua data preferida) no início do seu código:
 
 ```{r, eval=FALSE}
 install.packages("checkpoint")
@@ -242,4 +242,4 @@ checkpoint("2018-04-19")
 Desde que o checkpoint vai salvar uma copia dos pacotes localmente, funciona melhor dentro de um projeto de R.
 
 # Exercício
-Vamos limpar e organizar o script com quem você está trabalhando para criar um documento PDF profissional. Especifique parâmetros de cada chunk para tirar todos os mensagens, warnings e código bruto do documento final. O seu PDF deve conter apenas o seu texto explicativo, 'in-line' código, e tabelas/gráficos.
+Vamos limpar e organizar o script com quem você está trabalhando para criar um documento PDF (ou HTML se não tem Latex instalado) profissional. Especifique parâmetros de cada chunk para tirar todos os mensagens, warnings e código bruto do documento final. O seu PDF deve conter apenas o seu texto explicativo, 'in-line' código, e tabelas/gráficos.
