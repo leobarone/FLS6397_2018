@@ -1,0 +1,58 @@
+#  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
+
+- Responsáveis: Leonardo S. Barone e Jonathan Phillips
+
+# Desafio 2 - Manipulação de dados com dplyr
+
+## Instruções para Entrega
+
+Data: 04/05
+
+Formato: Um arquive de R Markdown (arquivo .Rmd) e um arquivo de PDF ou HTML
+
+Via: e-mail com título "[FLS6397] - D2" para leobarone@gmail.com e jonnyphillips@gmail.com.
+
+## Instruções para a atividade
+
+Documente __TODOS__ os seus passos num arquivo de R Markdown, com código em chunks no mesmo documento. O seu script de R Markdown deve ser compilado ('knit') para criar um documento final (PDF ou HTML) com apenas suas respostas (não exibindo cópias do código, warnings, mensagens etc.). Comente no seu código de R __TODOS__ os seus passos e explique a si mesma(o) suas escolhas e estratégias. Mencione __SEMPRE__ em comentários quando a solução encontrada não for sua. O seu código deve usar as funções e o estilo (o pipe `%>%`) da gramática do dplyr / tidyverse / tidy data.
+
+As primeiras linhas do seu script devem conter suas informações pessoais como comentário, tal qual o modelo abaixo:
+
+```{r}
+### nome <- "Fulano da Silva Sauro"
+### programa <- "Mestrado em Paleontologia"
+### n_usp <- 32165498
+### data_entrega: "29/02/2017"
+```
+
+## Parte 1 - Abrindo os dados
+
+1. Vamos fazer o download de dados eleitorais de CEPESPdata (dados limpos e organizados do TSE). Pode fazer o download usando o API de R, seguindo as instruções [aqui](https://github.com/Cepesp-Fgv/cepesp-r) ou pode buscar manualmente no [site](http://cepesp.io), baixar o arquivo e abrir em R. Em qualquer forma, vamos baixar **duas tabelas separadas** - uma tabela de candidatos e uma tabela de resultados. Precisamos os dados de prefeitos na agregação regional do município e por 2016. 
+
+2 - Usando os verbos de `dplyr`/`tidyverse`, nomeie estes data.frames `resultados` e `candidatos`. Filtre as tabelas para escolher os três estados do sul (`UF` e `SIGLA_UF`).
+
+3 - Filtre as tabelas para incluir apenas os dados de prefeitos (não vereadores ou vice-prefeitos) (`DESCRICAO_CARGO`) e do primeiro turno da eleição (`NUM_TURNO`). 
+
+## Parte 2 - Calcule percentagens de votação
+
+4. Usando as funções `group_by` e `mutate`, adicione uma nova coluna no data.frame `resultados` que contém o total de votos (`QTDE_VOTO`) por município (`COD_MUN_IBGE`).
+
+5. Agora, crie mais uma coluna que contém o percentagem de voto do candidato no município em relação ao total de votos recebdidos por todos os candidatos no município (vamos ignorar a existência de votos na legenda para fins didáticos).
+
+## Parte 3 - Integrando os bancos de dados
+
+6. Antes de combinando os dois bancos de dados, escolhe as colunas seguintes da tabela `resultados` para torná-lo mais fácil de usar: `NUMERO_CANDIDATO`,`SIGLA_UE`,`QTDE_VOTOS` e as colunas de total de votos por município e percentagem de votos no município que você criou.
+
+7. Vamos combinar os data.frames `candidatos` e `resultados` usando alguma função do tipo `join` apropriada. Note que precisamos usar duas colunas-chaves - `NUMERO_CANDIDATO` e `SIGLA_UE` - porque `NUMERO_CANDIDATO` é apenas um identificador único para candidatos dentro do mesmo município. 
+
+## Parte 4 - Produzindo tabelas de resumo
+
+8. Usando a sua data.frame combinada, crie uma tabela bem formatada que mostra o candidato para prefeito com o maior percentagem de voto em cada um dos três estados. Sua tabela deve nos informar o estado (`SIGLA_UF`), o nome de candidato (`NOME_CANDIDATO`) e o porcentagem de voto para cada candidato.
+
+9. Crie uma tabela bem formatada que compara a média percentagem de voto para candidatos do cada sexo (`DESCRICAO_SEXO`). Qual sexo recebe mais apoio?
+
+10. Crie uma tabela bem formatada que compara a média percentagem de voto para candidatos do cada sexo e por estado. Em qual estado a diferença entre homens e mulheres é o menor?
+
+11. Crie uma tabela bem formatada que compara a média percentagem de voto por grau de escolaridade de candidatos (`DESCRICAO_GRAU_INSTRUCAO`).
+
+12. Existe um candidato quem nasceu em 05/09/1946 (`DATA_NASCIMENTO`). Identifique esse candidato e use in-line código para escrever um frase que incluir o nome do candidato e o percentagem do voto que ele recebe. Dica: Para obter um valor específico do data.frame que está pronto para usar no in-line código, use o comando `pull` em vez de `select`.

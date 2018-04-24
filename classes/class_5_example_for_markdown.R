@@ -15,6 +15,7 @@ avg_delay <- flights %>% summarize(avg_delay=mean(dep_delay,na.rm=T)) #Average d
 flights %>% group_by(origin) %>% 
   summarize(avg_delay=mean(dep_delay,na.rm=T)) #Table of average delay by origin airport
 
-flights %>% group_by(origin) %>%
+flights %>% sample_n(10000) %>% 
+  group_by(origin) %>%
   ggplot() +
   geom_point(aes(x=dep_time,y=dep_delay)) #Relationship betweeen departure time and departure delay

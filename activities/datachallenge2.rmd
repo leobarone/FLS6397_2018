@@ -1,0 +1,119 @@
+#  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
+
+- Responsáveis: Leonardo S. Barone e Jonathan Phillips
+
+# Desafio 2 - Manipulação de dados com dplyr
+
+## Instruções para Entrega
+
+Data: 04/05
+
+Formato: Um arquive de R Markdown (arquivo .Rmd) e um arquivo de PDF ou HTML
+
+Via: e-mail com título "[FLS6397] - D2" para leobarone@gmail.com e jonnyphillips@gmail.com.
+
+## Instruções para a atividade
+
+Documente __TODOS__ os seus passos num arquivo de R Markdown, com código em chunks no mesmo documento. O seu script de R Markdown deve ser compilado ('knit') para criar um documento final (PDF ou HTML) com apenas suas respostas (não exibindo cópias do código, warnings, mensagens etc.). Comente no seu código de R __TODOS__ os seus passos e explique a si mesma(o) suas escolhas e estratégias. Mencione __SEMPRE__ em comentários quando a solução encontrada não for sua. O seu código deve usar as funções e o estilo (o pipe `%>%`) da gramática do dplyr / tidyverse / tidy data.
+
+As primeiras linhas do seu script devem conter suas informações pessoais como comentário, tal qual o modelo abaixo:
+
+```{r}
+### nome <- "Fulano da Silva Sauro"
+### programa <- "Mestrado em Paleontologia"
+### n_usp <- 32165498
+### data_entrega: "29/02/2017"
+```
+
+```{r}
+library(tidyverse)
+library(knitr)
+library(cepespR)
+```
+
+## Parte 1 - Abrindo os dados
+
+1. Vamos fazer o download de dados eleitorais de CEPESPdata (dados limpos e organizados do TSE). Pode fazer o download usando o API de R, seguindo as instruções [aqui](https://github.com/Cepesp-Fgv/cepesp-r) ou pode buscar manualmente no [site](http://cepesp.io), baixar o arquivo e abrir em R. Em qualquer forma, vamos baixar **duas tabelas separadas** - uma tabela de candidatos e uma tabela de resultados. Precisamos os dados de prefeitos na agregação regional do município e por 2016. 
+
+```{r}
+candidatos <- candidates(year=2016, position="prefeito")
+resultados <- votes(year=2016, position="Prefeito",regional_aggregation="Municipality")
+```
+
+2 - Usando os verbos de `dplyr`/`tidyverse`, nomeie estes data.frames `resultados` e `candidatos`. Filtre as tabelas para escolher os três estados do sul (`UF` e `SIGLA_UF`).
+
+```{r}
+candidatos <- candidatos %>% filter(SIGLA_UF %in% c("RS","PA","SC"))
+resultados <- resultados %>% filter(UF %in% c("RS","PA","SC"))
+```
+
+3 - Filtre as tabelas para incluir apenas os dados de prefeitos (não vereadores ou vice-prefeitos) (`DESCRICAO_CARGO`) e do primeiro turno da eleição (`NUM_TURNO`). 
+
+```{r}
+candidatos <- candidatos %>% filter(DESCRICAO_CARGO=="PREFEITO" & NUM_TURNO==1)
+resultados <- resultados %>% filter(DESCRICAO_CARGO=="PREFEITO" & NUM_TURNO==1)
+```
+
+## Parte 2 - Calcule percentagens de votação
+
+4. Usando as funções `group_by` e `mutate`, adicione uma nova coluna no data.frame `resultados` que contém o total de votos (`QTDE_VOTO`) por município (`COD_MUN_IBGE`).
+
+```{r}
+resultados <- resultados %>% group_by(COD_MUN_IBGE) %>% mutate(Total_votos=sum(QTDE_VOTOS,na.rm=TRUE))
+```
+
+5. Agora, crie mais uma coluna que contém o percentagem de voto do candidato no município em relação ao total de votos recebdidos por todos os candidatos no município (vamos ignorar a existência de votos na legenda para fins didáticos).
+
+```{r}
+resultados <- resultados %>% mutate(Pct_voto=QTDE_VOTOS/Total_votos)
+```
+
+## Parte 3 - Combinando os bancos de dados
+
+6. Antes de combinando os dois bancos de dados, escolhe as colunas seguintes da tabela `resultados` para torná-lo mais fácil de usar: `NUMERO_CANDIDATO`,`SIGLA_UE`,`QTDE_VOTOS` e as colunas de total de votos por município e percentagem de votos no município que você criou.
+
+```{r}
+resultados <- resultados %>% ungroup() %>% select(NUMERO_CANDIDATO,SIGLA_UE,QTDE_VOTOS,Total_votos,Pct_voto)
+```
+
+7. Vamos combinar os data.frames `candidatos` e `resultados` usando alguma função do tipo `join` apropriada. Note que precisamos usar duas colunas-chaves - `NUMERO_CANDIDATO` e `SIGLA_UE` - porque `NUMERO_CANDIDATO` é apenas um identificador único para candidatos dentro do mesmo município. 
+
+```{r}
+combinados <- candidatos %>% left_join(resultados,by=c("NUMERO_CANDIDATO","SIGLA_UE"))
+```
+
+## Parte 4 - Produzindo tabelas de resumo
+
+8. Usando a sua data.frame combinada, crie uma tabela bem formatada que mostra o candidato para prefeito com o maior percentagem de voto em cada um dos três estados. Sua tabela deve nos informar o estado (`SIGLA_UF`), o nome de candidato (`NOME_CANDIDATO`) e o porcentagem de voto para cada candidato.
+
+```{r}
+combinados %>% group_by(SIGLA_UF) %>% arrange(-Pct_voto) %>% slice(1) %>% select(SIGLA_UF,NOME_CANDIDATO,Pct_voto) %>% kable()
+```
+
+9. Crie uma tabela bem formatada que compara a média percentagem de voto para candidatos do cada sexo (`DESCRICAO_SEXO`). Qual sexo recebe mais apoio?
+
+```{r}
+combinados %>% group_by(DESCRICAO_SEXO) %>% summarize(Pct_voto=mean(Pct_voto,na.rm=TRUE))
+```
+
+10. Crie uma tabela bem formatada que compara a média percentagem de voto para candidatos do cada sexo e por estado. Em qual estado a diferença entre homens e mulheres é o menor?
+
+```{r}
+combinados %>% group_by(DESCRICAO_SEXO, SIGLA_UF) %>% summarize(Pct_voto=mean(Pct_voto,na.rm=TRUE)) %>% 
+  spread(key="SIGLA_UF",value="Pct_voto") %>% kable()
+```
+
+11. Crie uma tabela bem formatada que compara a média percentagem de voto por grau de escolaridade de candidatos (`DESCRICAO_GRAU_INSTRUCAO`).
+
+```{r}
+combinados %>% group_by(DESCRICAO_GRAU_INSTRUCAO) %>% summarize(Pct_voto=mean(Pct_voto,na.rm=TRUE)) %>% kable()
+```
+
+12. Existe um candidato quem nasceu em 05/09/1946 (`DATA_NASCIMENTO`). Identifique esse candidato e use in-line código para escrever um frase que incluir o nome do candidato e o percentagem do voto que ele recebe. Dica: Para obter um valor específico do data.frame que está pronto para usar no in-line código, use o comando `pull` em vez de `select`.
+
+```{r}
+cand <- combinados %>% filter(DATA_NASCIMENTO=="05/09/1946")
+cand_nome <- cand %>% pull(NOME_CANDIDATO)
+cand_pct <- cand %>% pull(Pct_voto)
+```
+ 
