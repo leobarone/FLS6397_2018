@@ -55,4 +55,4 @@ As primeiras linhas do seu script devem conter suas informações pessoais como 
 
 11. Crie uma tabela bem formatada que compara a média percentagem de voto por grau de escolaridade de candidatos (`DESCRICAO_GRAU_INSTRUCAO`).
 
-12. Existe um candidato quem nasceu em 05/09/1946 (`DATA_NASCIMENTO`). Identifique esse candidato e use in-line código para escrever um frase que incluir o nome do candidato e o percentagem do voto que ele recebe. Dica: Para obter um valor específico do data.frame que está pronto para usar no in-line código, use o comando `pull` em vez de `select`.
+12. Qual candidato foi eleito (`DESC_SIT_TOT_TURNO`) no município (`DESCRICAO_UE`) de Guaramirim no estado de Santa Catarina (`SIGLA_UF`)?  Identifique esse candidato e use in-line código para escrever um frase que incluir o nome do candidato, o nome do partido dele, e o percentagem do voto que ele/ela recebeu. Dica: Para obter um valor específico do nosso data.frame que está pronto para usar no in-line código, use o comando `pull` em vez de `select`.
