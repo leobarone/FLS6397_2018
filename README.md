@@ -26,7 +26,7 @@ OBS: alteramos a ordem dos tópicos das aulas 8 e 9. A ordem abaixo é a correta
 - 09/04/2018 - [Aula 3](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class03.md) - Abrindo e manipulando _data frames_
 - 16/04/2018 - [Aula 4](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class04.md) - Primeiros passos no _tidyverse_
 - 23/04/2018 - [Aula 5](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class05.md) - RMarkdown, git, e integração R e servidores SQL
-- 14/05/2018 - [Aula 6] - Visualização de dados e a gramática de gráficos _ggplot2_
+- 14/05/2018 - [Aula 6](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class06.md) - Visualização de dados e a gramática de gráficos _ggplot2_
 - 21/05/2018 - [Aula 7] - Iteração e vetorialização
 - 28/05/2018 - [Aula 8] - Mapas e GIS com R
 - 04/06/2018 - [Aula 9] - Raspagem de dados na internet com R
