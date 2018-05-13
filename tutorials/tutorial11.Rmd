@@ -1,4 +1,3 @@
-# Introdução à gramática de gráficos com ggplot2
 
 Para este tutorial vamos usar novamente dados de Fakeland, como fizemos no tutorial 5. Em vez de apenas 30 observações, agora trabalharemos com um conjunto maior de cidadãos (200) e menos variáveis, para facilitar nosso trabalho.
 
@@ -20,7 +19,7 @@ fake <- read_delim(url_fake_data, delim = ";", col_names = T)
 
 Em conjunto com a gramática de manipulação de dados do _dplyr_, a gramática de gráficos _ggplot2_ é um dos destaques da linguagem R. Além de flexível e aplicável a diversas classes de objetos (data frames, objetos de mapa e redes, por exemplo), a qualidade dos gráficos é excepcionalmente boa.
 
-Existe uma forte ligação entre a gramática de dplyr e a gramática de ggplot2: toda a informação para o nosso gráfico vem de um data.frame; cada linha em nosso data.frame é uma 'unidade' a ser exibida no gráfico, e cada coluna em nosso data.frame é uma variável que determina um aspeto visual específico do gráfico, incluindo posição, cor, tamanho e forma.
+Existe uma forte ligação entre a gramática de _dplyr_ e a gramática de _ggplot2_: toda a informação para o nosso gráfico vem de um data.frame; cada linha em nosso data.frame é uma 'unidade' a ser exibida no gráfico, e cada coluna em nosso data.frame é uma variável que determina um aspeto visual específico do gráfico, incluindo posição, cor, tamanho e forma.
 
 Neste tutorial vamos priorizar a compreensão da estrutura do código para produzir gráficos com _ggplot2_ a partir de alguns exemplos simples e propositalmente não cobriremos todas as (inúmeras) possibilidades de visualização.
 
@@ -45,7 +44,7 @@ O argumento da função _ggplot_ é "data", ou seja, o objeto que contém os dad
 
 Até aqui, nada de novo. Agora, para adicionar uma geometria, colocamos um símbolo de "+" após fechar o parêntesis da função _ggplot_ e, convencionalmente na linha seguinte, utilizarmos a função da geometria correspondente. Cada "+" nos permite adicionar mais uma camada em nosso gráfico. Mas qual camada? Nós definimos uma camada principalmente por sua _geometria_ - o tipo de representação visual dos nossos dados que queremos. _geom\_bar_ indica que queremos uma geometria de barras, como um 'bar chart' em excel. 
 
-Crucialmente, a escolha da geometria depende do tipo de dados que você deseja visualizar de seu dados.frame. Aqui, analisamos a distribuição de preferências de candidato à presidência, que é uma variável discreta (caráter ou fator), entao usamos uma geometria que corresponda com dados discretos. A lógica de um gráfico de barras é representar a contagem de frequência de cada categoria discreta, então faz sentido usar _geom\_bar_ como a nossa geometria. Vamos ver exemplos de outras geometrias que corespondam com outros dados debaixo.
+Crucialmente, a escolha da geometria depende do tipo de dados que você deseja visualizar de seu dados.frame. Aqui, analisamos a distribuição de preferências de candidato à presidência, que é uma variável discreta (caráter ou fator), então usamos uma geometria que corresponda com dados discretos. A lógica de um gráfico de barras é representar a contagem de frequência de cada categoria discreta, então faz sentido usar _geom\_bar_ como a nossa geometria. Vamos ver exemplos de outras geometrias que corespondam com outros dados debaixo.
 
 Dentro da camada de geometria, a mais estranhesa vem com as 3 letrinhas "aes" que são a abreviação de "aesthetics". Aqui definiremos quais variáveis de nosso data.frame farão parte do gráfico. Estamos trabalhando por enquanto com apenas uma variável, representada no eixo horizontal, ou eixo "x". Por esta razão preenchemos o parâmetro "x" da "aesthetics" e nada mais.
 
@@ -58,7 +57,7 @@ ggplot(data = fake) +
   geom_bar(aes(x = renda))
 ```
 
-Este gráfico está em branco, por quê? Tentamos representar uma variável contínua com uma geometria construído para variáveis discretas. Como cada valor de renda é único, existe uma barra (minúscula) para cada indivíduo e o gráfico não faz sentido. Precisamos mudar o geometria - o equivalente de um gráfico de barras para variáveis contínuas é um histogram, entao usamos _geom\_histogram_.
+Este gráfico está em branco, por quê? Tentamos representar uma variável contínua com uma geometria construído para variáveis discretas. Como cada valor de renda é único, existe uma barra (minúscula) para cada indivíduo e o gráfico não faz sentido. Precisamos mudar o geometria - o equivalente de um gráfico de barras para variáveis contínuas é um histogram, então usamos _geom\_histogram_.
 
 ```{r}
 ggplot(data = fake) + 
@@ -68,7 +67,7 @@ ggplot(data = fake) +
 Faz mais sentido? Espero que sim. Compare os dois códigos dos gráficos acima com calma e compreenda as diferenças. Note que o tipo de variável que demanda uma(s) geometria(s) específica(s), e não contrário.
 
 ### Exercício
-Use o banco de dados de Fakeland para criar um gráfico que mostra o o nível de apoio para cada partido, e um gráfico que mostra a distribuição da idade (trata idade como uma variável contínua). 
+Use o banco de dados de Fakeland para criar um gráfico que mostra o nível de apoio para cada partido, e um gráfico que mostra a distribuição da idade (trata idade como uma variável contínua). 
 
 ### Parâmetros fixos 
 
@@ -79,7 +78,7 @@ ggplot(data = fake) +
   geom_histogram(aes(x = renda), binwidth = 4000)
 ```
 
-Uma observação crucial aqui: o binwidth é especificado _fora_ do _aes()_. Por que? Porque existe uma regra importante no ggplot2 - Parâmetros que variam dependendo de nossos dados devem ficar dentro de _aes()_; Parâmetros fixos que não depende de nossos dados devem ficar fora do _aes()_. Então, em nosso código, temos dentro de _aes()_ uma variavel, renda, e fora de _aes()_ um número exógeno, 4000. 
+Uma observação crucial aqui: o binwidth é especificado _fora_ do _aes()_. Por que? Porque existe uma regra importante no _ggplot2_ - Parâmetros que variam dependendo de nossos dados devem ficar dentro de _aes()_; Parâmetros fixos que não depende de nossos dados devem ficar fora do _aes()_. Então, em nosso código, temos dentro de _aes()_ uma variavel, renda, e fora de _aes()_ um número exógeno, 4000. 
 
 O gráfico está muito cinza. Se quisemos mudar algumas cores, onde vamos especificar novos parâmetros de cores? Desde que os cores ficam fixos para todo o gráfico e não depende de nossos dados, fora de _aes()_.
 
@@ -329,7 +328,7 @@ ggplot(fake) +
 
 Lindo, não?
 
-Existe mais um outro jeito de mostrar mais de duas variáveis - podemos criar vários gráficos sem ter que repetir nosso código toda vez. Como fazer isso? Com _face\_grid_ ou _facet\_wrap_. Veja um exemplo:
+Existe mais um outro jeito de mostrar mais de duas variáveis - podemos criar vários gráficos organizados em uma grade sem ter que repetir nosso código toda vez. Como fazer isso? Com _face\_grid_ ou _facet\_wrap_. Veja um exemplo:
 
 ```{r}
 ggplot(fake) + 
@@ -339,7 +338,7 @@ ggplot(fake) +
 
 ### Exercício
 
-Vamos usar o banco de dados menor de Fakeland para investigar a relação entre renda, poupança e número de crianças. Usando o código debaixo, crie um gráfico de dispersão entre renda (income) e poupança (savings), e ajuste o tamanho de cada ponto dependendo do número de crianças (kids). 
+Vamos usar o banco de dados menor de Fakeland para investigar a relação entre renda, poupança e número de crianças. Começando com o código debaixo, crie um gráfico de dispersão entre renda (income) e poupança (savings), e ajuste o tamanho de cada ponto dependendo do número de crianças (kids). 
 
 ```{r}
 fake_menor <- read_delim(file1 <- "https://raw.githubusercontent.com/leobarone/ifch_intro_r/master/data/fake_data.csv", delim = ";", col_names = T)
@@ -367,7 +366,7 @@ ggplot(fake) +
   ylab("FM$ (Fake Money)")
 ```
 
-O ggplot nos permite modificar basicamente todos os elementos de estilo do nosso gráfico, mas isso é muitos detalhes. Para alterar o estilo do nosso gráfico, é mais fácil usar um tema ( _theme_ ) pré-definido. Por exemplo, podmos usar _theme\_classic_ para tirar o preenchimento e agrade do fundo. 
+O _ggplot_ nos permite modificar basicamente todos os elementos de estilo do nosso gráfico, mas isso é muitos detalhes. Para alterar o estilo do nosso gráfico, é mais fácil usar um tema ( _theme_ ) pré-definido. Por exemplo, podemos usar _theme\_classic_ para tirar o preenchimento e a grade do fundo. 
 
 ```{r}
 ggplot(fake) + 
@@ -394,4 +393,4 @@ ggplot(fake) +
 
 ### Exercício
 
-Melhore seu gráfico do exercício anterior especificando um título, títulos de eixo e um tema.
+Melhore seu gráfico do exercício anterior especificando um título, títulos de eixos e um tema de sua preferência.

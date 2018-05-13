@@ -1,6 +1,6 @@
 # Tópicos adicionais com ggplot2
 
-Esse breve tutorial fornece um guia para alguns recursos adicionais do ggplot2. Também exploramos como preparar nossos dados com _dplyr_ para facilitar o trabalho com _ggplot2_. 
+Este breve tutorial fornece um guia para alguns recursos adicionais do ggplot2. Também exploramos como preparar nossos dados com _dplyr_ para facilitar o trabalho com _ggplot2_. 
 
 ## Mais geometrias
 
@@ -29,7 +29,7 @@ ggplot(fake) +
 
 ## Pipes e Gráficos de linha
 
-Gráficos de linha exigem, em geral, um pouco mais de preparação de nossos dados. A variável y pode ser discreta ou contínua, mas precisa ser _ordenado_ para que as linhas façam sentido. Para que podemos transformar os nossos dados na mesma linha de código onde criamos o nosso gráfico, vamos aprender primeiramente como a usar _ggplot2_ com o pipe:
+Gráficos de linha exigem, em geral, um pouco mais de preparação de nossos dados. A variável x pode ser discreta ou contínua, mas precisa ser _ordenado_ para que as linhas façam sentido. Para que podemos transformar os nossos dados na mesma linha de código onde criamos o nosso gráfico, vamos aprender primeiramente como a usar _ggplot2_ com o pipe:
 
 ```{r}
 library(tidyverse)
@@ -37,7 +37,7 @@ fake %>% ggplot() +
   geom_point(aes(x=idade,y=renda))
 ```
 
-Só precisamos pegar o data.frame fora do ggplot2 e colocá-lo antes do pipe. Note uma coisa chata: existe dois símbolos conetando os nossas ações agora: um pipe ( _%>%_ ) e um "+". Usamos o pipe com data.frames, e o "+" com camadas de gráficos depois da linha _ggplot2()_. 
+Só precisamos mexer o data.frame fora do _ggplot2_ e colocá-lo antes do pipe. Note uma coisa chata: existe dois símbolos conetando as nossas ações agora: um pipe ( _%>%_ ) e um "+". Usamos o pipe com data.frames, e o "+" com camadas de gráficos depois da linha _ggplot()_. 
 
 Com este novo fluxo de trabalho, agora é fácil transformar nossos dados antes de visualizar. Por exemplo, podemos visualizar apenas os dados para as mulheres.
 
@@ -85,26 +85,16 @@ fake %>% group_by(idade,sexo) %>%
 
 Accesse o banco de dados _flights_ no pacote _nycflights13_. Transforme os dados e crie um gráfico de linha com meses no eixo horixontal, o atraso média de partida ( _dep\_delay_) no eixo vertical, e linhas separadas para cada aeroporto de origem.
 
-```{r}
-library(nycflights13)
-
-flights %>% group_by(month,origin) %>%
-  summarize(avg_dep_delay=mean(dep_delay,na.rm=T)) %>%
-  ggplot() +
-  geom_line(aes(x=month,y=avg_dep_delay,group=origin,colour=origin))
-```
-
-
 ## Controlando cores com 'scales'
 
 O ggplot2 usa cores defaults. Claro que podemos controlar os cores usando mais um elemento da gramática dos gráficos, 'scales'. Adicionamos mais uma linha de código no final para controlar quais cores o ggplot2 deve usar. Infelizmente, precisamos tomar muito cuidado com o tipo de scale, que precisa corresponder ao tipo de nossos dados e também se estamos colorindo um ponto/linha ('colour') ou preenchendo uma área ('fill'). Use o tabela debaixo como uma guia:
 
-Tipo de dados | Color (point, line) | Fill (area)
+Tipo de dados | Color (ponto, linha) | Fill (área)
 ------------- | --------------------|---------
-Continuo      | scale_color_gradient(low="color1",high="color2") | scale_fill_gradient(low="color1",high="color2")
+Continuo      | scale_color_gradient(low="cor1",high="cor2") | scale_fill_gradient(low="cor1",high="cor2")
 Discreto      | scale_color_brewer(palette="pre-definido")     | scale_fill_brewer(palette="pre-definido")
   
-Para os cores e palettes, podemos usar vários tipos de referências: nomes, rgb, hex etc. Mas é difícil escolher boas cores - é melhor usar um site como http://colorbrewer2.org
+Para os cores e palettes, podemos usar vários tipos de referências: nomes, rgb, hex etc. Mas é difícil escolher boas cores - é melhor usar um site, por exemplo http://colorbrewer2.org
 
 Vamos modificar os cores de nosso gráfico de linha. O nosso variável distinguida pela cor é o sexo, que é discreto, e nós queremos colorir as linhas, não as áreas, então precisamos usar _scale\_color\_brewer_. Eu gosto de um escala/palette se chame 'Accent' então adicionamos uma nova linha no código.
 
@@ -126,12 +116,12 @@ ggplot(fake) +
 
 ### Exercício
 
-Com o banco de dados _flights_, filtrar os dados para voos partindo do aeroporto LGA dia 20 de maio ('month' e 'day'). Depois, crie um gráfico de dispersão/texto que compara a hora de partida com distancia, que coloca os nomes de destinos no gráfico, e, usando um 'scale', para que o cor de cada texto refleto o atraso de partido deste voo.
+Com o banco de dados _flights_, filtrar os dados para voos partindo do aeroporto LGA no dia 20 de maio ('month' e 'day'). Depois, crie um gráfico de dispersão/texto que compara a hora de partida com distancia, que coloca os nomes de destinos no gráfico, e, usando um 'scale', para que o cor de cada texto reflete o atraso de partido desse voo.
 
 
 ## Gráficos interativas e animações
 
-Se você estiver trabalhando com um site online (e não um PDF), talvez queira tornar seu gráfico interativo para que os usuários possam explorar cada ponto de dados. Isso é fácil com o pacote _plotly_ e o comando _ggplotly_. Salvamos nosso gráfico como um objeto e, em seguida, usamos _ggplotly_.
+Se você estiver trabalhando com um site online (e não um PDF), talvez queira tornar seu gráfico interativo para que os usuários possam explorar cada ponto de dados. Isso é fácil com o pacote _plotly_ e o comando _ggplotly_. Gravamos nosso gráfico como um objeto e, em seguida, usamos _ggplotly_.
 
 ```{r}
 install.packages("plotly")
@@ -146,7 +136,7 @@ graf_1 %>%
   ggplotly()
 ```
 
-Este pacote também ajuda a transformar gráficos para animações. Podemos usar o mesmo fluxo de trabalho acima, e só precisamos especificar o parâmetro 'frame' em _ggplot2_ para a variável que queremos a mudar com cada slide da animação. Para ilustrar, vamos analisar um gráfico de dispersão simples, que muda cada slide para filtrar os dados por número de filhos.Toque 'play' no gráfico produzido pelo código debaixo para ver a animação.
+Este pacote também ajuda a transformar gráficos para animações. Podemos usar o mesmo fluxo de trabalho acima, e só precisamos especificar o parâmetro 'frame' em _ggplot2_ para a variável que queremos a mudar com cada slide da animação. Para ilustrar, vamos analisar um gráfico de dispersão simples, que muda cada slide para filtrar os dados por número de filhos. Toque 'play' no gráfico produzido pelo código debaixo para ver a animação.
 
 ```{r}
 graf_2 <- fake %>%
@@ -159,7 +149,7 @@ graf_2 %>%
 
 ## Gráficos em Rmarkdown
 
-Para incluir o seu gráfico num documento de Rmarkdown, apenas colocar o código dentro de um chunk (sem salvar como objeto). Normalmente, usamos um chunk separado para cada gráfico. Podemos controlar o tamanho do gráfico com os parametros de chunk, 'fig.height' and 'fig.width', em inches, eg. 'fig.height=5'. 
+Para incluir o seu gráfico num documento de Rmarkdown, apenas colocar o código dentro de um chunk (sem gravar como objeto). Normalmente, usamos um chunk separado para cada gráfico. Podemos controlar o tamanho do gráfico com os parametros de chunk, 'fig.height' and 'fig.width', em inches, eg. 'fig.height=5'. 
 
 ### Exercício
 
