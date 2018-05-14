@@ -21,5 +21,5 @@ Agora você é especialista em acessar e transformar dados. Mas ainda é difíci
 
 ### Roteiro pós-aula
 
-Vamos ler [...]. O proximo desafio sobre o ggplot2 sera disponivel logo com entrega agendada para 25/05.
+Vamos ler (de novo, se você já leu) capítulo 21, 'Iteration' de [R for Data Science](http://r4ds.had.co.nz/iteration.html). O proximo desafio sobre o ggplot2 sera disponivel logo com entrega agendada para 25/05.
 
