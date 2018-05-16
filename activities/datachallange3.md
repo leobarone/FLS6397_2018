@@ -9,7 +9,7 @@
 
 Data: 01/06
 
-Formato: arquivo .pdf ou .html produzido com RMarkdown, acompanhado de script em formato .Rmd
+Formato: arquivo .pdf ou .html produzido com RMarkdown, acompanhado de script em formato .R
 
 Via: e-mail com título "[FLS6397] - D3".
 
@@ -58,8 +58,8 @@ Sugestão: use _inner\_join_ para fazer as combinações de bases para ficar ape
 
 Utilizando os tutoriais de sala de aula sobre _ggplot2_ e os capítulos [Cap 3. Visualização de dados](http://r4ds.had.co.nz/data-visualisation.html) e [Cap 7. Análise exploratória de dados](http://r4ds.had.co.nz/exploratory-data-analysis.html), faça uma apresentação criativa dos dados e explore relações entre variáveis das diversas fontes. Considere, para facilitar seu processo criativo, visualizar variáveis e relações entre elas para os quais você consegue formular explicações ou hipóteses.
 
-Sua apresentação deve conter pelo menos: 1 gráfico para uma variável contínuo; 1 gráfico para uma variável discreta; 1 gráfico para duas variáveis, sendo uma discreta e uma contínua; e 1 gráfico para duas variáveis contínuas.
+Sua apresentação deve conter pelo menos: 1 gráfico para uma variável contínua; 1 gráfico para uma variável discreta; 1 gráfico para duas variáveis, sendo uma discreta e uma contínua; e 1 gráfico para duas variáveis contínuas.
 
-Em todos os gráficos, insira título e rótulos dos eixos. Quando necessário, inclua legenda. Altere os elementos da geometria (cor, tamanho, formato, etc de linhas, pontos e barras) para tornar as visualizações o mais elegange possível. Explique brevemente - em duas ou três frases - o que podemos aprender de cada gráfico.
+Em todos os gráficos, insira título e rótulos dos eixos. Quando necessário, inclua legenda. Altere os elementos da geometria (cor, tamanho, formato, etc de linhas, pontos e barras) para tornar as visualizações o mais elegange possível. Explique brevemente - em duas ou três frases - o que podemos aprender a partir de cada gráfico.
 
 Finalmente, seu arquivo de RMarkdown deve conter pelo menos 3 informações provenientes dos dados (exemplo: contagem de casos, médias de variáveis, somatórios) no meio dos parágrafos (_"inline code"_).
