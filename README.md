@@ -48,7 +48,7 @@ OBS: alteramos a ordem dos tópicos das aulas 8 e 9. A ordem abaixo é a correta
 
 - 20/04/2018 - [Desafio 1](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge1.md) - R base
 - 08/05/2018 - [Desafio 2](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge2.md) - Manipulação de dados com dplyr
-- 01/06/2018 - [Desafio 3](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge2.md) - Gráficos com ggplot2 
+- 01/06/2018 - [Desafio 3](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge3.md) - Gráficos com ggplot2 
 - 18/06/2018 - Desafio 4 - Mapas (requisito: desafio 2)
 - 25/06/2018 - Desafio 5 - Raspagem de dados e mineração de texto
 
