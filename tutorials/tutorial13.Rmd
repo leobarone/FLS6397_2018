@@ -285,4 +285,15 @@ candidatos <- c(2006, 2010, 2014) %>%
   bind_rows()
 ```
 
-Incrível, não? Em poucas linhas de código fazemos muitas coisas. Vamos, agora, às leituras.
+Incrível, não? Em poucas linhas de código fazemos muitas coisas. 
+
+## Exercício
+
+Refere-se os dados de 'Polity' baixados anteriormente (_p4\_raw_). 
+1. Use um _for loop_ para identificar o valor máximo na tabela das três variáveis: _parcomp_ (a competitividade da participação), _polcomp_ (a competitividade da política) e _polity2_ (o indicador geral da democracia). 
+2. Use _sapply_ ou _map_ para realizar a mesma coisa.
+3. Use _summarise\_at_ para realizar a mesma coisa.
+4. Use _summarise\_at_ com _group\_by_ para calcular a valor máximo de cada variável em cada país.
+5. (Desafiador) Use _summarise\_at_ com _group\_by_ para calcular a valor máximo __e mínimo__ de cada variável em cada país, e depois identificar o país que teve a variação mais extrema em democria usando o indicador _polity2_. Hint: Podemos aplicar duas funções ao mesmo tempo usando _funs(fun1,fun2)_ dentro de _summarise\_at_. Lembre-se também de substituir os valores -66, -77 e -88 por NA.
+
+Vamos, agora, às leituras.
