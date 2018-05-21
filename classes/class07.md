@@ -15,7 +15,7 @@ Nesta segunda etapa do curso, vamos trabalhar com tópicos mais avançados em R.
 
 0 - Não deixe nada de aulas anteriores para trás.
 
-1 - Começaremos a aula com exemplos de como o uso de funções e loops tornam o código mais  rápido, enxuto e eficiente, no Tutorial 12 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial11.Rmd).
+1 - Começaremos a aula com exemplos de como o uso de funções e loops tornam o código mais  rápido, enxuto e eficiente, no Tutorial 12 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial13.Rmd).
 
 2 - Ao terminar o tutorial, leremos, na sequência, capítulos/trechos do livro [R for Data Science](http://r4ds.had.co.nz). Comece aprendendo mais sobre funções no capítulo [19 - Functions](http://r4ds.had.co.nz/functions.html)
 
