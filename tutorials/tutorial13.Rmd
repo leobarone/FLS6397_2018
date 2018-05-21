@@ -1,0 +1,291 @@
+## Funções, iteração e vetorialização do código
+
+Neste breve tutorial vamos ver alguns exemplos de como criar funções e utilizar processos iterativos (loops), e sua forma vetorializada (famílias de funções _apply_ e _map_) facilitam  a organização do código, reduzem bastante o esforço de programação e tornam o programa mais eficiente.
+
+Estes exemplos servirão de norte para que você leia, em sala, os capítulos [19 - Functions](http://r4ds.had.co.nz/functions.html), [20 - Iteration](http://r4ds.had.co.nz/iteration.html), e o trecho do capítulo [18 - Vectors](http://r4ds.had.co.nz/vectors.html#lists) que trata de listas.
+
+## Exemplo 1 - substituindo repetição de código por loops
+
+Imagine que você precisa organizar dados dos candidatos à presidência de diversos anos (2002 a 2014) e vai utilizar a API do CEPESP Data. Utilizando a função _candidates_ do pacote _cepespR_ podemos obter os dados:
+
+```{r}
+library(cepespR)
+candidatos02 <- candidates(year = 2002, position = "President")
+candidatos06 <- candidates(year = 2006, position = "President")
+candidatos10 <- candidates(year = 2010, position = "President")
+candidatos14 <- candidates(year = 2014, position = "President")
+```
+
+e, a seguir, podemos juntar todos em um único data_frame:
+
+```{r}
+candidatos <- rbind(candidatos02, candidatos06, candidatos10, candidatos14)
+```
+
+Simples, não? Imagine agora que você quer repetir mesma tarefa não 4, mas centenas de vezes. O código deixaria de ser simples e passaria a ter centenas de linhas.
+
+Essa centena de linhas seria pura repetição de código. No nosso exemplo, a obtenção dos dados para candidatos à presidência em 2002 e em 2006 são idênticas, exceto por 2 números Como podemos evitar a repetição de códigos?
+
+Neste tutorial vamos rever dois tópicos pelos quais passamos brevemente no curso e que são fundamentais para tornar o seu código mais enxuto e eficiente: funções e iterações (loops e similares).
+
+No exemplo acima, um simples _for loop_ resolveria nosso problema de repetição de código. Veja abaixo e tente entender sozinha(o) o que está acontencendo:
+
+```{r}
+library(dplyr)
+
+vetor_anos <- c(2002, 2006, 2010, 2014)
+
+candidatos <- data.frame()
+for (ano in vetor_anos){
+  candidatos <- bind_rows(candidatos, 
+                      candidates(year = ano, position = "President"))
+}
+```
+
+Simples, não? Se quiséssemos utilizar mais anos em nossa análise, bastaria mudar o vetor "percorrido" pelo loop que contém o número de anos.
+
+Vamos supor agora que não queremos juntar todos os anos, apenas contar o número de linhas (que é o número de candidatos) em cada um dos anos e armazenar o resultado em um vetor. Veja como fazemos isso com um _for loop_:
+
+```{r}
+n_candidatos <- c()
+for (ano in vetor_anos){
+  n_candidatos <- c(n_candidatos, nrow(candidates(year = ano, position = "President")))
+}
+```
+
+Igualmente simples. Há outras maneiras de produzir o mesmo resultado em R sem utilizar _for loops_. Note que podemos pensar um _for loop_ como uma função que recebe como argumento um vetor e realiza a mesma tarefa para cada elemento do vetor.
+
+Há duas famílias de funções em R que contêm soluções alternativas -- e mais eficientes -- do que o _for loop_ para executar a mesma tarefa para cada item de um vetor: a família "apply", do pacote _base_, e a família "map", do pacote _purrr_ (tidyverse).
+
+Vamos ver como ficaria o código acima utilizando funções de ambas as famílias. Em ambas situações escrevemos uma função dentro da própria função e a aplicamos a cada elemento do vetor. Por enquanto, apenas examine o código. Aprenderemos mais sobre tais funções no futuro.
+
+Em primeiro lugar, vamos usar a função _sapply_ (pacote _base_):
+
+```{r}
+n_candidatos <- sapply(vetor_anos, function(x){
+  nrow(candidates(year = x, position = "President"))
+  }
+)
+```
+
+Agora com a função _map\_dbl_ (pacote _purrr_ -- "dbl" é abreviação de "double"):
+
+```{r}
+library(purrr)
+
+n_candidatos <- map_dbl(vetor_anos, function(x){
+  nrow(candidates(year = x, position = "President"))
+  }
+)
+```
+
+Note que nos dois casos acima precisamos construir uma função (que, no caso, é a combinação das funções _nrow_ e _candidates_).
+
+## Exemplo 2 - combinando loops e funções
+
+Uma das bases mais estudadas em política comparada e estudos empíricos sobre é a Polity IV, que contém varáveis sobre diversas características de um conjunto grande de países e em vários anos. Quem quiser conhecer mais sobre os dados pode acessar [aqui](http://www.systemicpeace.org/inscrdata.html) ou ler a documentação [aqui](http://www.systemicpeace.org/inscr/p4manualv2016.pdf).
+
+A principal variável da base de dados é um indicador de grau de democracia que resulta da combinação de um conjunto variáveis componentes codificadas diretamente a partir da observação dos casos. Vamos ignorar seus significados e apenas observar que essas variáveis componentes recebem valores de 0 a 7, se o caso for uma democracia, ou os códigos -66, -77 e -88 em períodos autoritários ou de transição.
+
+Comece abrindo os dados que estão no repositório do curso e criando uma cópia, 'p4', que será modificada.
+
+```{r}
+p4_raw <- read.csv2("https://raw.githubusercontent.com/leobarone/FLS6397_2018/master/data/p4v2016.csv")
+p4 <- p4_raw
+```
+
+Como as variáveis contêm alguns códigos numéricos cujas distâncias matemáticas não fazem nenhum sentido (-66, -77 e -88), precisamos transformá-los em NA para podermos calcular qualquer estatística descritiva com a variável. Vamos realizar a transformação nas variáveis 'xconst', 'xrreg', 'xropen', 'xconst' e aprender um novo operador, _%in%_. Todas as variáveis se referem sobre características da competição pelo poder Executivo em um país em um ano:
+
+```{r}
+p4$xrcomp[p4$xrcomp %in% c(-66, -77, -88)] <- NA
+p4$xrreg[p4$xrreg %in% c(-66, -77, -88)] <- NA
+p4$xropen[p4$xropen %in% c(-66, -77, -88)] <- NA
+p4$xconst[p4$xconst %in% c(-66, -77, -88)] <- NA
+```
+
+Como vamos repetir a mesma transformação de variáveis diversas vezes, convém escrever uma função para tal transformação. Observe com cuidado o código abaixo: 
+
+```{r}
+limpa_var <- function(x) {
+  x[x %in% c(-66, -77, -88)] <- NA
+  return(x)
+}
+```
+
+Vamos refazer o código acima utilizando a função que acabamos de criar (lembre-se criar um novo objeto 'p4', pois as variáveis foram transformadas no código anterior):
+
+```{r}
+p4 <- p4_raw
+
+p4$xrcomp <- limpa_var(p4$xrcomp)
+p4$xrreg <- limpa_var(p4$xrreg)
+p4$xropen <- limpa_var(p4$xropen)
+p4$xconst <- limpa_var(p4$xconst)
+```
+
+Melhor. Temos linhas mais enxutas. Se estívessemos aplicando transformações mais complexas às variáveis, encurtaríamos bastante o código.
+
+Ainda assim, temos muitas repetições de linha. O que muda de uma linha à outra é apenas o nome da variável. Como vimos no caso anterior, podemos realizar tarefas repetidas em loop. Vamos, dessa forma, aplicar a função que criamos em loop:
+
+```{r}
+p4 <- p4_raw
+
+vetor_var <- c('xrcomp', 'xrreg', 'xropen', 'xconst')
+
+for (var in vetor_var){
+  p4[, var] <- limpa_var(p4[, var])
+}
+```
+
+Se estívessemos utilizando todas as variáveis do banco de dados codificadas da mesma maneira (são várias) teríamos uma economia bastante importante de código.
+
+Obs: uma forma alternativa de selecionar variáveis de um data frame utilizando colchetes é aplicando colchetes duplo (em vez de separar linhas e colunas dentro do colchetes por vírgula). O estilo de código abaixo, encontrado com frequência no livro "R for Data Science", é equivalente ao que acabamos de ver.
+
+```{r}
+for (var in vetor_var){
+  p4[[var]] <- limpa_var(p4[[var]])
+}
+```
+
+## Exemplo 3 - calculando média para um conjunto de variáveis
+
+Vamos aproveitar o exemplo acima e comparar as médias das variáveis. Poderíamos simplesmente aplicar as funções de média e guardar o resultado em um vetor:
+
+```{r}
+xrcomp_mean <- mean(p4$xrcomp, na.rm = T)
+xrreg_mean <- mean(p4$xrreg, na.rm = T)
+xropen_mean <- mean(p4$xropen, na.rm = T)
+xconst_mean <- mean(p4$xconst, na.rm = T)
+medias <- c(xrcomp_mean, xrreg_mean, xropen_mean, xconst_mean)
+```
+
+Deve estar claro para você agora que este código é desnecessariamente longo, mesmo para apenas 4 variáveis. Vamos utilizar um loop para em vez de repetir o código diversas vezes:
+
+```{r}
+medias <- c()
+for (var in vetor_var){
+  medias <- c(medias, mean(p4[[var]], na.rm = T))
+}
+medias
+```
+
+Mais simples do que um loop, podemos utilizar a função _sapply_
+
+```{r}
+sapply(p4[vetor_var], mean, na.rm = T)
+```
+
+ou a função _map\_dbl_:
+
+```{r}
+map_dbl(p4[vetor_var], mean, na.rm = T)
+```
+
+## Exemplo 4 - Summarise e mutate em múltiplas colunas
+
+Quando estamos tratando de data frames, há soluções implementadas para realizar exatamente o que fizemos acima de forma bastante eficiente. Note que, ainda assim, precisaremos de funções e loops para outros tipos de problemas (como webscraping, por exemplo).
+
+Seguindo com o nosso exemplo, podemos calcular a média de um conjunto de variáveis utilizando o verbo _summarise\_all_, cujo comportamento se assemelha ao de _summarise_, mas permite a aplicação a um data frame e não apenas a uma variável:
+
+```{r}
+library(dplyr) # Caso não tenha carregado o pacote ainda
+
+summarise_all(p4[vetor_var], mean, na.rm = T)
+```
+
+ou, utilizando o pipe:
+
+```{r}
+p4[vetor_var] %>%
+  summarise_all(mean, na.rm = T)
+```
+
+
+Caso todas as variáveis tenham nome semelhante (por exemplo, comecem com o mesmo prefixo), não precisamos restringir o data frame, como fizemos acima, se utilizarmos a função _summarise\_at_, que seleciona variáveis 
+
+```{r}
+p4 %>%
+  summarise_at(vars(starts_with("x")), mean, na.rm = T)
+```
+
+Existem outros "helpers" para selecionar variáveis com base em regularidade dos nomes e você pode encontrar mais sobre isso [aqui](https://www.rdocumentation.org/packages/tidyselect/versions/0.2.4/topics/select_helpers).
+
+_summarise\_if_ tem comportamento análogo a _summarise\_at_.
+
+Tal como _summarise_, podemos aplicar uma transformação a todas as variáveis de um data frame com _mutate\_all_. Lembre-se de copiar "p4" novamente.
+
+```{r}
+p4 <- p4_raw
+
+vetor_var <- c('xrcomp', 'xrreg', 'xropen', 'xconst')
+
+p4[vetor_var] <- mutate_all(p4[vetor_var], limpa_var)
+```
+
+Obs: este é um caso ruim para o uso do pipe. Por que?
+
+_mutate\_at_ também pode ser usada para transformar variáveis a partir de regularidade nos nomes das variáveis:
+
+```{r}
+p4 %>%
+  mutate_at(vars(starts_with("x")), limpa_var)
+```
+
+Finalmente, essas variações de _mutate_ e _summarise_ pode ser combinadas com _group\_by_ para gerar transformações e sumários, respectivamente, por uma variável de agrupamento.
+
+Por exemplo, podemos calcular as médias por ano (vamos filtrar para anos acima de 2010) das 4 variáveis com as quais temos trabalhando:
+
+```{r}
+p4 %>% 
+  filter(year > 2010) %>%
+  group_by(year) %>%
+  summarise_at(vars(starts_with("x")), mean, na.rm = T)
+```
+
+## Exemplo 5 - loops e listas
+
+Vamos voltar ao nosso primeiro exemplo, no qual abrimos dados do CEPESP Data em loop. Se você observar com cuidado, verá que nosso primeiro exemplo não teve nenhuma alternativa ao uso do _for loop_. Por que?
+
+Para obter uma resposta adequada, precisamos reponder a outras perguntas: como abrir um conjunto de data frames ao mesmo tempo sem combiná-los em um único data frame?
+
+Existe alguma classe de objeto que nos permite armazenar em um único objeto vários data frames (eventualmente tão diferentes entre si a ponto de não serem "combináveis")? Sim, existe. Essa classe de objeto se chama "list" (listas).
+
+Vamos voltar ao exemplo. Nossa solução com loop foi:
+
+```{r}
+vetor_anos <- c(2002, 2006, 2010, 2014)
+
+candidatos <- data.frame()
+for (ano in vetor_anos){
+  candidatos <- bind_rows(candidatos, 
+                      candidates(year = ano, position = "President"))
+}
+```
+
+Agora, vamos substituir o _for loop_ pela função do tipo _map_, que é a função mais básica da família. Seu comportamento é o seguinte: a partir de um vetor, a função retorna uma lista que tem, em cada posição, o resultado da transformação de cada elemento do vetor.
+
+```{r}
+candidatos_lista <- map(vetor_anos, function(x) {candidates(year = x, position = "President")})
+```
+
+Note que, no nosso caso, um elemento do vetor (ano) gera um data frame (de candidatos). Ao retornar uma lista, que é um objeto bastante flexível, não precisamos lidar com o fato de que os elementos da lista não necessariamente se combinam (no nosso caso, felizmente, combinam).
+
+Veremos, na leitura indicada para esta aula, o que são listas. Quando passarmos a outros tópicos, como webscraping, listas serão fundamentais.
+
+Há diversas maneiras de tirar objetos de dentro de uma lista. Com dois colchetes, podemos extrair um elemento de uma posição específica (por exemplo, o data frame com os candidatos de 2006, que está na segunda posição):
+
+```{r}
+head(candidatos_lista[[2]])
+```
+
+Há também funções que nos ajudam a combinar elementos de uma lista (se forem combináveis). Para o nosso caso, a função _bind\_rows_ resolverá o problema. Veja a aplicação de _map_ e _bind\_rows_ em conjunto (com pipe):
+
+Obs: foi retirado o ano de 2002 pois a variável CPF não vem no mesmo formato que a dos demais anos e, por conta disso, impede o uso de _bind\_rows_. Precisaríamos de um passo extrar para fazer a combinação sem erros.
+
+```{r}
+candidatos <- c(2006, 2010, 2014) %>%
+  map(function(x) {candidates(year = x, position = "President")}) %>%
+  bind_rows()
+```
+
+Incrível, não? Em poucas linhas de código fazemos muitas coisas. Vamos, agora, às leituras.
