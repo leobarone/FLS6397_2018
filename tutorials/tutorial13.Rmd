@@ -6,11 +6,10 @@ Estes exemplos servirão de norte para que você leia, em sala, os capítulos [1
 
 ## Exemplo 1 - substituindo repetição de código por loops
 
-Imagine que você precisa organizar dados dos candidatos à presidência de diversos anos (2002 a 2014) e vai utilizar a API do CEPESP Data. Utilizando a função _candidates_ do pacote _cepespR_ podemos obter os dados:
+Imagine que você precisa organizar dados dos candidatos à presidência de diversos anos (2006 a 2014) e vai utilizar a API do CEPESP Data. Utilizando a função _candidates_ do pacote _cepespR_ podemos obter os dados:
 
 ```{r}
 library(cepespR)
-candidatos02 <- candidates(year = 2002, position = "President")
 candidatos06 <- candidates(year = 2006, position = "President")
 candidatos10 <- candidates(year = 2010, position = "President")
 candidatos14 <- candidates(year = 2014, position = "President")
@@ -19,12 +18,12 @@ candidatos14 <- candidates(year = 2014, position = "President")
 e, a seguir, podemos juntar todos em um único data_frame:
 
 ```{r}
-candidatos <- rbind(candidatos02, candidatos06, candidatos10, candidatos14)
+candidatos <- rbind(candidatos06, candidatos10, candidatos14)
 ```
 
 Simples, não? Imagine agora que você quer repetir mesma tarefa não 4, mas centenas de vezes. O código deixaria de ser simples e passaria a ter centenas de linhas.
 
-Essa centena de linhas seria pura repetição de código. No nosso exemplo, a obtenção dos dados para candidatos à presidência em 2002 e em 2006 são idênticas, exceto por 2 números Como podemos evitar a repetição de códigos?
+Essa centena de linhas seria pura repetição de código. No nosso exemplo, a obtenção dos dados para candidatos à presidência em 2006 e em 2010 são idênticas, exceto por 2 números Como podemos evitar a repetição de códigos?
 
 Neste tutorial vamos rever dois tópicos pelos quais passamos brevemente no curso e que são fundamentais para tornar o seu código mais enxuto e eficiente: funções e iterações (loops e similares).
 
@@ -33,7 +32,7 @@ No exemplo acima, um simples _for loop_ resolveria nosso problema de repetição
 ```{r}
 library(dplyr)
 
-vetor_anos <- c(2002, 2006, 2010, 2014)
+vetor_anos <- c(2006, 2010, 2014)
 
 candidatos <- data.frame()
 for (ano in vetor_anos){
@@ -253,7 +252,7 @@ Existe alguma classe de objeto que nos permite armazenar em um único objeto vá
 Vamos voltar ao exemplo. Nossa solução com loop foi:
 
 ```{r}
-vetor_anos <- c(2002, 2006, 2010, 2014)
+vetor_anos <- c(2006, 2010, 2014)
 
 candidatos <- data.frame()
 for (ano in vetor_anos){
@@ -279,8 +278,6 @@ head(candidatos_lista[[2]])
 ```
 
 Há também funções que nos ajudam a combinar elementos de uma lista (se forem combináveis). Para o nosso caso, a função _bind\_rows_ resolverá o problema. Veja a aplicação de _map_ e _bind\_rows_ em conjunto (com pipe):
-
-Obs: foi retirado o ano de 2002 pois a variável CPF não vem no mesmo formato que a dos demais anos e, por conta disso, impede o uso de _bind\_rows_. Precisaríamos de um passo extrar para fazer a combinação sem erros.
 
 ```{r}
 candidatos <- c(2006, 2010, 2014) %>%
