@@ -28,8 +28,8 @@ OBS: alteramos a ordem dos tópicos das aulas 8 e 9. A ordem abaixo é a correta
 - 23/04/2018 - [Aula 5](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class05.md) - RMarkdown, git, e integração R e servidores SQL
 - 14/05/2018 - [Aula 6](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class06.md) - Visualização de dados e a gramática de gráficos _ggplot2_
 - 21/05/2018 - [Aula 7](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class07.md) - Funções, iteração e vetorialização
-- 28/05/2018 - [Aula 8] - Mapas e GIS com R
-- 04/06/2018 - [Aula 9] - Raspagem de dados na internet com R
+- 28/05/2018 - [Aula 8] - Mapas e GIS com R - ADIADA -- DATA INDEFINIDA
+- 04/06/2018 - [Aula 9](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class09.md) - Raspagem de dados na internet com R
 - 11/06/2018 - [Aula 10] - Strings e Mineração de Textos com R
 - 18/06/2018 - [Aula 11] - Tópicos Avançados de programação em R - Programação Funcional
 - 25/06/2018 - [Aula 12] - Tópicos Avançados de programação em R
@@ -49,7 +49,7 @@ OBS: alteramos a ordem dos tópicos das aulas 8 e 9. A ordem abaixo é a correta
 - 20/04/2018 - [Desafio 1](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge1.md) - R base
 - 08/05/2018 - [Desafio 2](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge2.md) - Manipulação de dados com dplyr
 - 01/06/2018 - [Desafio 3](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge3.md) - Gráficos com ggplot2 
-- 18/06/2018 - Desafio 4 - Mapas (requisito: desafio 2)
+- 25/06/2018 - Desafio 4 - Mapas (requisito: desafio 2)
 - 25/06/2018 - Desafio 5 - Raspagem de dados e mineração de texto
 
 ### Projetos
