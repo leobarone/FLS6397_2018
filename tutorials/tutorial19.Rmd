@@ -1,0 +1,92 @@
+# Análise de texto no R - pacote _stringr_
+
+### Webscrapping para capturar material para o tutorial
+
+Esta parte do tutorial foi alterada para trabalharmos offline. Idealmente, capturaríamos um conjunto de discursos de um parlamentar na Câmara dos deputados para trabalharmos com os diferentes pacotes de mineração de texto. Em vez de capturarmos os dados, abra o arquivo .RData passado via pen drive e comece da sessão abaixo
+
+```{r}
+load("aula_offline.RData")
+```
+
+
+### Funcionalidades do _stringr_
+
+Qual é o tamanho de cada discurso? Vamos aplicar _str\_length_ para descobrir. Seu uso é semelhante ao da função _nchar_:
+
+```{r}
+len_discursos <- str_length(discursos)
+len_discursos
+```
+
+Vamos agora observar quais são os discursos nos quais a deputada menciona "Constituição". Para tanto, usamos _str\_detect_
+
+```{r}
+str_detect(discursos, "Constituição")
+```
+
+Poderíamos usar o vetor lógico resultante para gerar um subconjunto dos discursos, apenas com aqueles nos quais a palavra "Constituição" é mencionada. Mais simples, porém, é utilizar a função _str\_subset_, que funciona tal qual _str\_detect_, mas resulta num subconjunto em lugar de um vetor lógico:
+
+```{r}
+discursos_constituicao <- str_subset(discursos, "Constituição")
+```
+
+Se quisessemos apenas a posição no vetor dos discursos que contêm "Constituição", _str\_which_ faria o trabalho:
+
+```{r}
+str_which(discursos, "Constituição")
+```
+
+Voltando ao vetor completo, quantas vezes "Constituição" é mencionada em cada discursos? Qual é o máximo de menções a "Constituição" em um único discurso?
+
+```{r}
+str_count(discursos, "Constituição")
+max(str_count(discursos, "Constituição"))
+```
+
+Vamos fazer uma substituição nos discursos. No lugar de "Constituição" colocaremos a expressão "Constituição, aquele pedaço de papel que não vale nada,". Podemos fazer a substituição com _str\_replace_ ou com _str\_replace\_all_. A diferença entre ambas é que _str\_replace_ substitui apenas a primeira ocorrênca encontrada, enquanto _str\_replace\_all_ substitui todas as ocorrências.
+
+```{r}
+str_replace(discursos_constituicao, "Constituição", "Constituição, aquele pedaço de papel que não vale nada,")
+str_replace_all(discursos_constituicao, "Constituição", "Constituição, aquele pedaço de papel que não vale nada,")
+```
+
+Em vez de substituir, queremos conhecer a posição das ocorrências de "Constituição". Com _str\_locate_ e _str\_locate\_all_, respectivamente para a primeira ocorrência e todas as ocorrências, obtemos a posição de começo e fim do padrão buscado:
+
+```{r}
+str_locate(discursos_constituicao, "Constituição")
+str_locate_all(discursos_constituicao, "Constituição")
+```
+
+Finalmente, notemos que os discursos começam sempre mais ou menos da mesma forma. Vamos retirar os 100 primeiros caracteres de cada discurso para observá-los. Usamos a função _str\_sub_, semelhante à função _substr_, para extrair um padaço de uma string:
+
+```{r}
+str_sub(discursos, 1, 100)
+```
+
+As posições para extração de exerto podem ser variáveis. Por exemplo, vamos usar "len_discursos" que criamos acima para extrair os 50 últimos caracteres de cada discurso:
+
+```{r}
+str_sub(discursos, (len_discursos - 50), len_discursos)
+```
+
+Note que alguns discursos começam e terminam com espaços. Para nos livrarmos deles (apenas daqueles no começo e fim da string), utilizamos _str\_trim_:
+
+```{r}
+str_trim(discursos)
+```
+
+Infelizmente, não há tempo suficiente para entrarmos neste tutorial em um tema extremamante útil: expressões regulares. Expressões regulares, como podemos deduzir pelo nome, são expressões que nos permite localizar -- e, portanto, substituir, extrair, parear, etc -- sequências de caracteres com determinadas caraterísticas -- por exemplo, "quaisquer caracteres entre parênteses", ou "qualquer sequência entre espaços que comece com 3 letras e termine com 4 números" (placa de automóvel).
+
+Você pode ler um pouco sobre expressões regulares no R [aqui](https://rstudio-pubs-static.s3.amazonaws.com/74603_76cd14d5983f47408fdf0b323550b846.html) se tiver tempo em sala de aula. Com o uso de expressões regulares, outros dois pares de funções são bastante úteis _str\_extract_, _str\_extract\_all_, _str\_match_ e _str\_match\_all_.
+
+## Nuvem de Palavras
+
+Com a função _wordcloud_ do pacote de mesmo nome, podemos rapidamente visualizar as palavras discursadas tendo o tamanho como função da frequência (vamos limitar a 50 palavras):
+
+```{r}
+library(wordcloud)
+wordcloud(discursos, max.words = 50)
+```
+
+Não muito bonita. Voltaremos a fazer nuvem de palavras depois de aprendermos outra maneiras de trabalharmos com texto como dado no R.
+

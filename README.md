@@ -29,10 +29,10 @@ OBS: alteramos a ordem dos tópicos das aulas 8 e 9. A ordem abaixo é a correta
 - 14/05/2018 - [Aula 6](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class06.md) - Visualização de dados e a gramática de gráficos _ggplot2_
 - 21/05/2018 - [Aula 7](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class07.md) - Funções, iteração e vetorialização
 - 28/05/2018 - [Aula 8] - Mapas e GIS com R - ADIADA -- DATA INDEFINIDA
-- 04/06/2018 - [Aula 9](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class09.md) - Raspagem de dados na internet com R
-- 11/06/2018 - [Aula 10] - Strings e Mineração de Textos com R
+- 04/06/2018 - [Aula 9](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class09.md) - Raspagem de dados na internet com R (invertida com aula 10 por falta de internet em sala de aula)
+- 11/06/2018 - [Aula 10](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class10.md) - Strings e Mineração de Textos com R (invertida com aula 09)
 - 18/06/2018 - [Aula 11] - Tópicos Avançados de programação em R - Programação Funcional
-- 25/06/2018 - [Aula 12] - Tópicos Avançados de programação em R
+- 25/06/2018 - [Aula 12] - Mapas em R
 
 ## Referências bibliográficas
 
@@ -46,6 +46,8 @@ OBS: alteramos a ordem dos tópicos das aulas 8 e 9. A ordem abaixo é a correta
 
 ### Desafios
 
+AVISO: Entregar 4 de 5
+
 - 20/04/2018 - [Desafio 1](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge1.md) - R base
 - 08/05/2018 - [Desafio 2](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge2.md) - Manipulação de dados com dplyr
 - 01/06/2018 - [Desafio 3](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge3.md) - Gráficos com ggplot2 
@@ -54,8 +56,8 @@ OBS: alteramos a ordem dos tópicos das aulas 8 e 9. A ordem abaixo é a correta
 
 ### Projetos
 
-- 21/05/2018 - Discussão em aula sobre projetos em grupo
-- 11/06/2018 - Entrega do projeto em grupo
+AVISO: Projeto em grupo excluído da avaliação
+
 - 18/06/2018 - Discussão em aula sobre projeto final individual
 - 31/07/2018 - Entrega do projeto final individual
 
