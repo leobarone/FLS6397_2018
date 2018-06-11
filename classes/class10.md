@@ -13,11 +13,11 @@ Aprender sobre as diferentes formas de manipular strings e textos no R.
 
 Nesta aula veremos 3 pacotes diferentes para trabalhar com texto como dado: _stringr_, que é bastante útil para 'limpeza' de textos; _tm_, que foi durante vários anos o pacote principal para mineração de texto e análise de _corpus_ em R; e _tidytext_, pacote do _tidyverse_ para mineração de texto, bastante recente.
 
-_stringr_ - [Tutorial 19](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial11.Rmd).
+_stringr_ - Tutorial 19 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial19.Rmd)
 
-_tm_ - [Tutorial 20](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial11.Rmd).
+_tm_ - Tutorial 20 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial20.Rmd)
 
-_tisytext_ - [Tutorial 21](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial11.Rmd).
+_tisytext_ - Tutorial 21 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial21.Rmd)
 
 Se houver tempo em sala de aula e você quiser se aprofundar no assunto, leia alguns dos capítulos do livro sobre "tidy" text mining, [Text Mininig with R](http://tidytextmining.com/), também disponível em formato bookdown:
 
