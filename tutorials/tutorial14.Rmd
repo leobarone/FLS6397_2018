@@ -21,7 +21,6 @@ Vamos abrir o arquivo:
   
 ```{r}
 library(readr)
-escolas <- read_delim("C:\\users\\jonny\\downloads\\temp.csv", delim = ";")
 escolas <- read_delim("temp.csv", delim = ";")
 ```
 
