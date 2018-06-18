@@ -23,11 +23,12 @@ Documente __TODOS__ os seus passos no arquivo de script. Comente no seu script _
 As primeiras linhas do seu script devem conter suas informações pessoais como comentário, tal qual o modelo abaixo:
 
 ```{r}
-### nome <- c("Fulano da Silva Sauro", "Sauro da Silva Fulani", "Silvia Fulane de Sauro")
-### programa <- c("Mestrado em Paleontologia", "Doutorado em Paleontologia", "Docente do Dpto. de Paleontologia da USP")
-### n_usp <- c(32165498, 83216549, 98321654)
+### nome <- "Fulano da Silva Sauro"
+### programa <- "Mestrado em Paleontologia"
+### n_usp <- 32165498
 ### data_entrega: "29/02/2017"
 ```
+
 
 ### Instruções únicas
 
