@@ -13,7 +13,7 @@ install.packages("devtools")
 devtools::install_github("tidyverse/ggplot2")
 install.packages("mapview")
 install.packages("ggmap")
-install.packages("cepespR")
+devtools::install_github("Cepesp-Fgv/cepesp-r")
 ```
 
 # Início
