@@ -10,7 +10,7 @@ Antes de iniciar o tutorial, certifique-se de que os pacotes _sf_, _devtools_, a
 ```{r, echo=F}
 install.packages("sf")
 install.packages("devtools")
-devtools::install_github("tidyverse/ggplot2")
+devtools::install_github("tidyverse/ggplot2", force = T)
 install.packages("mapview")
 install.packages("ggmap")
 devtools::install_github("Cepesp-Fgv/cepesp-r")
