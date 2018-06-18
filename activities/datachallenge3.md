@@ -1,7 +1,6 @@
 #  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
 
 - Responsável: Leonardo S. Barone e Jonathan Phillips
-- Data: 10/05/2017
 
 ## Desafio 3
 
@@ -18,8 +17,6 @@ Via: e-mail com título "[FLS6397] - D3".
 Siga as instruções abaixo. Faça no arquivo de RMarkdown uma síntese de sua atividade e apresente apenas o essencial do código (você deve julgar o que é essencial).
 
 Documente __TODOS__ os seus passos no arquivo de script. Comente no seu script __TODOS__ os seus passos e explique a si mesm@ suas escolhas e estratégias.
-
-O arquivo .pdf ou .html produzido em RMarkdown deve contar as informações dos integrantes do grupo.
 
 As primeiras linhas do seu script devem conter suas informações pessoais como comentário, tal qual o modelo abaixo:
 

@@ -46,7 +46,7 @@ escolas <- escolas  %>%
 
 Pronto! Temos agora uma informação geográfica das EMEFs e uma variável de interesse -- ano -- que utilizaremos para investigar a expansão da rede.
 
-Para analisar estes dados como dados espaciais precisamos dizer a R quais são as variáveis de localização e transformá-lo em um objeto 'simple features' usando o biblioteca _sf_ e a função _st\_as\_sf_ para criar um objeto tipo "simple features". 
+Para analisar estes dados como dados espaciais precisamos dizer a R quais são as variáveis de localização e transformá-lo em um objeto 'simple features' usando o biblioteca _sf_ e a função _st\_as\_sf_ para criar um objeto tipo "simple features". Lembre-se de instalar o pacote antes de carregá-lo.
 
 ```{r}
 library(sf)
@@ -58,7 +58,7 @@ O parâmetro 'coords' indica os colunas de latitude e longitude, e o 'crs' indic
 Qual tipo de objeto é `emef` agora?
 
 ```{r}
-class(emef)
+class(escolas)
 ```
 
 Temos vários resultados aqui - é um objeto 'simple features', mas também um _tbl_ (tibble) e _data.frame_! Isso significa que podemos aplicar todas as funções do dplyr com dados espaciais também. Por exemplo, selecionaremos apenas as linhas referentes a EMEF (Escolas Municipal de Ensino Fundamental) usando _filter_ e as variáveis NOMESC e SITUACAO:
