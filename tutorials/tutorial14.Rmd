@@ -3,6 +3,20 @@
 ```{r, echo=F}
 knitr::opts_chunk$set(echo = TRUE, eval=F)
 ```
+# Antes de começar
+
+Antes de iniciar o tutorial, certifique-se de que os pacotes _sf_, _devtools_, a versão de desenvolvedor _ggplot2_, _mapview_ e _ggmap_.
+
+```{r, echo=F}
+install.packages("sf")
+install.packages("devtools")
+devtools::install_github("tidyverse/ggplot2", force = T)
+install.packages("mapview")
+install.packages("ggmap")
+devtools::install_github("Cepesp-Fgv/cepesp-r")
+```
+
+# Início
 
 Dados espaciais são dados organizados por localização e permitem novos tipos de análise e visualização. Explorar mapas em R nos permite praticar e estender muitas das ferramentas que aprendemos nas últimas semanas - análises de dados com dplyr, joins e gráficos com ggplot2.
 
