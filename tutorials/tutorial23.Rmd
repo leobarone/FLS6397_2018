@@ -288,9 +288,9 @@ Um das chatices de trabalharmos com os dados da MUNIC é o fato das informaçõe
 Para o exemplo, temos 3 planilhas que foram exportadas em formato .txt. Em primeiro lugar, vamos abrí-las: 
 
 ```{r}
-munic_v_externa <- read.csv("~/FLS6397_2018/data/munic_v_externa.csv", sep=";")
-munic_r_humanos <- read.csv("~/FLS6397_2018/data/munic_r_humanos.csv", sep=";")
-munic_p_urbano <- read.csv2("~/FLS6397_2018/data/munic_p_urbano.csv")
+munic_v_externa <- read.csv("https://raw.githubusercontent.com/leobarone/FLS6397_2018/master/data/munic_v_externa.csv", sep=";")
+munic_r_humanos <- read.csv("https://raw.githubusercontent.com/leobarone/FLS6397_2018/master/data/munic_r_humanos.csv", sep=";")
+munic_p_urbano <- read.csv2("https://raw.githubusercontent.com/leobarone/FLS6397_2018/master/data/munic_p_urbano.csv")
 ```
 
 e juntá-las em uma lista.
