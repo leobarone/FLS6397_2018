@@ -32,7 +32,7 @@ OBS: alteramos a ordem dos tópicos das aulas 8 e 9. A ordem abaixo é a correta
 - 04/06/2018 - [Aula 9](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class09.md) - Raspagem de dados na internet com R (invertida com aula 10 por falta de internet em sala de aula)
 - 11/06/2018 - [Aula 10](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class10.md) - Strings e Mineração de Textos com R (invertida com aula 09)
 - 25/06/2018 - [Aula 11](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class11.md) - Mapas e GIS com R
-- 18/06/2018 - [Aula 12] - Tópicos Avançados de programação em R - Programação Funcional
+- 18/06/2018 - [Aula 12](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class12.md) - Programação Funcional com purrr
 
 ## Referências bibliográficas
 
