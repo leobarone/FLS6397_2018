@@ -22,14 +22,6 @@ Calendário e tópicos sujeitos a alteração
 - 07/06/2019 - [Aula 11](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class11.md) - Mapas e GIS com R
 - 14/06/2019 - [Aula 12](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class12.md) - Programação Funcional com purrr
 
-## Referências bibliográficas
-
-- Grolemund, Garrett (2014). Hands-On Programming with R. Ed: O'Reilly Media. Não distribuído gratuitamente. Informações no site da editora [aqui](http://shop.oreilly.com/product/0636920028574.do)
-- Wichkam, Hadley e Grolemund, Garrett (2016). R for Data Science. Ed: O'Reilly Media. Disponível gratuitamente Disponível gratuitamente [aqui](https://www.tidytextmining.com/)
-- Silge, Julia e Robinson, David (2017). Text Mining with R: A Tidy Approach. Ed: O'Reilly Media. Disponível gratuitamente [aqui](https://www.tidytextmining.com/) 
-- Wichkam, Hadley (2014). Advanced R. Ed: Chapman and Hall/CRC. Disponível gratuitamente Disponível gratuitamente [aqui](http://adv-r.had.co.nz/)
-- Gillespie, Colin e Lovelace, Robin (2016). Efficient R programming. Ed: O'Reilly Media. Disponível gratuitamente Disponível gratuitamente [aqui](https://csgillespie.github.io/efficientR/)
-
 ## Atividades de Avaliação
 
 ### Desafios
