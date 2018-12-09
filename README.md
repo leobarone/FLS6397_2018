@@ -19,20 +19,18 @@ O curso está dividido em duas partes. A primeira parte do curso foca na prepara
 
 Calendário e tópicos sujeitos a alteração
 
-OBS: alteramos a ordem dos tópicos das aulas 8 e 9. A ordem abaixo é a correta.
-
-- 19/03/2018 - [Aula 1](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class01.md) - Introdução ao curso e R Básico.
-- 02/04/2018 - [Aula 2](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class02.md) - Do básico ao intermediário.
-- 09/04/2018 - [Aula 3](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class03.md) - Abrindo e manipulando _data frames_
-- 16/04/2018 - [Aula 4](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class04.md) - Primeiros passos no _tidyverse_
-- 23/04/2018 - [Aula 5](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class05.md) - RMarkdown, git, e integração R e servidores SQL
-- 14/05/2018 - [Aula 6](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class06.md) - Visualização de dados e a gramática de gráficos _ggplot2_
-- 21/05/2018 - [Aula 7](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class07.md) - Funções, iteração e vetorialização
-- 28/05/2018 - Aula 8 - CANCELADA - GREVE DE CAMINHONEIROS
-- 04/06/2018 - [Aula 9](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class09.md) - Raspagem de dados na internet com R (invertida com aula 10 por falta de internet em sala de aula)
-- 11/06/2018 - [Aula 10](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class10.md) - Strings e Mineração de Textos com R (invertida com aula 09)
-- 25/06/2018 - [Aula 11](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class11.md) - Mapas e GIS com R
-- 18/06/2018 - [Aula 12](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class12.md) - Programação Funcional com purrr
+- 22/03/2019 - [Aula 1](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class01.md) - Introdução ao curso e R Básico.
+- 29/03/2019 - [Aula 2](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class02.md) - Do básico ao intermediário.
+- 05/04/2019 - [Aula 3](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class03.md) - Abrindo e manipulando _data frames_
+- 12/04/2019 - [Aula 4](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class04.md) - Primeiros passos no _tidyverse_
+- 19/04/2019 - [Aula 5](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class05.md) - RMarkdown, git, e integração R e servidores SQL
+- 26/04/2019 - [Aula 6](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class06.md) - Visualização de dados e a gramática de gráficos _ggplot2_
+- 03/05/2019 - [Aula 7](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class07.md) - Funções, iteração e vetorialização
+- 10/05/2019 - Aula 8 -
+- 17/05/2019 - [Aula 9](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class09.md) - Raspagem de dados na internet com R
+- 24/05/2019 - [Aula 10](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class10.md) - Strings e Mineração de Textos com R (invertida com aula 09)
+- 07/06/2019 - [Aula 11](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class11.md) - Mapas e GIS com R
+- 14/06/2019 - [Aula 12](https://github.com/leobarone/FLS6397_2018/blob/master/classes/class12.md) - Programação Funcional com purrr
 
 ## Referências bibliográficas
 
@@ -46,19 +44,4 @@ OBS: alteramos a ordem dos tópicos das aulas 8 e 9. A ordem abaixo é a correta
 
 ### Desafios
 
-AVISO: Entregar 4 de 5
-
-- 20/04/2018 - [Desafio 1](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge1.md) - R base
-- 08/05/2018 - [Desafio 2](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge2.md) - Manipulação de dados com dplyr
-- 01/06/2018 - [Desafio 3](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge3.md) - Gráficos com ggplot2 
-- 02/07/2018 - [Desafio 4](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge4.md) - Mapas (requisito: desafio 2)
-- 02/07/2018 - [Desafio 5](https://github.com/leobarone/FLS6397_2018/blob/master/activities/datachallenge5.md) - Raspagem de dados e mineração de texto
-
 ### Projetos
-
-AVISO: Projeto em grupo excluído da avaliação
-
-- 18/06/2018 - Discussão em aula sobre projeto final individual
-- 31/07/2018 - Entrega do projeto final individual
-
-
