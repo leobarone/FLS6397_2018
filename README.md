@@ -3,15 +3,7 @@
 ## Responsáveis: 
 Leonardo S. Barone e Jonathan Phillips
 
-## Apresentação
-
-O curso oferece aos estudantes de pós-graduação em ciências sociais uma iniciação à lógica de programação e ao uso de ferramentas computacionais para (1) coleta (2) organização e preparação e (3) apresentação de dados para pesquisa social. O foco do curso é o desenvolvimento da habilidade de programação para solução de problemas diversos relacionados ao manejo de dados com fins de pesquisa. Note-se que não é um curso de metodologia de pesquisa, análise de dados ou de ciências sociais computacionais.
-
-Este curso pretende preencher uma lacuna de formação comum em alunas e alunos de pós-graduação em ciências sociais referente à habilidade de lidar com dados e ferramentas computacionais para a condução de suas pesquisas.
-
-O curso está dividido em duas partes. A primeira parte do curso foca na preparação do ambiente computacional, apresentação de ferramentas e "alfabetização" e nas linguagens de programação utilizadas no curso -- R, Git, SQL, Markdown, etc. A segunda parte foca em aplicações das habilidades desenvolvidas a problemas de manipulação de grandes bases de dados, coleta de dados na internet e via uso de APIs de terceiros, organização de documentos para análise textual, confecção de gráficos e mapas ou demais tópicos de interesse da turma.
-
-- [Syllabus](https://github.com/JonnyPhillips/FLS6397_2019/blob/master/FLS6397%20Syllabus.md)
+Detalhes da disciplina no [Syllabus](https://github.com/JonnyPhillips/FLS6397_2019/blob/master/FLS6397%20Syllabus.md).
 
 ## Roteiros de aula, calendário e tutoriais
 
