@@ -1,7 +1,7 @@
 name: "Introdução à Programação"
 output_dir: "."
 navbar:
-  title: "FLP6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais"
+  title: "Introdução à Programação"
   left:
     - text: "Intro"
       icon: fa-home
@@ -15,6 +15,7 @@ navbar:
       - text: "Aula 2"
         href: classes/class02.html
     - text: "Desafios"
+      menu:
       - text: "Desafio 1"
         href: activities/datachallenge1.html
       - text: "Desafio 2"
