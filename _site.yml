@@ -1,4 +1,4 @@
-name: "FLP6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais"
+name: "Introdução à Programação"
 output_dir: "."
 navbar:
   title: "FLP6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais"
@@ -14,6 +14,17 @@ navbar:
         href: classes/class01.html
       - text: "Aula 2"
         href: classes/class02.html
+    - text: "Desafios"
+      - text: "Desafio 1"
+        href: activities/datachallenge1.html
+      - text: "Desafio 2"
+        href: activities/datachallenge2.html
+      - text: "Desafio 3"
+        href: activities/datachallenge3.html
+      - text: "Desafio 4"
+        href: activities/datachallenge4.html
+      - text: "Desafio 5"
+        href: activities/datachallenge5.html
 
 output:
   html_document:
