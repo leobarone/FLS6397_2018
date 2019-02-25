@@ -1,0 +1,24 @@
+name: "FLP6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais"
+output_dir: "."
+navbar:
+  title: "FLP6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais"
+  left:
+    - text: "Intro"
+      icon: fa-home
+      href: index.html
+    - text: "Programa"
+      href: FLS6397_Syllabus.html
+    - text: "Aulas"
+      menu:
+      - text: "Aula 1"
+        href: classes/class01.html
+      - text: "Aula 2"
+        href: classes/class02.html
+
+output:
+  html_document:
+    theme: journal
+    css: styles.css
+    highlight: tango
+    lib_dir: site_libs
+    self_contained: no

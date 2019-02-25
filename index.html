@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 61px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h2 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h3 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h4 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h5 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h6 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">FLP6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Intro
+  </a>
+</li>
+<li>
+  <a href="FLS6397_Syllabus.html">Programa</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Aulas
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="classes/class01.html">Aula 1</a>
+    </li>
+    <li>
+      <a href="classes/class02.html">Aula 2</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<h2 style="text-align: center;">
+FLP6396 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
+</h2>
+<p><br><br></p>
+<div id="informacoes-basicas" class="section level2">
+<h2>1. Informações básicas</h2>
+<p>Primeiro Semestre, 2019</p>
+<p>DCP - FFLCH - USP</p>
+<p>Sexta-feira, 14h - 18h</p>
+<p>Leonardo S. Barone e Jonathan Phillips</p>
+<p>Site do curso: <a href="https://github.com/JonnyPhillips/FLS6397_2019" class="uri">https://github.com/JonnyPhillips/FLS6397_2019</a></p>
+</div>
+<div id="apresentacao" class="section level2">
+<h2>2. Apresentação</h2>
+<p>O curso oferece aos estudantes de pós-graduação em ciências sociais uma iniciação à lógica de programação e ao uso de ferramentas computacionais para (1) coleta (2) organização e preparação e (3) apresentação de dados para pesquisa social. O foco do curso é o desenvolvimento da habilidade de programação para solução de problemas diversos relacionados ao manejo de dados com fins de pesquisa. Note-se que não é um curso de metodologia de pesquisa, análise de dados ou de ciências sociais computacionais.</p>
+<p>Este curso pretende preencher uma lacuna de formação comum em <a href="mailto:alun@s">alun@s</a> de pós-graduação em ciências sociais referente à habilidade de lidar com dados e ferramentas computacionais para a condução de suas pesquisas.</p>
+<p>O curso está dividido em duas partes. A primeira parte do curso foca na preparação do ambiente computacional, apresentação de ferramentas e “alfabetização” e nas linguagens de programação utilizadas no curso – R, Git, SQL, Markdown, etc. A segunda parte foca em aplicações das habilidades desenvolvidas a problemas de manipulação de grandes bases de dados, coleta de dados na internet e via uso de APIs de terceiros, organização de documentos para análise textual, confecção de gráficos e mapas ou demais tópicos de interesse da turma.</p>
+</div>
+<div id="estrutura-do-curso" class="section level2">
+<h2>3. Estrutura do curso</h2>
+<div id="aulas-leituras-e-materiais" class="section level3">
+<h3>Aulas, leituras e materiais</h3>
+<p>As aulas serão compostas por breves apresentações dos tópicos e por longos laboratórios, com tutoriais para auto-aprendizado e acompanhamento dos instrutores e assistentes. Espera-se que a turma pratique exaustivamente, dentro e fora de sala de aula, as técnicas aprendidas.</p>
+</div>
+<div id="atividades-e-tempo-de-dedicacao" class="section level3">
+<h3>Atividades e tempo de dedicação</h3>
+<p>Ao longo do curso as participantes deverão solucionar um desafio correspondente aos tópicos. Exemplos de desafios: (1) organizar automaticamente dados eleitorais a partir do repositório de dados do TSE; (2) elaborar um mapa com dados municipais a partir do DATASUS; (3) criar um corpus de notícias da internet; (4) abrir e organizar os dados do ENEM ou Censo Populacional. Os desafios exigirão dedicação extra-classe e são parte fundamental do curso.</p>
+<p>No final do curso as estudantes deverão elaborar um projeto individual.</p>
+<p>Entre aulas, tutoriais, leituras e desafios, espera-se que cada aluna ou aluno dedique de 8h a 12h por semana à disciplina.</p>
+</div>
+<div id="avaliacao" class="section level3">
+<h3>Avaliação</h3>
+<p>A avaliação é composta pela entrega dos desafios, do projeto final individual e da participação. A atribuição de nota para os desafios e projetos entregues priorizará o esforço e engenhosidade apresentados (leia-se “código com erros, mas bem elaborado”) em detrimento da finalização do desafio (leia-se “código funcionando plenamente”) como forma de encorajar estudantes iniciantes.</p>
+</div>
+</div>
+<div id="requisitos" class="section level2">
+<h2>4. Requisitos</h2>
+<p>Não é necessário nenhum conhecimento prévio de programação, pacotes estatísticos ou manejo de conjuntos de dados. O curso é recomendado para tanto alunas e alunos que já têm alguma noção quanto para estudantes que morrem de medo de computadores. O objetivo é criar um ambiente confortável para o aprendizado de técnicas programação, independentemente da habilidade das inscritas, e seguindo todos os passos desde a preparação do ambiente de computação até a apresentação de resultados.</p>
+<p>É recomendado que as participantes já tenham concluído ou esteja cursando algum curso de métodos de pesquisa (de qualquer abordagem) ou de análise de dados, seja do programa ou da IPSA-USP Summer School. É um curso adequado para estudantes em qualquer etapa do mestrado ou doutorado, desde que tenham disponibilidade para realizar as atividades extra-classe.</p>
+<p>Estudantes do DCP-USP que podem se matricular regularmente não serão aceitas como ouvintes.</p>
+</div>
+<div id="topicos" class="section level2">
+<h2>5. Tópicos</h2>
+<ol style="list-style-type: decimal">
+<li>Introdução ao curso e R Básico</li>
+<li>Do básico ao intermediário</li>
+<li>Abrindo e manipulando data frames</li>
+<li>Primeiros passos no tidyverse</li>
+<li>RMarkdown, git, e integração R e servidores SQL</li>
+<li>Visualização de dados e a gramática de gráficos ggplot2</li>
+<li>Funções, iteração e vetorialização</li>
+<li>Raspagem de dados na internet</li>
+<li>Strings e Mineração de Textos</li>
+<li>Mapas e GIS</li>
+<li>Programação Funcional e Latex</li>
+</ol>
+</div>
+<div id="bibliografia" class="section level2">
+<h2>6. Bibliografia</h2>
+</div>
+<div id="leituras-obrigatorias" class="section level2">
+<h2>Leituras obrigatórias</h2>
+<ul>
+<li>Grolemund, Garrett (2014). Hands-On Programming with R. Ed: O’Reilly Media. Não distribuído gratuitamente. Informações no site da editora <a href="http://shop.oreilly.com/product/0636920028574.do">aqui</a></li>
+<li>Wichkam, Hadley e Grolemund, Garrett (2016). R for Data Science. Ed: O’Reilly Media. Disponível gratuitamente Disponível gratuitamente <a href="https://www.tidytextmining.com/">aqui</a></li>
+<li>Silge, Julia e Robinson, David (2017). Text Mining with R: A Tidy Approach. Ed: O’Reilly Media. Disponível gratuitamente <a href="https://www.tidytextmining.com/">aqui</a></li>
+<li>Wichkam, Hadley (2014). Advanced R. Ed: Chapman and Hall/CRC. Disponível gratuitamente Disponível gratuitamente <a href="http://adv-r.had.co.nz/">aqui</a></li>
+<li>Gillespie, Colin e Lovelace, Robin (2016). Efficient R programming. Ed: O’Reilly Media. Disponível gratuitamente Disponível gratuitamente <a href="https://csgillespie.github.io/efficientR/">aqui</a></li>
+</ul>
+</div>
+<div id="leituras-complementares" class="section level2">
+<h2>Leituras Complementares</h2>
+<ul>
+<li>Jones, O., Maillardet, R., &amp; Robinson, A. (2009). Introduction to Scientific Programming and Simulation Using R (1 edition). Boca Raton, FL: Chapman and Hall/CRC.</li>
+<li>Makhabel, B. (2015). Learning Data Mining with R. Packt Publishing Ltd.</li>
+<li>Munzert, S., Rubba, C., MeiBner, P., &amp; Nyhuis, D. (2014). Automated Data Collection with R: A Practical Guide to Web Scraping and Text Mining. John Wiley &amp; Sons.</li>
+<li>Nolan, D., &amp; Lang, D. T. (2013). XML and Web Technologies for Data Sciences with R. Springer Science &amp; Business Media.</li>
+<li>Teetor, P. (2011). R Cookbook: Proven Recipes for Data Analysis, Statistics, and Graphics. O’Reilly Media, Inc.</li>
+<li>Wickham, Hadley. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2009.</li>
+<li>Wickham, Hadley and Francois, Romain (2016). dplyr: A Grammar of Data Manipulation. R package version 0.5.0. <a href="https://CRAN.R-project.org/package=dplyr" class="uri">https://CRAN.R-project.org/package=dplyr</a></li>
+<li>Zuur, A., Ieno, E. N., &amp; Meesters, E. (2009). A Beginner’s Guide to R (2009 edition). Dordrecht.; New York: Springer.</li>
+</ul>
+</div>
+<div id="ferramentas" class="section level2">
+<h2>Ferramentas</h2>
+<ul>
+<li>Barone, Leonardo Sangali, Aslan, Alexia and McDonnell, Robert Myles (2016). bRasilLegis: R Tools for Brazilian Chamber of Deputies (Camara Dos Deputados) Data. R package version 1.0. <a href="https://CRAN.R-project.org/package=bRasilLegis" class="uri">https://CRAN.R-project.org/package=bRasilLegis</a></li>
+<li>Ingo Feinerer and Kurt Hornik (2015). tm: Text Mining Package. R package version 0.6-2. <a href="https://CRAN.R-project.org/package=tm" class="uri">https://CRAN.R-project.org/package=tm</a></li>
+<li>Duncan Temple Lang and the CRAN Team (2016). XML: Tools for Parsing and Generating XML Within R and S-Plus. R package version 3.98-1.4. <a href="https://CRAN.R-project.org/package=XML" class="uri">https://CRAN.R-project.org/package=XML</a></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
