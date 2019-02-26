@@ -1,3 +1,12 @@
+---
+title: 'Tutorial 10'
+output: html_document
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
+```
+
 # Git, Github e RStudio
 
 1- Comece criando uma conta no github: [https://github.com/](https://github.com/). Github é um serviço web-based de controle de versão, que utiliza o software de código aberto _git_.

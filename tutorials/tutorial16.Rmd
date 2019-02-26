@@ -1,3 +1,12 @@
+---
+title: 'Tutorial 16'
+output: html_document
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
+```
+
 ## Apresentação do problema
 
 Na primeira atividade da oficina não precisamos lidar com o conteúdo e a estrutura da página que estávamos capturando. Como o conteúdo que nos interessava estava em uma tabela, e o pacote _rvest_ contém uma função específica para extração de tabelas, gastamos poucas linhas de código para ter a informação capturada já organizada em um data frame.

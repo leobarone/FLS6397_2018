@@ -1,3 +1,12 @@
+---
+title: 'Tutorial 13'
+output: html_document
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
+```
+
 ## Funções, iteração e vetorialização do código
 
 Neste breve tutorial vamos ver alguns exemplos de como criar funções e utilizar processos iterativos (loops), e sua forma vetorializada (famílias de funções _apply_ e _map_) facilitam  a organização do código, reduzem bastante o esforço de programação e tornam o programa mais eficiente.

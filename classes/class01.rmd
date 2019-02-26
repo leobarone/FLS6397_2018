@@ -1,7 +1,6 @@
 
-#  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
+###  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
 
-- Responsáveis: Leonardo S. Barone e Jonathan Phillips
 - Data: 22/03/2019
 
 ## Aula 1 - Introdução ao curso e R Básico
@@ -12,13 +11,10 @@ Nesta aula vamos discutir o funcionamento do curso, definir os tópicos e ferram
 
 ### Roteiro para a aula
 
-1- Começaremos com apresentação do curso e discussão do programa e do calendário.
-
-2- A seguir, teremos uma rápida exposição sobre o ambiente R e o RStudio.
-
-3- **[Tutorial 1:](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial01.html)** Diferentemente de cursos convencionais de R, nos quais se apresenta primeiro R como linguagem de programação, vamos começar com aquilo que é distintivo em R, que é sua vocação para análise de dados. Em particular, vamos começar trabalhando com _data frames_, que são as matrizes de dados.
-
-4 - Exercício de correção de erros: Quando terminar o tutorial, façao exercício abaixo de correção de código. [Fix the code 1](https://jonnyphillips.github.io/FLS6397_2019/activities/fixthecode1.html)
+1. Começaremos com apresentação do curso e discussão do programa e do calendário.
+2. A seguir, teremos uma rápida exposição sobre o ambiente R e o RStudio.
+3. **[Tutorial 1:](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial01.html)** Diferentemente de cursos convencionais de R, nos quais se apresenta primeiro R como linguagem de programação, vamos começar com aquilo que é distintivo em R, que é sua vocação para análise de dados. Em particular, vamos começar trabalhando com _data frames_, que são as matrizes de dados.
+4. [Exercício de correção de erros](https://jonnyphillips.github.io/FLS6397_2019/activities/fixthecode1.html): Quando terminar o tutorial, façao exercício abaixo de correção de código.
 
 ### Roteiro pós-aula
 

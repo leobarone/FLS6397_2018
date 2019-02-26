@@ -1,3 +1,12 @@
+---
+title: 'Tutorial 20'
+output: html_document
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
+```
+
 # Análise de texto no R - pacote _tm_
 
 ## Corpus e o pacote _tm_

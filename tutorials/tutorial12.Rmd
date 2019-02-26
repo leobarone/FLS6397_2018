@@ -1,3 +1,12 @@
+---
+title: 'Tutorial 12'
+output: html_document
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
+```
+
 # Tópicos adicionais com ggplot2
 
 Este breve tutorial fornece um guia para alguns recursos adicionais do ggplot2. Também exploramos como preparar nossos dados com _dplyr_ para facilitar o trabalho com _ggplot2_. 

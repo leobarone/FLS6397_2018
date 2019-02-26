@@ -1,14 +1,10 @@
 ---
-title: "R Markdown"
-author: "Leonardo Sangali Barone e Jonathan Phillips"
-date: "April 16, 2018"
-output:
-  html_document: default
-  pdf_document: default
+title: 'Tutorial 8'
+output: html_document
 ---
 
-```{r setup, include=FALSE, echo=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
 ```
 
 # Código e análise de dados reproduzívies

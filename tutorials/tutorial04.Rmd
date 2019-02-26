@@ -1,3 +1,12 @@
+---
+title: 'Tutorial 4'
+output: html_document
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
+```
+
 # Abrindo dados no R
 
 Neste tutorial vamos cobrir uma série de métodos disponíveis para abrirmos arquivos de texto, editores de planiljas e de outros softwares de análise de dadoss no R. Vamos dar atenção aos argumentos das funções de forma a solucionar dificuldades de abertura de dados com diferentes características ou em sistemas operacionais variados.

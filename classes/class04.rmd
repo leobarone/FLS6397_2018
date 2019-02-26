@@ -1,7 +1,11 @@
+---
+output: html_document
+---
+
 #  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
 
 - Responsáveis: Jonathan Phillips
-- Data: 16/04/2018
+- Data: 12/04/2019
 
 ## Aula 4 - Primeiros passos no tidyverse
 
@@ -17,15 +21,15 @@ Para quem nunca trabalhou com bases de dados relacionais, essa aula pode ser um 
 
 0 - Se você teve dúvidas ou problemas nos tutoriais anteriores, o começo da aula é um bom momento para conversarmos.
 
-1- Comece o Tutorial 6 assim que chegar em sala de aula [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial06.Rmd) ou [versão RPubs](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial6.pdf). Este tutorial trata da manipulação de dados com as funções do pacote _dplyr_.
+1- Comece o [Tutorial 6](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial06.html) assim que chegar em sala de aula . Este tutorial trata da manipulação de dados com as funções do pacote _dplyr_.
 
-2- A seguir, faça o Tutorial 7 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial07.Rmd) ou [versão RPubs](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial7.pdf), sobre bases de dados relacionais.
+2- A seguir, faça o [Tutorial 7](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial07.html), sobre bases de dados relacionais.
 
 ### Roteiro pós-aula
 
 Vamos seguir com a leitura do livro _R for Data Science_. Na semana passada indicamos a leitura da parte _I Explore_. Você pode avançar agora para a parte _II Wrangle_, [aqui](http://r4ds.had.co.nz/wrangle-intro.html), que vai do capítulo 9 ao 16. Se for muita leitura para a sua semana, priorize os 10 a 13.
 
-Veremos nos tutoriais desta aula um símbolo novo, `r %>%`, que altera o estilo do código. O capítulo 18, [aqui](http://r4ds.had.co.nz/pipes.html), trata do assunto. 
+Veremos nos tutoriais desta aula um símbolo novo, \%\>\%, que altera o estilo do código. O capítulo 18, [aqui](http://r4ds.had.co.nz/pipes.html), trata do assunto. 
 
 ### Recurso para auto-estudo
 

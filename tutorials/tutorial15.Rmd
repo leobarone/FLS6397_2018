@@ -1,3 +1,12 @@
+---
+title: 'Tutorial 15'
+output: html_document
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
+```
+
 # Pacotes no R
 
 Algumas das funções que vamos utilizar nesta atividade não estão na biblioteca básica do R. Temos, dessa forma, que começar instalando uma biblioteca chamada "rvest". A biblioteca já está instalada nos computadores que vamos utilizar hoje (espero!). Porém, vamos refazer o processo de instalação para aprender um pouco mais. Execute o comando abaixo:

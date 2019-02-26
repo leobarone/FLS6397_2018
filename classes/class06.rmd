@@ -1,7 +1,6 @@
-#  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
+###  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
 
-- Responsáveis: Leonardo S. Barone e Jonathan Phillips
-- Data: 14/05/2018
+- Data: 26/04/2019
 
 ## Aula 6 -  Introdução à gramática de gráficos com ggplot2
 
@@ -11,15 +10,10 @@ Agora você é especialista em acessar e transformar dados e domina pelo menos d
 
 ### Roteiro para a aula
 
-0 - Tivemos novamente um intervalo muito grande entre aulas no curso. Se você está atrasada(o) com algum tutorial ou leitura, em especial os da aula 5, aproveite a aula para botar o curso em dia e tirar dúvidas.
-
-1- Faremos uma apresentação rápida sobre _ggplot2_ logo no início da aula.
-
-2- A seguir, faça o Tutorial 11 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial11.Rmd), que traz uma introdução ao _ggplot2_.
-
-3- Caso não tenha lido, leia capítulos 3, 7 e 28 do livro [R for Data Science](http://r4ds.had.co.nz) sobre _ggplot2_. Se já tiver lido, volte aos capítulos e certifique-se de que não restaram dúvidas antes de prosseguir.
-
-4- Finalmente, faça o Tutorial 12 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial12.Rmd), que traz mais algums aspectos do _ggplot2_ e aprsenta um outro pacote para visualizações em R, _plotly_
+1. Faremos uma apresentação rápida sobre _ggplot2_ logo no início da aula.
+2. A seguir, faça o [Tutorial 11](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial11.html), que traz uma introdução ao _ggplot2_.
+3. Caso não tenha lido, leia capítulos 3, 7 e 28 do livro [R for Data Science](http://r4ds.had.co.nz) sobre _ggplot2_. Se já tiver lido, volte aos capítulos e certifique-se de que não restaram dúvidas antes de prosseguir.
+4. Finalmente, faça o [Tutorial 12](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial12.html), que traz mais algums aspectos do _ggplot2_ e aprsenta um outro pacote para visualizações em R, _plotly_
 
 ### Roteiro pós-aula
 

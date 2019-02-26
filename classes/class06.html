@@ -90,8 +90,14 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -100,14 +106,74 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -125,24 +191,27 @@ $(document).ready(function () {
 <h1>FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais</h1>
 <ul>
 <li>Responsáveis: Leonardo S. Barone e Jonathan Phillips</li>
-<li>Data: 14/05/2018</li>
+<li>Data: 26/04/2019</li>
 </ul>
 <div id="aula-6---introducao-a-gramatica-de-graficos-com-ggplot2" class="section level2">
 <h2>Aula 6 - Introdução à gramática de gráficos com ggplot2</h2>
 <div id="objetivos-gerais" class="section level3">
 <h3>Objetivos Gerais</h3>
-<p>Agora você é especialista em acessar e transformar dados. Mas ainda é difícil se comunicar e visualizar sua análise porque só sabemos apresentar texto e tabelas básicas. Hoje, vamos aprender como criar gráficos para visualizar os nossos dados usando o pacote mais poderoso, <code>ggplot2</code>.</p>
+<p>Agora você é especialista em acessar e transformar dados e domina pelo menos duas gramáticas diferentes em R. Mas ainda é difícil se comunicar e visualizar sua análise porque só sabemos apresentar texto e tabelas básicas. Hoje, vamos aprender mais uma gramática da linguagem, <code>ggplot2</code> (grammar of graphics). Veremos criar gráficos para visualizar os nossos dados usando este poderoso pacote.</p>
 </div>
 <div id="roteiro-para-a-aula" class="section level3">
 <h3>Roteiro para a aula</h3>
-<p>1- Apresentação rápida sobre ggplot2</p>
-<p>2- Comece o Tutorial 11 <a href="https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial11.Rmd">versão github</a>.</p>
-<p>3- Leia novamente capítulos 3, 7 e 28 do livro <a href="http://r4ds.had.co.nz">R for Data Science</a> sobre ggplot2.</p>
-<p>4- Comece o Tutorial 12 <a href="https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial12.Rmd">versão github</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Faremos uma apresentação rápida sobre <em>ggplot2</em> logo no início da aula.</li>
+<li>A seguir, faça o <a href="https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial11.html">Tutorial 11</a>, que traz uma introdução ao <em>ggplot2</em>.</li>
+<li>Caso não tenha lido, leia capítulos 3, 7 e 28 do livro <a href="http://r4ds.had.co.nz">R for Data Science</a> sobre <em>ggplot2</em>. Se já tiver lido, volte aos capítulos e certifique-se de que não restaram dúvidas antes de prosseguir.</li>
+<li>Finalmente, faça o <a href="https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial12.html">Tutorial 12</a>, que traz mais algums aspectos do <em>ggplot2</em> e aprsenta um outro pacote para visualizações em R, <em>plotly</em></li>
+</ol>
 </div>
 <div id="roteiro-pos-aula" class="section level3">
 <h3>Roteiro pós-aula</h3>
-<p>Vamos ler […]. O proximo desafio sobre o ggplot2 sera disponivel logo com entrega agendada para 25/05.</p>
+<p>Ainda na segunda-feira colocaremos no ar o Desafio 3. Para o desafio você precisará estar confortável com os seguintes tópicos: aberturas de bases de dados; manipulação de bases de dados com <em>dplyr</em>; bases de dados relacionais com <em>dplyr</em>; e, finalmente, visualização de dados com <em>ggplot2</em>. Este é o momento de tirar dúvidas.</p>
+<p>Vamos ler (novamente, se você já leu) capítulo 21, “Iterations”, de <a href="http://r4ds.had.co.nz/iteration.html">R for Data Science</a>. O proximo desafio sobre o ggplot2 sera disponivel logo com entrega agendada para 25/05.</p>
 </div>
 </div>
 </div>

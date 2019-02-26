@@ -1,3 +1,12 @@
+---
+title: 'Tutorial 18'
+output: html_document
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
+```
+
 # Tutorial 4
 
 Nos atividades anteriores utilizamos as ferramentas básicas de captura de dados disponíveis na biblioteca _rvest_. Em primeiro, aprendemos a capturar várias páginas contendo tabelas em formato HTML de uma só vez. Depois, aprendemos como um documento XML está estruturado e que podemos a extrair com precisão os conteúdos de tags e os valores dos atributos das tags de páginas escritas em HTML.

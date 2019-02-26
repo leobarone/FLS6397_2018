@@ -1,12 +1,10 @@
 ---
-title: "Manipulação de dados em R"
-author: "Leonardo Sangali Barone"
-date: "April 16, 2018"
-output: pdf_document
+title: 'Tutorial 6'
+output: html_document
 ---
-  
-```{r setup, include=FALSE, echo=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
 ```
 
 # Manipulação de dados com a gramática básica do pacote dplyr

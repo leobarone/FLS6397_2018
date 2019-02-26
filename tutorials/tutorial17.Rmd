@@ -1,3 +1,12 @@
+---
+title: 'Tutorial 17'
+output: html_document
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
+```
+
 # Apresentação do problema
 
 Agora que sabemos coletar de uma página da busca atributos e os conteúdos de uma "tag", precisamos repetir o procedimento para todas as páginas de resultado.  Fizemos algo semelhante no Tutorial 1, mas ainda usávamos a função _html\_table_. O objetivo é repetir o que fizemos lá, mas com as novas funções que vimos ao longo do Tutorial 2. Para tanto, vamos usar o "for loop" do Tutorial 1 para ir de uma página a outra.

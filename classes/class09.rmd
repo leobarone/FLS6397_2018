@@ -1,7 +1,6 @@
-#  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
+###  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
 
-- Responsáveis: Leonardo S. Barone e Jonathan Phillips
-- Data: 04/06/2018
+- Data: 17/05/2019
 
 ## Aula 9 - Captura de dados na internet com R
 
@@ -15,10 +14,10 @@ Trabalharemos apenas com exemplos simples: páginas com tabela e portais de not�
 
 Teremos 4 tutoriais neste tópico. Leia atentamente o roteiro abaixo e faça-os em ordem.
 
-1 - Comece aprendendo a raspar uma sequência de páginas que contêm tabelas no Tutorial 15 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial15.Rmd). Em HTML, tabelas são facilmente identificáveis e há funções específicas que facilitam a extração de tabelas de um documento HTML. Por esta razão, páginas com tabelas são o caso mais simples de raspagem de dados. A estratégia que aprenderemos neste primeiro tutorial, no entanto, servirá aos seguintes.
+1 - Comece aprendendo a raspar uma sequência de páginas que contêm tabelas no [Tutorial 15](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial15.html). Em HTML, tabelas são facilmente identificáveis e há funções específicas que facilitam a extração de tabelas de um documento HTML. Por esta razão, páginas com tabelas são o caso mais simples de raspagem de dados. A estratégia que aprenderemos neste primeiro tutorial, no entanto, servirá aos seguintes.
 
-2 - A maior parte das informações que queremos extrair, no entanto, não estão em tabelas. Aprenderemos como extrair informações de uma página qualquer de internet no Tutorial 16 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial16.Rmd)
+2 - A maior parte das informações que queremos extrair, no entanto, não estão em tabelas. Aprenderemos como extrair informações de uma página qualquer de internet no [Tutorial 16](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial16.html).
 
-3 - Seguindo com o exemplo do tutorial anterior, extrairemos informações de uma sequência páginas (busca de notícias) no Tutorial 17 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial17.Rmd).
+3 - Seguindo com o exemplo do tutorial anterior, extrairemos informações de uma sequência páginas (busca de notícias) no [Tutorial 17](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial17.html).
 
-4 - Finalmente, trabalharemos com o exemplo do DataFolha para coletar um conjunto de notícias em um buscador qualquer. O Tutorial 18 [versão github](https://github.com/leobarone/FLS6397_2018/blob/master/tutorials/tutorial18.Rmd) condensa o que vimos nos tutoriais anteriores e exige uma compreensão um pouco mais clara de loops e condicionais. Note que algumas páginas que tenteramos capturar neste exemplo contêm erros. A solução definitiva do exemplo está no final do tutorial.
+4 - Finalmente, trabalharemos com o exemplo do DataFolha para coletar um conjunto de notícias em um buscador qualquer. O [Tutorial 18](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial18.html) condensa o que vimos nos tutoriais anteriores e exige uma compreensão um pouco mais clara de loops e condicionais. Note que algumas páginas que tenteramos capturar neste exemplo contêm erros. A solução definitiva do exemplo está no final do tutorial.

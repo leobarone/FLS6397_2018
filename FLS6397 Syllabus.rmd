@@ -1,7 +1,9 @@
 ---
-title: "FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais"
-output: pdf_document
-geometry: margin=1.0in 
+title: 'FLS6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais'
+output:
+  html_document:
+    df_print: paged
+geometry: margin=1.0in
 ---
 
 ## 1. Informações básicas

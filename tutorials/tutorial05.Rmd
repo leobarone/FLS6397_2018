@@ -1,3 +1,12 @@
+---
+title: 'Tutorial 5'
+output: html_document
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
+```
+
 # Manipulação de dados com a gramática básica do R
 
 A esta altura do campeonato, você já tem bastante recursos para programar em R. Combinando seu conhecimento sobre vetores, _data frames_, tipos de dados, loops, condicionais e funções dá para fazer um bocado de coisas legais. Depois deste tutorial, voltaremos a estes tópicos para exercitar o que aprendemos.

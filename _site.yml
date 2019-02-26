@@ -14,6 +14,26 @@ navbar:
         href: classes/class01.html
       - text: "Aula 2"
         href: /classes/class02.html
+      - text: "Aula 3"
+        href: /classes/class03.html
+      - text: "Aula 4"
+        href: /classes/class04.html
+      - text: "Aula 5"
+        href: /classes/class05.html
+      - text: "Aula 6"
+        href: /classes/class06.html
+      - text: "Aula 7"
+        href: /classes/class07.html
+      - text: "Aula 8"
+        href: /classes/class08.html
+      - text: "Aula 9"
+        href: /classes/class09.html
+      - text: "Aula 10"
+        href: /classes/class10.html
+      - text: "Aula 11"
+        href: /classes/class11.html
+      - text: "Aula 12"
+        href: /classes/class12.html
     - text: "Desafios"
       menu:
       - text: "Desafio 1"
