@@ -8,7 +8,7 @@ geometry: margin=1.0in
 
 Primeiro Semestre, 2019
 
-DCP - FFLCH - USP
+DCP - FFLCH - USP, Sala 18 Prédio da C. Sociais/Filosofia
 
 Sexta-feira, 14h - 18h
 
@@ -16,14 +16,13 @@ Leonardo S. Barone e Jonathan Phillips
 
 Site do curso: [https://jonnyphillips.github.io/FLS6397_2019/](https://jonnyphillips.github.io/FLS6397_2019/)
 
-
 ## 2. Apresentação
 
 O curso oferece aos estudantes de pós-graduação em ciências sociais uma iniciação à lógica de programação e ao uso de ferramentas computacionais para (1) coleta (2) organização e preparação e (3) apresentação de dados para pesquisa social. O foco do curso é o desenvolvimento da habilidade de programação para solução de problemas diversos relacionados ao manejo de dados com fins de pesquisa. Note-se que não é um curso de metodologia de pesquisa, análise de dados ou de ciências sociais computacionais.
 
-Este curso pretende preencher uma lacuna de formação comum em alun@s de pós-graduação em ciências sociais referente à habilidade de lidar com dados e ferramentas computacionais para a condução de suas pesquisas.
+Este curso pretende preencher uma lacuna de formação comum em aluno/as de pós-graduação em ciências sociais referente à habilidade de lidar com dados e ferramentas computacionais para a condução de suas pesquisas.
 
-O curso está dividido em duas partes. A primeira parte do curso foca na preparação do ambiente computacional, apresentação de ferramentas e "alfabetização" e nas linguagens de programação utilizadas no curso -- R, Git, SQL, Markdown, etc. A segunda parte foca em aplicações das habilidades desenvolvidas a problemas de manipulação de grandes bases de dados, coleta de dados na internet e via uso de APIs de terceiros, organização de documentos para análise textual, confecção de gráficos e mapas ou demais tópicos de interesse da turma. 
+O curso está dividido em duas partes. A primeira parte do curso foca na preparação do ambiente computacional, apresentação de ferramentas e "alfabetização" e nas linguagens de programação utilizadas no curso -- R, Git, Markdown, Latex etc. A segunda parte foca em aplicações das habilidades desenvolvidas a problemas de manipulação de grandes bases de dados, coleta de dados na internet e via uso de APIs de terceiros, organização de documentos para análise textual, confecção de gráficos e mapas ou demais tópicos de interesse da turma. 
 
 ## 3. Estrutura do curso
 
@@ -33,12 +32,12 @@ As aulas serão compostas por breves apresentações dos tópicos e por longos l
 ### Atividades e tempo de dedicação
 Ao longo do curso as participantes deverão solucionar um desafio correspondente aos tópicos. Exemplos de desafios: (1) organizar automaticamente dados eleitorais a partir do repositório de dados do TSE; (2) elaborar um mapa com dados municipais a partir do DATASUS; (3) criar um corpus de notícias da internet; (4) abrir e organizar os dados do ENEM ou Censo Populacional. Os desafios exigirão dedicação extra-classe e são parte fundamental do curso.
 
-No final do curso as estudantes deverão elaborar um projeto individual.
+No final do curso as estudantes deverão elaborar um projeto individual ou em grupo.
 
 Entre aulas, tutoriais, leituras e desafios, espera-se que cada aluna ou aluno dedique de 8h a 12h por semana à disciplina.
 
 ### Avaliação
-A avaliação é composta pela entrega dos desafios, do projeto final individual e da participação. A atribuição de nota para os desafios e projetos entregues priorizará o esforço e engenhosidade apresentados (leia-se "código com erros, mas bem elaborado") em detrimento da finalização do desafio (leia-se "código funcionando plenamente") como forma de encorajar estudantes iniciantes.
+A avaliação é composta pela entrega dos desafios, do projeto final e da participação. A atribuição de nota para os desafios e projetos entregues priorizará o esforço e engenhosidade apresentados (leia-se "código com erros, mas bem elaborado") em detrimento da finalização do desafio (leia-se "código funcionando plenamente") como forma de encorajar estudantes iniciantes.
 
 
 ## 4. Requisitos
@@ -47,21 +46,20 @@ Não é necessário nenhum conhecimento prévio de programação, pacotes estat�
 
 É recomendado que as participantes já tenham concluído ou esteja cursando algum curso de métodos de pesquisa (de qualquer abordagem) ou de análise de dados, seja do programa ou da IPSA-USP Summer School. É um curso adequado para estudantes em qualquer etapa do mestrado ou doutorado, desde que tenham disponibilidade para realizar as atividades extra-classe.
 
-Estudantes do DCP-USP que podem se matricular regularmente não serão aceitas como ouvintes.
-
 ## 5. Tópicos
 
-1. Introdução ao curso e R Básico
-2. Do básico ao intermediário
-3. Abrindo e manipulando data frames
-4. Primeiros passos no tidyverse
-5. RMarkdown, git, e integração R e servidores SQL
-6. Visualização de dados e a gramática de gráficos ggplot2
-7. Funções, iteração e vetorialização
-8. Raspagem de dados na internet
-9. Strings e Mineração de Textos
-10. Mapas e GIS
-11. Programação Funcional e Latex
+1. Introdução ao curso e R Básico (22/03/2019)
+2. Do básico ao intermediário (29/03/2019)
+3. Abrindo e manipulando data frames (05/04/2019)
+4. Primeiros passos no tidyverse (12/04/2019)
+5. RMarkdown, e integração R e databases (19/04/2019)
+6. Visualização de dados (26/04/2019)
+7. Mapas e GIS (03/05/2019)
+8. Funções, iteração e vetorialização (10/05/2019)
+9. Strings e Mineração de Textos (17/05/2019)
+10. Raspagem de dados na internet (24/05/2019)
+11. Latex, Git e Pesquisa Reproduzível (07/06/2019)
+12. Programação Funcional e simulações (14/05/2019)
 
 ## 6. Bibliografia
 
@@ -79,7 +77,6 @@ Estudantes do DCP-USP que podem se matricular regularmente não serão aceitas c
 - Nolan, D., & Lang, D. T. (2013). XML and Web Technologies for Data Sciences with R. Springer Science & Business Media.
 - Teetor, P. (2011). R Cookbook: Proven Recipes for Data Analysis, Statistics, and Graphics. O’Reilly Media, Inc.
 - Wickham, Hadley. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2009.
-- Wickham, Hadley and Francois, Romain (2016). dplyr: A Grammar of Data Manipulation. R package version 0.5.0. https://CRAN.R-project.org/package=dplyr
 - Zuur, A., Ieno, E. N., & Meesters, E. (2009). A Beginner’s Guide to R (2009 edition). Dordrecht.; New York: Springer.
 
 ## Ferramentas

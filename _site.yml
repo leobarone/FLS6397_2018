@@ -13,7 +13,7 @@ navbar:
       - text: "Aula 1"
         href: classes/class01.html
       - text: "Aula 2"
-        href: classes/class02.html
+        href: /classes/class02.html
     - text: "Desafios"
       menu:
       - text: "Desafio 1"

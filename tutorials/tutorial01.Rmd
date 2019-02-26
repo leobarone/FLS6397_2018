@@ -1,3 +1,12 @@
+---
+title: 'Tutorial 1'
+output: html_document
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
+```
+
 # Começando pelo meio: data frames
 
 Uma característica distintiva da linguagem de programação R é ter sido desenvolvida para a análise de dados. E quando pensamos em análise de dados, a protagonista do show é a _base de dados_ ou, como vamos conhecer a partir de agora, __data frame__.

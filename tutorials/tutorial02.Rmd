@@ -1,3 +1,12 @@
+---
+title: 'Tutorial 2'
+output: html_document
+---
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
+```
+
 # Voltando ao zero - O básico do R
 
 No tutorial anterior, começamos "do meio", ou seja, fizemos a primeira incursão na linguagem R aprendendo um pouco sobre _data frames_. Vamos, no presente tutorial, "começar do zero" e aprender sobre os aspectos elementares da linguagem R para, na etapa seguinte, avançar nosso conhecimento sobre _data frames_ e demais aspectos da linguagem.

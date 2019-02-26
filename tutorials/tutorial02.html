@@ -90,8 +90,14 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -100,14 +106,74 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -129,25 +195,18 @@ $(document).ready(function () {
 <p>R serve como calculadora é bastante simples realizar operações matemáticas.</p>
 <p>Soma:</p>
 <pre class="r"><code>42 + 84</code></pre>
-<pre><code>## [1] 126</code></pre>
 <p>Subtração:</p>
 <pre class="r"><code>84 - 42</code></pre>
-<pre><code>## [1] 42</code></pre>
 <p>Multiplicação</p>
 <pre class="r"><code>42 * 2</code></pre>
-<pre><code>## [1] 84</code></pre>
 <p>Divisão:</p>
 <pre class="r"><code>42 / 6</code></pre>
-<pre><code>## [1] 7</code></pre>
 <p>Potência:</p>
 <pre class="r"><code>2 ^ 5</code></pre>
-<pre><code>## [1] 32</code></pre>
 <p>Divisão inteira (sem resto):</p>
 <pre class="r"><code>42 %/% 5</code></pre>
-<pre><code>## [1] 8</code></pre>
 <p>Resto da divisão:</p>
 <pre class="r"><code>42 %% 5</code></pre>
-<pre><code>## [1] 2</code></pre>
 <p>Nos exemplos acima realizamos operações bastante simples sem usar objetos, ou, como costumamos chamar, variáveis. Note que há dois usos para a palavra “variável”. O primeiro deles, que vimos no tutorial anterior, é o sinônimo de coluna em um <em>data frame</em>, e registra uma característica específica para todas as observações (por exemplo, a coluna com idade em um <em>data frame</em> com indivíduos).</p>
 <p>O outro uso é sinônimo de objeto no R. Nos referimos à “variável x”, quando atribuímos algo – um número ou um texto, por exemplo – a “x”.</p>
 <p>Nos tutoriais, vamos fazer uso de variável com ambos significados. Fique atent@, mas com o tempo você se acostumará.</p>
@@ -158,22 +217,16 @@ $(document).ready(function () {
 <p>No entanto, vale a pena usar “&lt;-” para não confundir os usos de “=”, que também é usado para estabelecer valores nos argumentos de uma função.</p>
 <p>Podemos imprimir o valor de uma variável no console simplesmente digitando seu nome:</p>
 <pre class="r"><code>x</code></pre>
-<pre><code>## [1] 42</code></pre>
 <p>Em várias outras linguagens, e em R inclusive, usa-se a função <em>print</em> para imprimir os valores de uma variável:</p>
 <pre class="r"><code>print(x)</code></pre>
-<pre><code>## [1] 42</code></pre>
 <p>Quando usar print? Veremos no futuro que, dependendo da situação (por exemplo, dentro de funções), é preciso explicitar que queremos “imprimir” algo, e, nestes casos, usamos a função <em>print</em>.</p>
 <p>Vamos criar mais uma variável, y, e fazer operações com variáveis:</p>
 <pre class="r"><code>y &lt;- 5
 
-x + y</code></pre>
-<pre><code>## [1] 47</code></pre>
-<pre class="r"><code>x - y</code></pre>
-<pre><code>## [1] 37</code></pre>
-<pre class="r"><code>x / y</code></pre>
-<pre><code>## [1] 8.4</code></pre>
-<pre class="r"><code>x * y</code></pre>
-<pre><code>## [1] 210</code></pre>
+x + y
+x - y
+x / y
+x * y</code></pre>
 <p>Podemos armazenar o resultado de uma operação matemática em uma variável. Veja os exemplos:</p>
 <pre class="r"><code>z1 &lt;- 42 / 3
 z2 &lt;- x + y
@@ -187,12 +240,9 @@ z3 &lt;- ((x / 5 ) * 9) + 32</code></pre>
 texto &lt;- &quot;Meu texto&quot;
 verdadeiro &lt;- TRUE</code></pre>
 <p>Usamos a função <em>class</em> para examinar a classe de um objeto:</p>
-<pre class="r"><code>class(numero_pi)</code></pre>
-<pre><code>## [1] &quot;numeric&quot;</code></pre>
-<pre class="r"><code>class(texto)</code></pre>
-<pre><code>## [1] &quot;character&quot;</code></pre>
-<pre class="r"><code>class(verdadeiro)</code></pre>
-<pre><code>## [1] &quot;logical&quot;</code></pre>
+<pre class="r"><code>class(numero_pi)
+class(texto)
+class(verdadeiro)</code></pre>
 <p>Auto-explicativo, certo?</p>
 </div>
 <div id="mais-um-pouco-sobre-vetores" class="section level2">
@@ -201,12 +251,9 @@ verdadeiro &lt;- TRUE</code></pre>
 <pre class="r"><code>vetor_numerico &lt;- c(42, 7, 999, 3.14)
 vetor_texto &lt;- c(&quot;Miriam&quot;, &quot;a&quot;, 'jota', &quot;TRUE&quot;, &quot;4&quot;)
 vetor_logico &lt;- c(TRUE, FALSE, F, F, T)
-class(vetor_numerico)</code></pre>
-<pre><code>## [1] &quot;numeric&quot;</code></pre>
-<pre class="r"><code>class(vetor_texto)</code></pre>
-<pre><code>## [1] &quot;character&quot;</code></pre>
-<pre class="r"><code>class(vetor_logico)</code></pre>
-<pre><code>## [1] &quot;logical&quot;</code></pre>
+class(vetor_numerico)
+class(vetor_texto)
+class(vetor_logico)</code></pre>
 <p>Detalhes para observarmos:</p>
 <ul>
 <li>No caso do vetor numérico, não importa se usamos números com casas decimais.</li>
@@ -231,19 +278,14 @@ v7 &lt;- c(T, T, F, T, F, F, 42)</code></pre>
 <p>Dá um trabalho danado criar uma sequência de números de, por exemplo, 42 a 66. Ou sequências ainda maiores. Uma maneira simples (mas não a única), de gerar uma sequência de inteiros em R é utilizar “:”. Veja o exemplo:</p>
 <pre class="r"><code>sequencia &lt;- 42:66
 print(sequencia)</code></pre>
-<pre><code>##  [1] 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64
-## [24] 65 66</code></pre>
 <p>A sequência pode ter ordem reversa:</p>
 <pre class="r"><code>sequencia_reversa &lt;- 10:1
 print(sequencia_reversa)</code></pre>
-<pre><code>##  [1] 10  9  8  7  6  5  4  3  2  1</code></pre>
 <p>Podemos combinar sequências que contém um intervalo, ou mesmo sequências que se sobrepõe, em um único vetor:</p>
 <pre class="r"><code>sequencia_intervalo &lt;- c(1:10, 20:30)
-print(sequencia_intervalo)</code></pre>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 20 21 22 23 24 25 26 27 28 29 30</code></pre>
-<pre class="r"><code>sequencia_sobreposicao &lt;- c(10:20, 15:25)
+print(sequencia_intervalo)
+sequencia_sobreposicao &lt;- c(10:20, 15:25)
 print(sequencia_sobreposicao)</code></pre>
-<pre><code>##  [1] 10 11 12 13 14 15 16 17 18 19 20 15 16 17 18 19 20 21 22 23 24 25</code></pre>
 </div>
 <div id="operacoes-matematicas-com-vetores" class="section level2">
 <h2>Operações matemáticas com vetores</h2>
@@ -258,7 +300,6 @@ print(sequencia_sobreposicao)</code></pre>
 <h2>Nomes do vetor</h2>
 <p>Aproveitando o exemplo, os elementos de um vetor podem ser nomeados. O vetor “temperatura_celsius”, por enquanto, não tem nome:</p>
 <pre class="r"><code>names(temperatura_celsius)</code></pre>
-<pre><code>## NULL</code></pre>
 <p>(Ei, já usamos a função <em>names</em> no passado para ver o nome das colunas de um <em>data frame</em>).</p>
 <p>Se quiseremos atribuir os nomes aos elementos de “temperatura_celsius”, atribuimos um vetor a “names(temperatura_celsius)”. Esse uso da linguagem é um pouco estranho, pois estamos atribuindo algo a uma função de um objeto, não a um objeto.</p>
 <p>Uma maneira de pensar esse uso menos confusa, é imaginar que um objeto tem várias partes e que estamos atribuindo algo a uma parte específica – os nomes dos elementos, no caso – deste objeto. Veja:</p>
@@ -281,8 +322,6 @@ names(semana_2) &lt;- dias_da_semana</code></pre>
 <p>Operações entre vetores seguem a mesma lógica das operações com vetores atômicos e com vetores e números, com a ressalva de que as operações são realizadas “pareando” os elementos dos vetores. Dito de outra forma, ao somarmos dois vetores, por exemplo, o vetor resultante terá na primeira posição a soma dos elementos da primeira posição dos vetores originais, a segunda posição terá a soma dos elementos da segunda posição dos vetores originais e assim por diante. Executando o exemplo:</p>
 <pre class="r"><code>soma_semanas &lt;- semana_1 + semana_2
 print(soma_semanas)</code></pre>
-<pre><code>## Domingo Segunda   Terca  Quarta  Quinta   Sexta  Sabado 
-##      64      41      27      32      42      40      90</code></pre>
 <p>Note que, como os vetores originais já estavam nomeados e os elementos em cada posição tinham o mesmo nome, o vetor resultante também já está nomeado.</p>
 <p>É bastante simples criar um vetor que seja a combinação de dois vetores. Por exemplo, se quisermos juntar as duas semanas em um único vetor, usamos a função <em>c</em>:</p>
 <pre class="r"><code>duas_semanas &lt;- c(semana_1, semana_2)</code></pre>
@@ -294,28 +333,16 @@ print(soma_semanas)</code></pre>
 <p>Quando queremos selecionar elementos de um vetor (ou, no futuro, de uma matriz ou de um <em>data frame</em>) usamos colchetes [] ao final do objeto. Vetores são objetos com uma única dimensão, então tudo que precisamos fazer é colocar o número da posição que queremos dentro dos colchetes. Chamamos esse procedimento em inglês de “subset” (no português, “selecionar um subconjunto”).</p>
 <p>Para extrair o primeiro dia do vetor com dados da semana 1 (domingo):</p>
 <pre class="r"><code>semana_1[1]</code></pre>
-<pre><code>## Domingo 
-##      32</code></pre>
 <p>Ou, para extrair o final de semana (domingo na posição 1 e sábado na posição 7):</p>
 <pre class="r"><code>semana_1[c(1,7)]</code></pre>
-<pre><code>## Domingo  Sabado 
-##      32      40</code></pre>
 <p>Ou ainda, os dias úteis da semana:</p>
 <pre class="r"><code>semana_1[2:6]</code></pre>
-<pre><code>## Segunda   Terca  Quarta  Quinta   Sexta 
-##      20      15      20      18      19</code></pre>
 <p>Se os elementos do vetor estiverem adequadamente nomeados, podemos usar seus nomes no lugar de suas posições. Repetindo os dois primeiros exemplos imediatamente acima temos:</p>
-<pre class="r"><code>semana_1[&quot;Domingo&quot;]</code></pre>
-<pre><code>## Domingo 
-##      32</code></pre>
-<pre class="r"><code>semana_1[c(&quot;Domingo&quot;, &quot;Sabado&quot;)]</code></pre>
-<pre><code>## Domingo  Sabado 
-##      32      40</code></pre>
+<pre class="r"><code>semana_1[&quot;Domingo&quot;]
+semana_1[c(&quot;Domingo&quot;, &quot;Sabado&quot;)]</code></pre>
 <p>Podemos usar um vetor para nos auxíliar a produzir o subconjunto:</p>
 <pre class="r"><code>dias_uteis &lt;- c(&quot;Segunda&quot;, &quot;Terca&quot;, &quot;Quarta&quot;, &quot;Quinta&quot;, &quot;Sexta&quot;)
 semana_1[dias_uteis]</code></pre>
-<pre><code>## Segunda   Terca  Quarta  Quinta   Sexta 
-##      20      15      20      18      19</code></pre>
 </div>
 <div id="exercicio" class="section level2">
 <h2>Exercício:</h2>
@@ -331,23 +358,14 @@ semana_1[dias_uteis]</code></pre>
 <p>Ao longo do tempo, nosso repertório de funções de R aumentará rapidamente. Há um conjunto de funções fáceis de lembrar que são muito úteis para calcular estatísticas descritivas de um vetor (ou de uma variável em um <em>data frame</em>). Exemplo: meu consumo de litros de café por mês em 2016.</p>
 <pre class="r"><code>litros_cafe &lt;- c(4.3, 3.1, 5.3, 5.5, 6.9, 8.3, 9.7, 9.9, 9.1, 7.0, 6.2, 5.6)</code></pre>
 <p>Observe as funções de soma, media, desvio padrão, variância, mediana, máximo, mínimo e quantil, na respectiva ordem:</p>
-<pre class="r"><code>sum(litros_cafe)</code></pre>
-<pre><code>## [1] 80.9</code></pre>
-<pre class="r"><code>mean(litros_cafe)</code></pre>
-<pre><code>## [1] 6.741667</code></pre>
-<pre class="r"><code>sd(litros_cafe)</code></pre>
-<pre><code>## [1] 2.158475</code></pre>
-<pre class="r"><code>var(litros_cafe)</code></pre>
-<pre><code>## [1] 4.659015</code></pre>
-<pre class="r"><code>median(litros_cafe)</code></pre>
-<pre><code>## [1] 6.55</code></pre>
-<pre class="r"><code>max(litros_cafe)</code></pre>
-<pre><code>## [1] 9.9</code></pre>
-<pre class="r"><code>min(litros_cafe)</code></pre>
-<pre><code>## [1] 3.1</code></pre>
-<pre class="r"><code>quantile(litros_cafe, probs = c(0, 0.25, 0.5, 0.75, 1))</code></pre>
-<pre><code>##   0%  25%  50%  75% 100% 
-## 3.10 5.45 6.55 8.50 9.90</code></pre>
+<pre class="r"><code>sum(litros_cafe)
+mean(litros_cafe)
+sd(litros_cafe)
+var(litros_cafe)
+median(litros_cafe)
+max(litros_cafe)
+min(litros_cafe)
+quantile(litros_cafe, probs = c(0, 0.25, 0.5, 0.75, 1))</code></pre>
 <p>Veja que, com a exceção de <em>quantile</em>, todas as funções retornam vetores atômicos. <em>quantile</em> retorna um vetor do tamanho do vetor de probabilidades, que é o segundo argumento da função, e que indica os quantis correspondentes a cada valor.</p>
 </div>
 <div id="exercicio-1" class="section level2">
@@ -364,14 +382,8 @@ names(litros_cafe) &lt;- meses</code></pre>
 <p>Criando um vetor lógico (TRUE ou FALSE) que indique em quais meses meu consumo ultrapassou o limite recomendado:</p>
 <pre class="r"><code>selecao &lt;- litros_cafe &gt; 7
 print(selecao)</code></pre>
-<pre><code>##   Janeiro Fevereiro     Marco     Abril      Maio     Junho     Julho 
-##     FALSE     FALSE     FALSE     FALSE     FALSE      TRUE      TRUE 
-##    Agosto  Setembro   Outubro  Novembro  Dezembro 
-##      TRUE      TRUE     FALSE     FALSE     FALSE</code></pre>
 <p>Usamos o vetor “selecao” para fazer o subconjunto do vetor de dados de consumo de café:</p>
 <pre class="r"><code>litros_cafe[selecao]</code></pre>
-<pre><code>##    Junho    Julho   Agosto Setembro 
-##      8.3      9.7      9.9      9.1</code></pre>
 <p>Para vetores pequenos, o procedimento adotado para gerar subconjuntos parece desnecessariamente trabalhoso. Mas imagine agora que você queira observar os votos de todos os candidatos que atendam a determinada condição – por exemplo, terem gastos de campanha acima de determinado patarmar. Com uma variável (gasto de campanha) você pode gerar um vetor de seleção que permite gerar o subconjunto desejado.</p>
 <p>Voltaremos em variações desse assunto em diversos momentos no futuro.</p>
 </div>
@@ -381,64 +393,39 @@ print(selecao)</code></pre>
 <p><strong>factor</strong> é, basicamente, a classe de vetores em R utilizada para lidar com dados categóricos, nominais ou ordinais. Em vez de gastarmos tinta tentando entendê-los de forma abstrata, vamos a um exemplo.</p>
 <p>Suponhamos que temos um vetor de texto que representa uma variável categórica que pode receber dois valores, “sim” e “nao”.</p>
 <pre class="r"><code>yes_no &lt;- c(&quot;sim&quot;, &quot;nao&quot;, &quot;nao&quot;, &quot;nao&quot;, &quot;sim&quot;, &quot;nao&quot;)
-print(yes_no)</code></pre>
-<pre><code>## [1] &quot;sim&quot; &quot;nao&quot; &quot;nao&quot; &quot;nao&quot; &quot;sim&quot; &quot;nao&quot;</code></pre>
-<pre class="r"><code>class(yes_no)</code></pre>
-<pre><code>## [1] &quot;character&quot;</code></pre>
+print(yes_no)
+class(yes_no)</code></pre>
 <p>Vamos usar a função <em>factor</em> para gerar o vetor “f_yes_no” e observar o resultado:</p>
 <pre class="r"><code>f_yes_no &lt;- factor(yes_no)
 print(f_yes_no)</code></pre>
-<pre><code>## [1] sim nao nao nao sim nao
-## Levels: nao sim</code></pre>
 <p>Note que não temos mais aspas nos valores impressos do vetor de fatores. Além disso, ele vem acompanhado de uma nova informação: “levels”, ou niveis.</p>
 <p>Basicamente, “factors” são vetores numéricos cujos valores estão associados a um rótulo. Os “levels” são esses pares de código numérico + rótulo.</p>
 <p>Se tentamos transformar em números o vetor de fatores, veja o que obtemos:</p>
 <pre class="r"><code>as.numeric(f_yes_no)</code></pre>
-<pre><code>## [1] 2 1 1 1 2 1</code></pre>
 <p>1 e 2 são os códigos numéricos gerados autormaticamente para “nao” e “sim”, respectivamente. O critério para atribuir valores foi a ordem alfabética dos textos transformados em fatores.</p>
 <p>Podemos investigar os níveis de um vetor de fatores com a função <em>levels</em>:</p>
 <pre class="r"><code>levels(f_yes_no)</code></pre>
-<pre><code>## [1] &quot;nao&quot; &quot;sim&quot;</code></pre>
 <p>E também podemos alterá-los, tal como fazemos com os nomes dos elementos de um vetor:</p>
 <pre class="r"><code>levels(f_yes_no) &lt;- c(&quot;No&quot;, &quot;Sim&quot;)
 print(f_yes_no)</code></pre>
-<pre><code>## [1] Sim No  No  No  Sim No 
-## Levels: No Sim</code></pre>
 <p>Tudo bem até agora?</p>
 <p>E se os níveis de uma variável forem ordenados? Vejamos um exemplo:</p>
 <pre class="r"><code>tamanho &lt;- c(&quot;alto&quot;, &quot;baixo&quot;, &quot;baixo&quot;, &quot;medio&quot;, &quot;alto&quot;, &quot;baixo&quot;, &quot;medio&quot;)
 f_tamanho &lt;- factor(tamanho)
 print(f_tamanho)</code></pre>
-<pre><code>## [1] alto  baixo baixo medio alto  baixo medio
-## Levels: alto baixo medio</code></pre>
 <p>Como o R segue o ordenamento alfabético, os códigos numéricos 1, 2 e 3 estão associados a “alto”, “baixo” e “medio”, respectivamente. Mas qual é o problema de não ordenarmos? Veja abaixo:</p>
-<pre class="r"><code>f_tamanho[1]</code></pre>
-<pre><code>## [1] alto
-## Levels: alto baixo medio</code></pre>
-<pre class="r"><code>f_tamanho[2]</code></pre>
-<pre><code>## [1] baixo
-## Levels: alto baixo medio</code></pre>
-<pre class="r"><code>f_tamanho[1] &gt; f_tamanho[2]</code></pre>
-<pre><code>## Warning in Ops.factor(f_tamanho[1], f_tamanho[2]): '&gt;' not meaningful for
-## factors</code></pre>
-<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>f_tamanho[1]
+f_tamanho[2]
+f_tamanho[1] &gt; f_tamanho[2]</code></pre>
 <p>Sem ordenarmos, não podemos comparar os níveis e estamos assumindo a variável como sendo nominal.</p>
 <p>Para ordernar os níveis de um vetor de fatores, temos que informar alguns parâmetros adicionais – <em>order</em> e <em>levels</em> – ao criá-lo:</p>
 <pre class="r"><code>f_tamanho &lt;- factor(tamanho, ordered = T, levels &lt;- c(&quot;baixo&quot;, &quot;medio&quot;, &quot;alto&quot;))
 print(f_tamanho)</code></pre>
-<pre><code>## [1] alto  baixo baixo medio alto  baixo medio
-## Levels: baixo &lt; medio &lt; alto</code></pre>
 <p>Note que a informação sobre os “levels” acompanha a ordem informada, que, neste caso, é diferente da alfabética. Comparações entre os níveis fazem sentido se a variável for ordinal:</p>
-<pre class="r"><code>f_tamanho[1]</code></pre>
-<pre><code>## [1] alto
-## Levels: baixo &lt; medio &lt; alto</code></pre>
-<pre class="r"><code>f_tamanho[2]</code></pre>
-<pre><code>## [1] baixo
-## Levels: baixo &lt; medio &lt; alto</code></pre>
-<pre class="r"><code>f_tamanho[1] &gt; f_tamanho[2]</code></pre>
-<pre><code>## [1] TRUE</code></pre>
-<pre class="r"><code>f_tamanho &gt; &quot;medio&quot;</code></pre>
-<pre><code>## [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE</code></pre>
+<pre class="r"><code>f_tamanho[1]
+f_tamanho[2]
+f_tamanho[1] &gt; f_tamanho[2]
+f_tamanho &gt; &quot;medio&quot;</code></pre>
 <p>Voltaremos aos “factors” em momento adequado. O importante agora é saber que eles existem e que é uma classe de vetores em R. Atenção especial deve ser dada ao fato de que diversas vezes, ao importarmos bases de dados para o “workspace”, o R considera variáveis de texto como sendo “factors”, mesmo de maneira inadequada. Para evitar este problema, devemos adotar o argumento “stringAsFactors = F” em diversas funções de importação. Como avisei no início deste tópico, “factors” é um dos aspectos mais confusos em R (em conjunto com “missing values”, que vamos adiar até um momento adequado).</p>
 </div>
 <div id="exercicio-2" class="section level2">
@@ -458,16 +445,8 @@ print(f_tamanho)</code></pre>
 <p>Para matemáticos, matrizes são objetos com uma álgebra própria e parte de uma área denominada Álgebra Linear. Por exemplo, a multiplicação de matrizes, se você lembra dela de seu período de escola ou graduação, segue regras e tem propriedades diferentes da multiplicação de números. Apesar do R ter uma “gramática” para Álgebra Linear (que lembra o MATLAB e Octave), ela não nos interessa agora e a deixaremos de lado.</p>
 <p>Para criarmos uma matriz, precisamos de um vetor que contenha o número de elementos a serem inseridos em uma matriz. Para uma matriz de 3 linhas e 3 colunas, precisamos de um vetor de 9 elementos, a exemplo do vetor gerado pelo comando “1:9”.</p>
 <p>Há duas maneiras de “preencher” a matriz: pelas linhas (“byrow = T”) ou pelas colunas (“byrow = F”). Veja os exemplos abaixo e tente compreender o funcionamento de <em>matrix</em>:</p>
-<pre class="r"><code>matrix(1:9, byrow = TRUE, nrow = 3)</code></pre>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    1    2    3
-## [2,]    4    5    6
-## [3,]    7    8    9</code></pre>
-<pre class="r"><code>matrix(1:9, byrow = FALSE, nrow = 3)</code></pre>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    1    4    7
-## [2,]    2    5    8
-## [3,]    3    6    9</code></pre>
+<pre class="r"><code>matrix(1:9, byrow = TRUE, nrow = 3)
+matrix(1:9, byrow = FALSE, nrow = 3)</code></pre>
 <p>Vamos a um exemplo de matriz criada a partir de 3 vetores. Os vetores abaixo representam o gasto de café de 3 pessoas de segunda a sexta-feira em uma semana determinada.</p>
 <pre class="r"><code>beatriz &lt;- c(4, 5, 0, 3, 5)
 pedro &lt;- c(2, 2, 2, 2, 2)
@@ -477,12 +456,6 @@ mateus &lt;- c(0, 0, 12, 0, 0)</code></pre>
 <p>… e criar uma matriz de 5 linhas e 3 colunas denominada café:</p>
 <pre class="r"><code>cafe &lt;- matrix(vetor_cafe, byrow = FALSE, nrow = 5)
 print(cafe)</code></pre>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    4    2    0
-## [2,]    5    2    0
-## [3,]    0    2   12
-## [4,]    3    2    0
-## [5,]    5    2    0</code></pre>
 <p>Veja que as margens da matriz não tem nomes. Vamos proceder como fizemos com vetores. Entretanto, não vamos nomear cada elemento, mas as linhas e colunas, e utilizaremos as funções <em>rownames</em> e <em>colnames</em> para a tarefa:</p>
 <pre class="r"><code>fregueses &lt;- c(&quot;Beatriz&quot;, &quot;Pedro&quot;, &quot;Mateus&quot;)
 dias_uteis &lt;- c(&quot;Segunda&quot;, &quot;Terca&quot;, &quot;Quarta&quot;, &quot;Quinta&quot;, &quot;Sexta&quot;)
@@ -491,42 +464,18 @@ rownames(cafe) &lt;- dias_uteis
 colnames(cafe) &lt;- fregueses
 
 print(cafe)</code></pre>
-<pre><code>##         Beatriz Pedro Mateus
-## Segunda       4     2      0
-## Terca         5     2      0
-## Quarta        0     2     12
-## Quinta        3     2      0
-## Sexta         5     2      0</code></pre>
 <p>O processo de nomear as linhas e colunas poderia ser realizado no momento em que a matriz foi gerada com o uso do argumento <em>dimnames</em>, como no exemplo:</p>
 <pre class="r"><code>cafe &lt;- matrix(vetor_cafe, byrow = FALSE, nrow = 5,
                dimnames = list(dias_uteis, fregueses))</code></pre>
 <p>E se quisermos trocar as linhas pelas colunas – processo conhecido como transposição da matriz? Usamos a função <em>t</em>. Dica: <em>c</em> e <em>t</em> são funções em R. Evite criar objetos com esse nome.</p>
 <pre class="r"><code>t(cafe)</code></pre>
-<pre><code>##         Segunda Terca Quarta Quinta Sexta
-## Beatriz       4     5      0      3     5
-## Pedro         2     2      2      2     2
-## Mateus        0     0     12      0     0</code></pre>
 <p>Se quisermos juntar os três vetores originais como se fossem colunas, podemos usar a função <em>cbind</em>.</p>
 <pre class="r"><code>cbind(beatriz, pedro, mateus)</code></pre>
-<pre><code>##      beatriz pedro mateus
-## [1,]       4     2      0
-## [2,]       5     2      0
-## [3,]       0     2     12
-## [4,]       3     2      0
-## [5,]       5     2      0</code></pre>
 <p><em>rbind</em>, função bastante útil e que voltará várias vezes no curso, faz o mesmo tratando os vetores como linhas:</p>
 <pre class="r"><code>rbind(beatriz, pedro, mateus)</code></pre>
-<pre><code>##         [,1] [,2] [,3] [,4] [,5]
-## beatriz    4    5    0    3    5
-## pedro      2    2    2    2    2
-## mateus     0    0   12    0    0</code></pre>
 <p>As funções <em>rowSums</em> e <em>colSums</em>, como é de se esperar, calculam as somas de todos os elementos de cada linha e de cada coluna, respectivamente:</p>
-<pre class="r"><code>rowSums(cafe)</code></pre>
-<pre><code>## Segunda   Terca  Quarta  Quinta   Sexta 
-##       6       7      14       5       7</code></pre>
-<pre class="r"><code>colSums(cafe)</code></pre>
-<pre><code>## Beatriz   Pedro  Mateus 
-##      17      10      12</code></pre>
+<pre class="r"><code>rowSums(cafe)
+colSums(cafe)</code></pre>
 <p>Combinando as funções de soma com as de combinação (sic), podemos gerar os totais nas margens da matriz:</p>
 <pre class="r"><code>Total_Coluna &lt;- colSums(cafe)
 cafe2 &lt;- rbind(cafe, Total_Coluna)
@@ -534,60 +483,28 @@ cafe2 &lt;- rbind(cafe, Total_Coluna)
 Total_Linha &lt;- rowSums(cafe2)
 cafe2 &lt;- cbind(cafe2, Total_Linha)
 print(cafe2)</code></pre>
-<pre><code>##              Beatriz Pedro Mateus Total_Linha
-## Segunda            4     2      0           6
-## Terca              5     2      0           7
-## Quarta             0     2     12          14
-## Quinta             3     2      0           5
-## Sexta              5     2      0           7
-## Total_Coluna      17    10     12          39</code></pre>
 <p>Como com vetores, podemos fazer operações aritméticas (veja que não estamos falando de Álgebra Linear) com matrizes. Por exemplo, para transformar os gastos com café em doláres (cotação = 3.2):</p>
 <pre class="r"><code>cafe / 3.2</code></pre>
-<pre><code>##         Beatriz Pedro Mateus
-## Segunda  1.2500 0.625   0.00
-## Terca    1.5625 0.625   0.00
-## Quarta   0.0000 0.625   3.75
-## Quinta   0.9375 0.625   0.00
-## Sexta    1.5625 0.625   0.00</code></pre>
 <p>Podemos também relizar operações entre matrizes de mesmas dimensões que considerem os elementos de forma pareada, tal como com vetores. Usando as duas matrizes do começo deste tópico:</p>
 <pre class="r"><code>matrix(1:9, byrow = TRUE, nrow = 3) + matrix(1:9, byrow = FALSE, nrow = 3)</code></pre>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    2    6   10
-## [2,]    6   10   14
-## [3,]   10   14   18</code></pre>
 <p>Tanto sobre matriz para chegarmos ao que realmente importa: subconjuntos de matrizes. Com vetores, usamos colchetes para produzirmos subconjuntos. As regras que aprendemos para vetores valem para matrizes. A diferença é que matrizes – e também <em>data frames</em> – são objetos com duas dimensões (linhas e colunas). Portanto, ao extrairmos um subconjunto, precisamos informar as duas dimensões nos colchetes, primeiro linha, depois coluna, separadas por vírgula. Se deixamos uma das dimensões em branco, estamos selecionando todos os elementos daquela dimensão.</p>
 <p>Vamos a uma série de exemplos para compreender as regras de subconjunto de matrizes.</p>
 <p>Selecionar toda a segunda coluna:</p>
 <pre class="r"><code>cafe[, 2]</code></pre>
-<pre><code>## Segunda   Terca  Quarta  Quinta   Sexta 
-##       2       2       2       2       2</code></pre>
 <p>Selecionar toda a terceira linha:</p>
 <pre class="r"><code>cafe[3, ]</code></pre>
-<pre><code>## Beatriz   Pedro  Mateus 
-##       0       2      12</code></pre>
 <p>Selecionar o elemento da linha 1 e coluna 3:</p>
 <pre class="r"><code>cafe[1, 3]</code></pre>
-<pre><code>## [1] 0</code></pre>
 <p>Selecionar os elementos 4 e 5 da coluna 1:</p>
 <pre class="r"><code>cafe[4:5, 1]</code></pre>
-<pre><code>## Quinta  Sexta 
-##      3      5</code></pre>
 <p>Selecionar os elementos 1, 3 e 5 da coluna 3:</p>
 <pre class="r"><code>cafe[c(1,3,5), 3]</code></pre>
-<pre><code>## Segunda  Quarta   Sexta 
-##       0      12       0</code></pre>
 <p>Selecionar o elemento 4 das colunas 2 e 3:</p>
 <pre class="r"><code>cafe[4, 2:3]</code></pre>
-<pre><code>##  Pedro Mateus 
-##      2      0</code></pre>
 <p>Selecionar a segunda e terça-feira de Pedro:</p>
 <pre class="r"><code>cafe[c(&quot;Segunda&quot;, &quot;Terca&quot;), &quot;Pedro&quot;]</code></pre>
-<pre><code>## Segunda   Terca 
-##       2       2</code></pre>
 <p>Selecionar a quarta-feira de todos:</p>
 <pre class="r"><code>cafe[&quot;Quarta&quot;,]</code></pre>
-<pre><code>## Beatriz   Pedro  Mateus 
-##       0       2      12</code></pre>
 </div>
 <div id="exercicio-3" class="section level2">
 <h2>Exercício</h2>
