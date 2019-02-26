@@ -2,15 +2,13 @@
 output: html_document
 ---
 
-#  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
-
-- Responsável: Leonardo S. Barone e Jonathan Phillips
+###  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
 
 ## Desafio 4
 
 ## Instruções para Entrega
 
-Data: 02/07/18
+Data: 
 
 Formato: arquivo .pdf ou .html produzido com RMarkdown, acompanhado de script em formato .R
 
