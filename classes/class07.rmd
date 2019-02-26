@@ -2,26 +2,14 @@
 
 - Data: 03/05/2019
 
-## Aula 7 - Funções, iteração e vetorialização de código em R
+## Aula 7 - Mapas e GIS
 
 ### Objetivos Gerais
 
-Estamos exatamente na metade do curso. O que você aprendeu até agora é suficiente para você sobreviver à pós-graduação e abandonar outras plataformas de análise de dados.
-
-Nesta segunda etapa do curso, vamos trabalhar com tópicos mais avançados em R. Hoje aprenderemos sobre funções, iteração e vetorialização. Já trabalhamos com estes tópicos em aulas anteriores, mas começaremos a nos aprofundar.
+Faremos hoje a aula de mapas no R, que havia sido cancelada anteriormente em virtude da greve de caminhoneiros, e discutiremos as propostas de trabalho final.
 
 ### Roteiro para a aula
 
-1. Começaremos a aula com exemplos de como o uso de funções e loops tornam o código mais  rápido, enxuto e eficiente, no [Tutorial 13](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial13.html).
+1 - Faça o [Tutorial 14](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial14.html), que apresenta o recém publicado pacote 'sf' para lidar com mapas no R.
 
-2. Ao terminar o tutorial, leremos, na sequência, capítulos/trechos do livro [R for Data Science](http://r4ds.had.co.nz). Comece aprendendo mais sobre funções no capítulo [19 - Functions](http://r4ds.had.co.nz/functions.html)
-
-3. A seguir, veremos uma nova classe de objetos em R, de extrema importância na linguagem: listas. Leia sobre o assunto no trecho "Lists", do capítulo [18 - Vectors](http://r4ds.had.co.nz/vectors.html#lists).
-
-4. Finalmente, encerre lendo o capítulo [20 - Iteration](http://r4ds.had.co.nz/iteration.html).
-
-5. Caso queira aprender um pouco mais sobre os usos de _summarise_ e _mutate_ para múltiplas colunas, vejas os exemplos [aqui](https://dplyr.tidyverse.org/reference/summarise_all.html)
-
-### Roteiro pós-aula
-
-Concentre-se em resolver o Desafio 3 (ou os desafios que ainda não tiver entregado).
+2 - Se houver tempo e interesse, você pode examinar outras formas de trabalhar com mapas no R fazendo o tutorial [Tutorial 22](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial22.html). A primeira parte do tutorial apresenta como utilizar APIs de mapas (ex: Google Maps) para obter 'camadas' de mapas para suas visualizações.

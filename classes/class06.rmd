@@ -2,7 +2,7 @@
 
 - Data: 26/04/2019
 
-## Aula 6 -  Introdução à gramática de gráficos com ggplot2
+## Aula 6 -  Visualização de dados
 
 ### Objetivos Gerais
 

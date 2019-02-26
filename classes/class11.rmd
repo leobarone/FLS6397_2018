@@ -2,19 +2,8 @@
 
 - Data: 07/06/2019
 
-## Aula 11 - Mapas no R
+## Aula 11 - Latex, Git e Pesquisa Reproduzível
 
-### Objetivos Gerais
+1. Caso ainda não tenha, crie uma conta no site [github](https://github.com/).
 
-Faremos hoje a aula de mapas no R, que havia sido cancelada anteriormente em virtude da greve de caminhoneiros, e discutiremos as propostas de trabalho final.
-
-### Roteiro para a aula
-
-1 - Faça o [Tutorial 14](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial14.html), que apresenta o recém publicado pacote 'sf' para lidar com mapas no R.
-
-2 - Se houver tempo e interesse, você pode examinar outras formas de trabalhar com mapas no R fazendo o tutorial [Tutorial 22](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial22.html). A primeira parte do tutorial apresenta como utilizar APIs de mapas (ex: Google Maps) para obter 'camadas' de mapas para suas visualizações.
-
-3 - Se você ainda não terminou algum dos últimos tópicos (webscraping ou mineração de texto), pode prosseguir em sala de aula.
-
-4 - Finalmente, todas e todos devem conversar comigo sobre a proposta de trabalho final.
-
+2. Usaremos o [Tutorial 10](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial10.html) de guia.
