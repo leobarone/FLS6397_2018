@@ -2,9 +2,8 @@
 output: html_document
 ---
 
-#  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
+###  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
 
-- Responsáveis: Jonathan Phillips
 - Data: 12/04/2019
 
 ## Aula 4 - Primeiros passos no tidyverse

@@ -1,6 +1,5 @@
-#  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
+###  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
 
-- Responsáveis: Leonardo S. Barone e Jonathan Phillips
 - Data: 05/04/2019
 
 ## Aula 3 - Abrindo e manipulando dados em R
