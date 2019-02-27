@@ -20,6 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
 
@@ -359,36 +361,31 @@ $(document).ready(function () {
 
 <div id="fls-6397---introducao-a-programacao-e-ferramentas-computacionais-para-as-ciencias-sociais" class="section level1">
 <h1>FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais</h1>
-<div id="responsaveis" class="section level2">
-<h2>Responsáveis:</h2>
-<p>Leonardo S. Barone e Jonathan Phillips</p>
-<p>Detalhes da disciplina no <a href="https://github.com/JonnyPhillips/FLS6397_2019/blob/master/FLS6397%20Syllabus.md">Syllabus</a>.</p>
-</div>
-<div id="roteiros-de-aula-calendario-e-tutoriais" class="section level2">
-<h2>Roteiros de aula, calendário e tutoriais</h2>
-<p>Calendário e tópicos sujeitos a alteração</p>
 <ul>
-<li>22/03/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class01.md">Aula 1</a> - Introdução ao curso e R Básico.</li>
-<li>29/03/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class02.md">Aula 2</a> - Do básico ao intermediário.</li>
-<li>05/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class03.md">Aula 3</a> - Abrindo e manipulando <em>data frames</em></li>
-<li>12/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class04.md">Aula 4</a> - Primeiros passos no <em>tidyverse</em></li>
-<li>19/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class05.md">Aula 5</a> - RMarkdown, git, e integração R e servidores SQL</li>
-<li>26/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class06.md">Aula 6</a> - Visualização de dados e a gramática de gráficos <em>ggplot2</em></li>
-<li>03/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class07.md">Aula 7</a> - Funções, iteração e vetorialização</li>
-<li>10/05/2019 - Aula 8 -</li>
-<li>17/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class09.md">Aula 9</a> - Raspagem de dados na internet com R</li>
-<li>24/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class10.md">Aula 10</a> - Strings e Mineração de Textos com R (invertida com aula 09)</li>
-<li>07/06/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class11.md">Aula 11</a> - Mapas e GIS com R</li>
-<li>14/06/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class12.md">Aula 12</a> - Programação Funcional com purrr</li>
+<li>Responsáveis: Leonardo S. Barone Jonathan Phillips</li>
+<li>Data: 19/04/2019</li>
 </ul>
+<div id="aula-5---rmarkdown-e-integracao-r-e-databases" class="section level2">
+<h2>Aula 5 - RMarkdown, e Integração R e Databases</h2>
+<div id="objetivos-gerais" class="section level3">
+<h3>Objetivos Gerais</h3>
+<p>Na aula passada concluímos uma parte essencial do curso, a manipulação de data frames em R. Antes de avançarmos para novos tópicos relativos ao uso da linguagem, vamos aprender sobre algumas ferramentas e funcionalidades diretamente relacionadas ao uso de R.</p>
+<p>O primeiro deles será a integração de R com Sistemas de Gerenciamente de Bancos de Dados que operam em SQL (Structured Query Language), facilitada pelo pacote <em>dplyr</em>. A combinação R + SQL é uma solução particularmente boa para a manutenção de grandes bases de dados (“out of memory data”) e para o armazenamento de dados utilizados por equipes de trabalho e pesquisa.</p>
+<p>A seguir, aprenderemos um pouco sobre Markdown, uma linguagem para a produção de documentos de texto, e de sua versão para R, RMarkdown. É possível, com esta linguagem, combinar texto, código e outputs em um único documento que pode ser exportado como uma página html, um documento pdf ou um arquivo em formato .docx.</p>
+<p>Finalmente, veremos como organizar nossa produção em projetos com controle de versão dos documentos utilizando git, que é um software de gerenciamento de versão, github, que é um repositório online que opera com git, e a integração de ambos com Rstudio.</p>
+<p>Importante: esta será uma aula com mais momentos de exposição. Fique atenta(o) aos horários.</p>
 </div>
-<div id="atividades-de-avaliacao" class="section level2">
-<h2>Atividades de Avaliação</h2>
-<div id="desafios" class="section level3">
-<h3>Desafios</h3>
+<div id="roteiro-para-a-aula" class="section level3">
+<h3>Roteiro para a aula</h3>
+<p>LEIA COM CUIDADO E ATÉ O FINAL O ROTEIRO DE HOJE ANTES DE COMEÇAR.</p>
+<p>1- Comece o <a href="https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial08.html">Tutorial 8</a> assim que chegar em sala de aula, sobre a integração entre R e SQL.</p>
+<p>2- Havendo sobra de tempo em sala de aula, leia, caso não tenha lido, o capítulo 8 do livro <em>R for Data Science</em>, <a href="http://r4ds.had.co.nz/workflow-projects.html">aqui</a>, sobre RProjects.</p>
+<p>4- Se tiver terminado o Tutorial 8, vá para o <a href="https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial09.html">Tutorial 9</a>, sobre RMarkdown.</p>
+<p>5- Se houver tempo em sala, leia os capítulos 26 a 30 so livro <em>R for Data Science</em>. Esta é a seção do livro sobre Comunicação Científica e a maioria deles trata de RMarkdown.</p>
 </div>
-<div id="projetos" class="section level3">
-<h3>Projetos</h3>
+<div id="roteiro-pos-aula" class="section level3">
+<h3>Roteiro pós-aula</h3>
+<p>Ficaremos 2 semanas sem nos encontrarmos novamente. Nesse período você deverá realizar o Desafio 2, que irá ao ar a partir de amanhã a noite e com entrega agendada para 04/05, e finalizar a leitura dos capítulos 1 (<em>Introduction</em>) a 18 (<em>Pipes</em>, no início da parte III) e 26 a 30 (parte V) do livro do livro <em>R for Data Science</em>, <a href="http://r4ds.had.co.nz/">aqui</a>.</p>
 </div>
 </div>
 </div>

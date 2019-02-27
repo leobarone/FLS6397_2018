@@ -20,8 +20,75 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -357,39 +424,42 @@ $(document).ready(function () {
 </div>
 
 
-<div id="fls-6397---introducao-a-programacao-e-ferramentas-computacionais-para-as-ciencias-sociais" class="section level1">
-<h1>FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais</h1>
-<div id="responsaveis" class="section level2">
-<h2>Responsáveis:</h2>
-<p>Leonardo S. Barone e Jonathan Phillips</p>
-<p>Detalhes da disciplina no <a href="https://github.com/JonnyPhillips/FLS6397_2019/blob/master/FLS6397%20Syllabus.md">Syllabus</a>.</p>
+<div id="fls-6397---introducao-a-programacao-e-ferramentas-computacionais-para-as-ciencias-sociais" class="section level3">
+<h3>FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais</h3>
 </div>
-<div id="roteiros-de-aula-calendario-e-tutoriais" class="section level2">
-<h2>Roteiros de aula, calendário e tutoriais</h2>
-<p>Calendário e tópicos sujeitos a alteração</p>
-<ul>
-<li>22/03/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class01.md">Aula 1</a> - Introdução ao curso e R Básico.</li>
-<li>29/03/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class02.md">Aula 2</a> - Do básico ao intermediário.</li>
-<li>05/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class03.md">Aula 3</a> - Abrindo e manipulando <em>data frames</em></li>
-<li>12/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class04.md">Aula 4</a> - Primeiros passos no <em>tidyverse</em></li>
-<li>19/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class05.md">Aula 5</a> - RMarkdown, git, e integração R e servidores SQL</li>
-<li>26/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class06.md">Aula 6</a> - Visualização de dados e a gramática de gráficos <em>ggplot2</em></li>
-<li>03/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class07.md">Aula 7</a> - Funções, iteração e vetorialização</li>
-<li>10/05/2019 - Aula 8 -</li>
-<li>17/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class09.md">Aula 9</a> - Raspagem de dados na internet com R</li>
-<li>24/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class10.md">Aula 10</a> - Strings e Mineração de Textos com R (invertida com aula 09)</li>
-<li>07/06/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class11.md">Aula 11</a> - Mapas e GIS com R</li>
-<li>14/06/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class12.md">Aula 12</a> - Programação Funcional com purrr</li>
-</ul>
+<div id="desafio-5" class="section level2">
+<h2>Desafio 5</h2>
 </div>
-<div id="atividades-de-avaliacao" class="section level2">
-<h2>Atividades de Avaliação</h2>
-<div id="desafios" class="section level3">
-<h3>Desafios</h3>
+<div id="instrucoes-para-entrega" class="section level2">
+<h2>Instruções para Entrega</h2>
+<p>Data:</p>
+<p>Formato: arquivo .pdf ou .html produzido com RMarkdown, acompanhado de script em formato .R</p>
+<p>Via: e-mail com título “[FLS6397] - D5”.</p>
+<p><strong>OBS: VOCÊ PODE FAZER ESTA ATIVIDADE SOZINH@ OU EM GRUPO DE ATÉ 3 PESSOAS</strong></p>
 </div>
-<div id="projetos" class="section level3">
-<h3>Projetos</h3>
+<div id="instrucoes-para-a-atividade" class="section level2">
+<h2>Instruções para a atividade</h2>
+<p>Siga as instruções abaixo. Faça no arquivo de RMarkdown uma síntese de sua atividade e apresente apenas o essencial do código (você deve julgar o que é essencial).</p>
+<p>Documente <strong>TODOS</strong> os seus passos no arquivo de script. Comente no seu script <strong>TODOS</strong> os seus passos e explique a si mesm@ suas escolhas e estratégias.</p>
+<p>As primeiras linhas do seu script devem conter suas informações pessoais como comentário, tal qual o modelo abaixo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">### nome &lt;- &quot;Fulano da Silva Sauro&quot;
+### programa &lt;- &quot;Mestrado em Paleontologia&quot;
+### n_usp &lt;- 32165498
+### data_entrega: &quot;29/02/2017&quot;</code></pre></div>
+<div id="parte-1---coletando-um-corpus-com-webscrapping" class="section level3">
+<h3>Parte 1 - Coletando um “corpus” com webscrapping</h3>
+<p>Coletar um conjunto de textos da internet. Você pode coletar notícias de jornal, registros administrativos ou textos de qualquer natureza, desde que contenham um número relevantes de caracteres cada (pelo menos 2 parágrafos) e sejam “discursivos”, ou seja, não contenham exclusivamente informações técnicas.</p>
 </div>
+<div id="parte-2---pre-processamento-nuvem-de-palavras" class="section level3">
+<h3>Parte 2 - Pré-processamento + nuvem de palavras</h3>
+<p>Utilizando o pacote <em>tm</em>, crie um objeto da classe “Corpus” e faça o pré-processamento do texto. Construa uma nuvem de palavras com o resultado.</p>
+</div>
+<div id="parte-3---pre-processamento-nuvem-de-palavras" class="section level3">
+<h3>Parte 3 - Pré-processamento + nuvem de palavras</h3>
+<p>Utilizando o pacote <em>tidytext</em>, construa um gráfico de barras dos temos mais frequêntes. Repita o mesmo procedimento para “bigrams”.</p>
+</div>
+<div id="fim" class="section level3">
+<h3>Fim</h3>
 </div>
 </div>
 

@@ -20,6 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
 
@@ -357,39 +359,26 @@ $(document).ready(function () {
 </div>
 
 
-<div id="fls-6397---introducao-a-programacao-e-ferramentas-computacionais-para-as-ciencias-sociais" class="section level1">
-<h1>FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais</h1>
-<div id="responsaveis" class="section level2">
-<h2>Responsáveis:</h2>
-<p>Leonardo S. Barone e Jonathan Phillips</p>
-<p>Detalhes da disciplina no <a href="https://github.com/JonnyPhillips/FLS6397_2019/blob/master/FLS6397%20Syllabus.md">Syllabus</a>.</p>
-</div>
-<div id="roteiros-de-aula-calendario-e-tutoriais" class="section level2">
-<h2>Roteiros de aula, calendário e tutoriais</h2>
-<p>Calendário e tópicos sujeitos a alteração</p>
+<div id="fls-6397---introducao-a-programacao-e-ferramentas-computacionais-para-as-ciencias-sociais" class="section level3">
+<h3>FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais</h3>
 <ul>
-<li>22/03/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class01.md">Aula 1</a> - Introdução ao curso e R Básico.</li>
-<li>29/03/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class02.md">Aula 2</a> - Do básico ao intermediário.</li>
-<li>05/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class03.md">Aula 3</a> - Abrindo e manipulando <em>data frames</em></li>
-<li>12/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class04.md">Aula 4</a> - Primeiros passos no <em>tidyverse</em></li>
-<li>19/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class05.md">Aula 5</a> - RMarkdown, git, e integração R e servidores SQL</li>
-<li>26/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class06.md">Aula 6</a> - Visualização de dados e a gramática de gráficos <em>ggplot2</em></li>
-<li>03/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class07.md">Aula 7</a> - Funções, iteração e vetorialização</li>
-<li>10/05/2019 - Aula 8 -</li>
-<li>17/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class09.md">Aula 9</a> - Raspagem de dados na internet com R</li>
-<li>24/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class10.md">Aula 10</a> - Strings e Mineração de Textos com R (invertida com aula 09)</li>
-<li>07/06/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class11.md">Aula 11</a> - Mapas e GIS com R</li>
-<li>14/06/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class12.md">Aula 12</a> - Programação Funcional com purrr</li>
+<li>Data: 24/05/2019</li>
 </ul>
 </div>
-<div id="atividades-de-avaliacao" class="section level2">
-<h2>Atividades de Avaliação</h2>
-<div id="desafios" class="section level3">
-<h3>Desafios</h3>
+<div id="aula-10---captura-de-dados-na-internet-com-r" class="section level2">
+<h2>Aula 10 - Captura de dados na internet com R</h2>
+<div id="objetivos-gerais" class="section level3">
+<h3>Objetivos Gerais</h3>
+<p>Nesta aula vamos ter uma breve introdução ao pacote <em>rvest</em> e à algumas técnicas de raspagem de dados de página em HTML com R. Veremos que não é preciso saber quase nada de HTML para conseguir extrair conteúdo de uma página de internet e que as bibliotecas desenvolvidas para a linguagem facilitam bastante a organização do conteúdo raspado.</p>
+<p>Trabalharemos apenas com exemplos simples: páginas com tabela e portais de notícias.</p>
 </div>
-<div id="projetos" class="section level3">
-<h3>Projetos</h3>
-</div>
+<div id="roteiro-para-a-aula" class="section level3">
+<h3>Roteiro para a aula</h3>
+<p>Teremos 4 tutoriais neste tópico. Leia atentamente o roteiro abaixo e faça-os em ordem.</p>
+<p>1 - Comece aprendendo a raspar uma sequência de páginas que contêm tabelas no <a href="https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial15.html">Tutorial 15</a>. Em HTML, tabelas são facilmente identificáveis e há funções específicas que facilitam a extração de tabelas de um documento HTML. Por esta razão, páginas com tabelas são o caso mais simples de raspagem de dados. A estratégia que aprenderemos neste primeiro tutorial, no entanto, servirá aos seguintes.</p>
+<p>2 - A maior parte das informações que queremos extrair, no entanto, não estão em tabelas. Aprenderemos como extrair informações de uma página qualquer de internet no <a href="https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial16.html">Tutorial 16</a>.</p>
+<p>3 - Seguindo com o exemplo do tutorial anterior, extrairemos informações de uma sequência páginas (busca de notícias) no <a href="https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial17.html">Tutorial 17</a>.</p>
+<p>4 - Finalmente, trabalharemos com o exemplo do DataFolha para coletar um conjunto de notícias em um buscador qualquer. O <a href="https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial18.html">Tutorial 18</a> condensa o que vimos nos tutoriais anteriores e exige uma compreensão um pouco mais clara de loops e condicionais. Note que algumas páginas que tenteramos capturar neste exemplo contêm erros. A solução definitiva do exemplo está no final do tutorial.</p>
 </div>
 </div>
 

@@ -11,41 +11,41 @@ navbar:
     - text: "Aulas"
       menu:
       - text: "Aula 1"
-        href: classes/class01.html
+        href: class01.html
       - text: "Aula 2"
-        href: classes/class02.html
+        href: class02.html
       - text: "Aula 3"
-        href: classes/class03.html
+        href: class03.html
       - text: "Aula 4"
-        href: classes/class04.html
+        href: class04.html
       - text: "Aula 5"
-        href: classes/class05.html
+        href: class05.html
       - text: "Aula 6"
-        href: classes/class06.html
+        href: class06.html
       - text: "Aula 7"
-        href: classes/class07.html
+        href: class07.html
       - text: "Aula 8"
-        href: classes/class08.html
+        href: class08.html
       - text: "Aula 9"
-        href: classes/class09.html
+        href: class09.html
       - text: "Aula 10"
-        href: classes/class10.html
+        href: class10.html
       - text: "Aula 11"
-        href: classes/class11.html
+        href: class11.html
       - text: "Aula 12"
-        href: classes/class12.html
+        href: class12.html
     - text: "Desafios"
       menu:
       - text: "Desafio 1"
-        href: activities/datachallenge1.html
+        href: datachallenge1.html
       - text: "Desafio 2"
-        href: activities/datachallenge2.html
+        href: datachallenge2.html
       - text: "Desafio 3"
-        href: activities/datachallenge3.html
+        href: datachallenge3.html
       - text: "Desafio 4"
-        href: activities/datachallenge4.html
+        href: datachallenge4.html
       - text: "Desafio 5"
-        href: activities/datachallenge5.html
+        href: datachallenge5.html
 
 output:
   html_document:

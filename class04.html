@@ -20,6 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
 
@@ -359,36 +361,32 @@ $(document).ready(function () {
 
 <div id="fls-6397---introducao-a-programacao-e-ferramentas-computacionais-para-as-ciencias-sociais" class="section level1">
 <h1>FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais</h1>
-<div id="responsaveis" class="section level2">
-<h2>Responsáveis:</h2>
-<p>Leonardo S. Barone e Jonathan Phillips</p>
-<p>Detalhes da disciplina no <a href="https://github.com/JonnyPhillips/FLS6397_2019/blob/master/FLS6397%20Syllabus.md">Syllabus</a>.</p>
-</div>
-<div id="roteiros-de-aula-calendario-e-tutoriais" class="section level2">
-<h2>Roteiros de aula, calendário e tutoriais</h2>
-<p>Calendário e tópicos sujeitos a alteração</p>
 <ul>
-<li>22/03/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class01.md">Aula 1</a> - Introdução ao curso e R Básico.</li>
-<li>29/03/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class02.md">Aula 2</a> - Do básico ao intermediário.</li>
-<li>05/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class03.md">Aula 3</a> - Abrindo e manipulando <em>data frames</em></li>
-<li>12/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class04.md">Aula 4</a> - Primeiros passos no <em>tidyverse</em></li>
-<li>19/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class05.md">Aula 5</a> - RMarkdown, git, e integração R e servidores SQL</li>
-<li>26/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class06.md">Aula 6</a> - Visualização de dados e a gramática de gráficos <em>ggplot2</em></li>
-<li>03/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class07.md">Aula 7</a> - Funções, iteração e vetorialização</li>
-<li>10/05/2019 - Aula 8 -</li>
-<li>17/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class09.md">Aula 9</a> - Raspagem de dados na internet com R</li>
-<li>24/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class10.md">Aula 10</a> - Strings e Mineração de Textos com R (invertida com aula 09)</li>
-<li>07/06/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class11.md">Aula 11</a> - Mapas e GIS com R</li>
-<li>14/06/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class12.md">Aula 12</a> - Programação Funcional com purrr</li>
+<li>Responsáveis: Jonathan Phillips</li>
+<li>Data: 12/04/2019</li>
 </ul>
+<div id="aula-4---primeiros-passos-no-tidyverse" class="section level2">
+<h2>Aula 4 - Primeiros passos no tidyverse</h2>
+<div id="objetivos-gerais" class="section level3">
+<h3>Objetivos Gerais</h3>
+<p>Nas três primeiras aulas aprendemos bastante sobre o básico da linguagem R. Ainda falta ver alguns dos aspectos básicos da linguagem. Ainda falta um bocado, mas é hora de avançar e começar um dos tópicos mais importantes do curso: a manipulação de bases de dados com o pacote <em>dplyr</em>. Além de aprender a fazer operações de linha e coluna, vamos também ver pela primeira vez dados relacionais, ou seja, que estão em mais de um <em>data frame</em> e que podem ser combinados pela existência de uma variável em comum.</p>
+<p>O curso começa a ficar mais complexo a partir de hoje, seja pelo fato de que vocês começarão a produzir código, quanto pela grau de sofisticação dos tópicos. Se você tem pendências com o curso – tutoriais não acabados ou leitura atrasada – esse é o momento adequado para eliminá-las.</p>
+<p>Para quem nunca trabalhou com bases de dados relacionais, essa aula pode ser um pouco mais difícil. Não se preocupe se não entender logo de cara. Há uma leitura bastante boa (Capítulo 10 do livro <em>R for Data Science</em>), indicada abaixo.</p>
 </div>
-<div id="atividades-de-avaliacao" class="section level2">
-<h2>Atividades de Avaliação</h2>
-<div id="desafios" class="section level3">
-<h3>Desafios</h3>
+<div id="roteiro-para-a-aula" class="section level3">
+<h3>Roteiro para a aula</h3>
+<p>0 - Se você teve dúvidas ou problemas nos tutoriais anteriores, o começo da aula é um bom momento para conversarmos.</p>
+<p>1- Comece o <a href="https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial06.html">Tutorial 6</a> assim que chegar em sala de aula . Este tutorial trata da manipulação de dados com as funções do pacote <em>dplyr</em>.</p>
+<p>2- A seguir, faça o <a href="https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial07.html">Tutorial 7</a>, sobre bases de dados relacionais.</p>
 </div>
-<div id="projetos" class="section level3">
-<h3>Projetos</h3>
+<div id="roteiro-pos-aula" class="section level3">
+<h3>Roteiro pós-aula</h3>
+<p>Vamos seguir com a leitura do livro <em>R for Data Science</em>. Na semana passada indicamos a leitura da parte <em>I Explore</em>. Você pode avançar agora para a parte <em>II Wrangle</em>, <a href="http://r4ds.had.co.nz/wrangle-intro.html">aqui</a>, que vai do capítulo 9 ao 16. Se for muita leitura para a sua semana, priorize os 10 a 13.</p>
+<p>Veremos nos tutoriais desta aula um símbolo novo, %&gt;%, que altera o estilo do código. O capítulo 18, <a href="http://r4ds.had.co.nz/pipes.html">aqui</a>, trata do assunto.</p>
+</div>
+<div id="recurso-para-auto-estudo" class="section level3">
+<h3>Recurso para auto-estudo</h3>
+<p>Recomendo como material de suporte a leitura da página <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html">Introduction to dplyr</a>. Outro recurso bem legal para trabalhar com <em>dplyr</em> e <em>readr</em> são as “colinhas” (“cheatsheets”) da RStudio, por exemplo <a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf">Data Transformation with dplyr</a>.</p>
 </div>
 </div>
 </div>

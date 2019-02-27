@@ -20,6 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
 
@@ -357,39 +359,31 @@ $(document).ready(function () {
 </div>
 
 
-<div id="fls-6397---introducao-a-programacao-e-ferramentas-computacionais-para-as-ciencias-sociais" class="section level1">
-<h1>FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais</h1>
-<div id="responsaveis" class="section level2">
-<h2>Responsáveis:</h2>
-<p>Leonardo S. Barone e Jonathan Phillips</p>
-<p>Detalhes da disciplina no <a href="https://github.com/JonnyPhillips/FLS6397_2019/blob/master/FLS6397%20Syllabus.md">Syllabus</a>.</p>
-</div>
-<div id="roteiros-de-aula-calendario-e-tutoriais" class="section level2">
-<h2>Roteiros de aula, calendário e tutoriais</h2>
-<p>Calendário e tópicos sujeitos a alteração</p>
+<div id="fls-6397---introducao-a-programacao-e-ferramentas-computacionais-para-as-ciencias-sociais" class="section level3">
+<h3>FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais</h3>
 <ul>
-<li>22/03/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class01.md">Aula 1</a> - Introdução ao curso e R Básico.</li>
-<li>29/03/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class02.md">Aula 2</a> - Do básico ao intermediário.</li>
-<li>05/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class03.md">Aula 3</a> - Abrindo e manipulando <em>data frames</em></li>
-<li>12/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class04.md">Aula 4</a> - Primeiros passos no <em>tidyverse</em></li>
-<li>19/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class05.md">Aula 5</a> - RMarkdown, git, e integração R e servidores SQL</li>
-<li>26/04/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class06.md">Aula 6</a> - Visualização de dados e a gramática de gráficos <em>ggplot2</em></li>
-<li>03/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class07.md">Aula 7</a> - Funções, iteração e vetorialização</li>
-<li>10/05/2019 - Aula 8 -</li>
-<li>17/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class09.md">Aula 9</a> - Raspagem de dados na internet com R</li>
-<li>24/05/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class10.md">Aula 10</a> - Strings e Mineração de Textos com R (invertida com aula 09)</li>
-<li>07/06/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class11.md">Aula 11</a> - Mapas e GIS com R</li>
-<li>14/06/2019 - <a href="https://github.com/leobarone/FLS6397_2018/blob/master/classes/class12.md">Aula 12</a> - Programação Funcional com purrr</li>
+<li>Data: 17/05/2019</li>
 </ul>
 </div>
-<div id="atividades-de-avaliacao" class="section level2">
-<h2>Atividades de Avaliação</h2>
-<div id="desafios" class="section level3">
-<h3>Desafios</h3>
+<div id="aula-9---strings-e-mineracao-de-textos-no-r" class="section level2">
+<h2>Aula 9 - Strings e Mineração de Textos no R</h2>
+<div id="objetivos-gerais" class="section level3">
+<h3>Objetivos Gerais</h3>
+<p>Aprender sobre as diferentes formas de manipular strings e textos no R.</p>
 </div>
-<div id="projetos" class="section level3">
-<h3>Projetos</h3>
-</div>
+<div id="roteiro-para-a-aula" class="section level3">
+<h3>Roteiro para a aula</h3>
+<p>Nesta aula veremos 3 pacotes diferentes para trabalhar com texto como dado: <em>stringr</em>, que é bastante útil para ‘limpeza’ de textos; <em>tm</em>, que foi durante vários anos o pacote principal para mineração de texto e análise de <em>corpus</em> em R; e <em>tidytext</em>, pacote do <em>tidyverse</em> para mineração de texto, bastante recente.</p>
+<p><em>stringr</em> - <a href="https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial19.html">Tutorial 19</a></p>
+<p><em>tm</em> - <a href="https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial20.html">Tutorial 20</a></p>
+<p><em>tidytext</em> - <a href="https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial21.html">Tutorial 21</a></p>
+<p>Se houver tempo em sala de aula e você quiser se aprofundar no assunto, leia alguns dos capítulos do livro sobre “tidy” text mining, <a href="http://tidytextmining.com/">Text Mining with R</a>, também disponível em formato bookdown:</p>
+<ul>
+<li><p><a href="http://tidytextmining.com/sentiment.html">Capítulo 2 - Análise de Sentimento (com textos em inglês)</a></p></li>
+<li><p><a href="http://tidytextmining.com/tfidf.html">Capítulo 3 - Análise de frequência de palavras</a></p></li>
+<li><p><a href="http://tidytextmining.com/ngrams.html">Capítulo 4 - Relacionamento entre palavras, n-gramas e correlação</a></p></li>
+<li><p><a href="http://tidytextmining.com/topicmodeling.html">Capítulo 6 - Topic Modeling</a></p></li>
+</ul>
 </div>
 </div>
 
