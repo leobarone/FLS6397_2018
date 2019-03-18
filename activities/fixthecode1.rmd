@@ -101,18 +101,25 @@ myData <- data.frame(v1, v3)
 Q14)
 
 ```{r}
-v1 <- c("pato", "cachorro"", "minhoca", "lagarto")
+v1 <- c("pato", "cachorro", "minhoca", "lagarto")
+v4 <- c(33, 31, 40, 25, 27, 40)
+myData <- data.frame(v1, v4)
+```
+Q15)
+
+```{r}
+v1 <- c("pato", "cachorro", "minhoca", "lagarto")
 v4 <- c(33, 31, 40, 25)
 myData <- data.frame(v1 = animal, v4 = idade)
 ```
 
-Q15)
+Q16)
 
 ```{r}
 ls
 ```
 
-Q16)
+Q17)
 
 ```{r}
 v1 <- c("pato", "cachorro", "minhoca", "lagarto")

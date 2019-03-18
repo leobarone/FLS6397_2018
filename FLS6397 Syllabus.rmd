@@ -57,9 +57,9 @@ Não é necessário nenhum conhecimento prévio de programação, pacotes estat�
 5. RMarkdown, e integração R e databases (19/04/2019)
 6. Visualização de dados (26/04/2019)
 7. Mapas e GIS (03/05/2019)
-8. Funções, iteração e vetorialização (10/05/2019)
-9. Strings e Mineração de Textos (17/05/2019)
-10. Raspagem de dados na internet (24/05/2019)
+8. Funções, iteração e vetorialização (17/05/2019)
+9. Strings e Mineração de Textos (24/05/2019)
+10. Raspagem de dados na internet (31/05/2019)
 11. Latex, Git e Pesquisa Reproduzível (07/06/2019)
 12. Programação Funcional e simulações (14/05/2019)
 
