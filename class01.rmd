@@ -1,8 +1,4 @@
 
-###  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
-
-- Data: 22/03/2019
-
 ## Aula 1 - Introdução ao curso e R Básico
 
 ### Objetivos Gerais
