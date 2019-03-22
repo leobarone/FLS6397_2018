@@ -67,10 +67,10 @@ Não é necessário nenhum conhecimento prévio de programação, pacotes estat�
 
 ## Leituras obrigatórias
 - Grolemund, Garrett (2014). Hands-On Programming with R. Ed: O'Reilly Media. [aqui](https://rstudio-education.github.io/hopr/)
-- Wichkam, Hadley e Grolemund, Garrett (2016). R for Data Science. Ed: O'Reilly Media. Disponível gratuitamente Disponível gratuitamente [aqui](https://r4ds.had.co.nz/)
+- Wichkam, Hadley e Grolemund, Garrett (2016). R for Data Science. Ed: O'Reilly Media. Disponível gratuitamente [aqui](https://r4ds.had.co.nz/)
 - Silge, Julia e Robinson, David (2017). Text Mining with R: A Tidy Approach. Ed: O'Reilly Media. Disponível gratuitamente [aqui](https://www.tidytextmining.com/) 
-- Wichkam, Hadley (2014). Advanced R. Ed: Chapman and Hall/CRC. Disponível gratuitamente Disponível gratuitamente [aqui](http://adv-r.had.co.nz/)
-- Gillespie, Colin e Lovelace, Robin (2016). Efficient R programming. Ed: O'Reilly Media. Disponível gratuitamente Disponível gratuitamente [aqui](https://csgillespie.github.io/efficientR/)
+- Wichkam, Hadley (2014). Advanced R. Ed: Chapman and Hall/CRC. Disponível gratuitamente  [aqui](http://adv-r.had.co.nz/)
+- Gillespie, Colin e Lovelace, Robin (2016). Efficient R programming. Ed: O'Reilly Media. Disponível gratuitamente [aqui](https://csgillespie.github.io/efficientR/)
 
 ## Leituras Complementares
 - Jones, O., Maillardet, R., & Robinson, A. (2009). Introduction to Scientific Programming and Simulation Using R (1 edition). Boca Raton, FL: Chapman and Hall/CRC.

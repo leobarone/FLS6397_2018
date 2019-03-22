@@ -2,7 +2,7 @@
 output: html_document
 ---
 
-<h2 style="text-align: center;" markdown="1"> FLP6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais </h2>  
+<h2 style="text-align: center;" markdown="1"> FLS6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais </h2>  
 <h3 style="text-align: center;" markdown="1"> Primeiro Semestre, 2019, DCP - FFLCH - USP </h3>  
 
 <br><br>
