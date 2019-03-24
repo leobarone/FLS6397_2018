@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE, eval=F, include=T)
 
 # Botando o computador para trabalhar
 
-Se há um tutorial sobre lógica de programação, é este. Os tópicos deste tutorial são os mais importantes para que possamos escrever algoritmos e botar o computador para fazer o que sabe de melhor: repetir instruções e tarefas. Veremos, em primeiro lugar, operadores relacionais e lógicos e, a seguir,, cláusulas condicionais, loops e funções.
+Se há um tutorial sobre lógica de programação, é este. Os tópicos deste tutorial são os mais importantes para que possamos escrever algoritmos e botar o computador para fazer o que sabe de melhor: repetir instruções e tarefas. Veremos, em primeiro lugar, operadores relacionais e lógicos e, a seguir, cláusulas condicionais, loops e funções.
 
 ## Operadores relacionais
 
@@ -53,7 +53,7 @@ Operadores relacionais também vale para textos:
 
 Note no segundo exemplo que o R é "case sensitive", ou seja, diferencia maiúsculas de minúsculas ao comparar textos.
 
-Textos também podem ser ordenados:
+Textos também podem ser ordenados (lexicograficamente, isto é, alfabeticamente):
 
 ```{r}
 "a" > "b"
@@ -243,12 +243,12 @@ if (partido == "PMDB" | partido == "PSD" | partido == "DEM") {
 
 ## Exercício
 
-- Anote quantos cafés você tomou no fim de semana. Guarde o valor na variavel 'cafe'.
+- Anote quantos cafés você tomou cada dia esta semana. Guarde o valor na variavel 'cafe'.
 - Represente com condicionais a regra: se você tomou 3 ou mais, imprima "Hummm, café!". Se você tomou menos de 3, imprima "zzzzzz". 
 
 ## Repetindo tarefas - while loop
 
-Uma das vantagens dos computadores em relação aos seres humanos é a capacidade de repetir tarefas a um custo baixo. Vamos ver um exemplo simples: contar até 42. Usaremos como recurso um _while_ loop, ou seja, daremos um estado inicial, uma condição e uma instrução para o computador e pediremos para ele repetir a instrução __enquanto__ a condição não for atendida.
+Uma das vantagens dos computadores em relação aos seres humanos é a capacidade de repetir tarefas a um custo baixo. Vamos ver um exemplo simples: contar até 42. Usaremos como recurso um _while_ loop, ou seja, daremos um estado inicial, uma condição e uma instrução para o computador e pediremos para ele repetir a instrução __enquanto__ a condição for atendida.
 
 Em nosso caso, a instrução será: imprima o número "atual" (você já entenderá isso), armazenado na variável "contador", e some mais um. A condição será: enquanto a variável "contador" for menor ou igual a 42. Se vamos começar a contar a partir do 1, nosso estado inicial será igualar o "contador" a 1. Veja como fica o código:
 
@@ -331,7 +331,7 @@ Vamos para por aqui com _loops_ e voltaremos a eles para fazermos exercícios.
 
 ## Escrevendo funções
 
-Ao longo dos três tutorais que fizemos, usamos diversas funções e já estamos acostumados com elas. Vamos agora aprender a construir funções simples. Vamos do exemplo à aplicação e nosso exemplo será um conversos de farenheit para celsius:
+Ao longo dos três tutorais que fizemos, usamos diversas funções e já estamos acostumados com elas. Vamos agora aprender a construir funções simples. Vamos do exemplo à aplicação e nosso exemplo será um conversor de farenheit para celsius:
 
 ```{r}
 conversor <- function(farenheit){
@@ -345,7 +345,7 @@ conversor(32)
 
 Temos vários elementos no "construtor" de funções. Em primeiro lugar, criamos a função como criamos um objeto. Quer dizer, escolhemos um nome para ela e atribuímos a função criada a esse nome.
 
-Para criar uma função, usamos _function_. Basicamente, o "construtor" tem duas partes: os argumentos da função, que inserimos no parênteses após _function_; e o corpo da função, que utiliza os argumentos para realizar uma tarefa e retorna um resultado, indicado pela função _return_.
+Para criar uma função, usamos _function_. Basicamente, o "construtor" tem duas partes: os argumentos da função, que inserimos no parênteses após _function_; e o corpo da função em chaves, que utiliza os argumentos para realizar uma tarefa e retorna um resultado, indicado pela função _return_.
 
 ## Exercício
 
@@ -365,19 +365,8 @@ quadrado(17)
 
 ## Exercício
 
-- Crie uma função que recebe um valor em reais e retorna o valor em dólares (use a 3.2 como cotação do dólar)
+- Crie uma função que recebe um valor em reais e retorna o valor em dólares (use a 3.9 como cotação do dólar)
 - Crie uma função que recebe um valor em reais e uma cotação do dólar e retorna o valor em dólares.
-
-## Reposta do segundo item
-
-```{r}
-conversor_moeda <- function(valor, cotacao){
-  dolares <- valor / cotacao
-  return(dolares)
-}
-
-conversor_moeda(42, 3.2)
-```
 
 ## Paramos por aqui
 

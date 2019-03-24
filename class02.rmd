@@ -1,8 +1,4 @@
-###  FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais
-
-- Data: 29/03/2019
-
-## Aula 2 - Do básico ao intermédiário
+## Aula 2 - Do Básico ao Intermédiário
 
 ### Objetivos Gerais
 
@@ -12,9 +8,7 @@ Nesta aula vamos cobrir um conjunto grande de aspectos da linguagem R. Aprendere
 
 No início da aula, conversaremos sobre a dificuldade da leitura da primeira semana --  _Hands-on Programming With R_. Por favor, sejam extremamente sinceros e relatem se tiverem tido dificuldade(s). 
 
-Faremos, a seguir, tutorais para aprender sobre os aspectos mais básicos da linguagem. Como ainda estamos "calibrando" o curso para a turma atual, pode ser que alguns de vocês ou não terminem os tutoriais a tempo ou terminem cedo demais. Se você está no primeiro grupo, não se preocupe, e finalize o tutorial em casa. Se você está no segundo, aproveite para avançar nas leituras.
-
-Se você ficou um pouco insegura(o) na aula passada, comece em:
+Faremos, a seguir, tutorais para aprender sobre os aspectos mais básicos da linguagem. Se você ficou um pouco insegura(o) na aula passada, comece em:
 
 1. Revise rapidamente o Tutorial 1, da aula passada ([Tutorial 1](https://jonnyphillips.github.io/FLS6397_2019/tutorials/tutorial01.html)).
 
@@ -32,4 +26,4 @@ Siga com a leitura do livro _Hands-on Programming With R_, de Garret Grolemund. 
 
 Continua valendo a dica do curso "[Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r)" no site Datacamp para reforçar o que foi aprendido nas duas primeiras aulas. O Tutorial 2 segue este curso como modelo.
 
-Se você quiser estudar um pouco mais sobre operadores e condicionais no R, recomendamos fazer o primeiro capítulo do curso "[Intermedtiante R](https://www.datacamp.com/courses/intermediate-r)" (apenas o primeiro capítulo é gratuito).
+Se você quiser estudar um pouco mais sobre operadores e condicionais no R, recomendamos fazer o primeiro capítulo do curso "[Intermediate R](https://www.datacamp.com/courses/intermediate-r)" (apenas o primeiro capítulo é gratuito).

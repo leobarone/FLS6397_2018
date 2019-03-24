@@ -190,7 +190,7 @@ $(document).ready(function () {
 
 <div id="botando-o-computador-para-trabalhar" class="section level1">
 <h1>Botando o computador para trabalhar</h1>
-<p>Se há um tutorial sobre lógica de programação, é este. Os tópicos deste tutorial são os mais importantes para que possamos escrever algoritmos e botar o computador para fazer o que sabe de melhor: repetir instruções e tarefas. Veremos, em primeiro lugar, operadores relacionais e lógicos e, a seguir,, cláusulas condicionais, loops e funções.</p>
+<p>Se há um tutorial sobre lógica de programação, é este. Os tópicos deste tutorial são os mais importantes para que possamos escrever algoritmos e botar o computador para fazer o que sabe de melhor: repetir instruções e tarefas. Veremos, em primeiro lugar, operadores relacionais e lógicos e, a seguir, cláusulas condicionais, loops e funções.</p>
 <div id="operadores-relacionais" class="section level2">
 <h2>Operadores relacionais</h2>
 <p>Uma das especialidades do computador é verificar se proposições simples são verdadeiras ou falsas. <strong>Operadores relacionais</strong> servem para verificar se objetos são iguais, diferentes, maiores ou menores. São seis operadores relacionais e a tabela abaixo apresenta os seus símbolos.</p>
@@ -246,7 +246,7 @@ $(document).ready(function () {
 &quot;texto&quot; == &quot;texTo&quot;
 &quot;texto&quot; != &quot;texto&quot;</code></pre>
 <p>Note no segundo exemplo que o R é “case sensitive”, ou seja, diferencia maiúsculas de minúsculas ao comparar textos.</p>
-<p>Textos também podem ser ordenados:</p>
+<p>Textos também podem ser ordenados (lexicograficamente, isto é, alfabeticamente):</p>
 <pre class="r"><code>&quot;a&quot; &gt; &quot;b&quot;
 &quot;a&quot; &lt; &quot;b&quot;
 &quot;A&quot; &lt; &quot;b&quot;
@@ -435,13 +435,13 @@ if (partido == &quot;PMDB&quot; | partido == &quot;PSD&quot; | partido == &quot;
 <div id="exercicio" class="section level2">
 <h2>Exercício</h2>
 <ul>
-<li>Anote quantos cafés você tomou no fim de semana. Guarde o valor na variavel ‘cafe’.</li>
+<li>Anote quantos cafés você tomou cada dia esta semana. Guarde o valor na variavel ‘cafe’.</li>
 <li>Represente com condicionais a regra: se você tomou 3 ou mais, imprima “Hummm, café!”. Se você tomou menos de 3, imprima “zzzzzz”.</li>
 </ul>
 </div>
 <div id="repetindo-tarefas---while-loop" class="section level2">
 <h2>Repetindo tarefas - while loop</h2>
-<p>Uma das vantagens dos computadores em relação aos seres humanos é a capacidade de repetir tarefas a um custo baixo. Vamos ver um exemplo simples: contar até 42. Usaremos como recurso um <em>while</em> loop, ou seja, daremos um estado inicial, uma condição e uma instrução para o computador e pediremos para ele repetir a instrução <strong>enquanto</strong> a condição não for atendida.</p>
+<p>Uma das vantagens dos computadores em relação aos seres humanos é a capacidade de repetir tarefas a um custo baixo. Vamos ver um exemplo simples: contar até 42. Usaremos como recurso um <em>while</em> loop, ou seja, daremos um estado inicial, uma condição e uma instrução para o computador e pediremos para ele repetir a instrução <strong>enquanto</strong> a condição for atendida.</p>
 <p>Em nosso caso, a instrução será: imprima o número “atual” (você já entenderá isso), armazenado na variável “contador”, e some mais um. A condição será: enquanto a variável “contador” for menor ou igual a 42. Se vamos começar a contar a partir do 1, nosso estado inicial será igualar o “contador” a 1. Veja como fica o código:</p>
 <pre class="r"><code>contador &lt;- 1
 
@@ -494,7 +494,7 @@ for (regiao in vetor_regioes){
 </div>
 <div id="escrevendo-funcoes" class="section level2">
 <h2>Escrevendo funções</h2>
-<p>Ao longo dos três tutorais que fizemos, usamos diversas funções e já estamos acostumados com elas. Vamos agora aprender a construir funções simples. Vamos do exemplo à aplicação e nosso exemplo será um conversos de farenheit para celsius:</p>
+<p>Ao longo dos três tutorais que fizemos, usamos diversas funções e já estamos acostumados com elas. Vamos agora aprender a construir funções simples. Vamos do exemplo à aplicação e nosso exemplo será um conversor de farenheit para celsius:</p>
 <pre class="r"><code>conversor &lt;- function(farenheit){
   celsius &lt;- ((farenheit - 32) / 9) * 5
   return(celsius)
@@ -503,7 +503,7 @@ for (regiao in vetor_regioes){
 conversor(212)
 conversor(32)</code></pre>
 <p>Temos vários elementos no “construtor” de funções. Em primeiro lugar, criamos a função como criamos um objeto. Quer dizer, escolhemos um nome para ela e atribuímos a função criada a esse nome.</p>
-<p>Para criar uma função, usamos <em>function</em>. Basicamente, o “construtor” tem duas partes: os argumentos da função, que inserimos no parênteses após <em>function</em>; e o corpo da função, que utiliza os argumentos para realizar uma tarefa e retorna um resultado, indicado pela função <em>return</em>.</p>
+<p>Para criar uma função, usamos <em>function</em>. Basicamente, o “construtor” tem duas partes: os argumentos da função, que inserimos no parênteses após <em>function</em>; e o corpo da função em chaves, que utiliza os argumentos para realizar uma tarefa e retorna um resultado, indicado pela função <em>return</em>.</p>
 </div>
 <div id="exercicio-1" class="section level2">
 <h2>Exercício</h2>
@@ -522,18 +522,9 @@ quadrado(17)</code></pre>
 <div id="exercicio-2" class="section level2">
 <h2>Exercício</h2>
 <ul>
-<li>Crie uma função que recebe um valor em reais e retorna o valor em dólares (use a 3.2 como cotação do dólar)</li>
+<li>Crie uma função que recebe um valor em reais e retorna o valor em dólares (use a 3.9 como cotação do dólar)</li>
 <li>Crie uma função que recebe um valor em reais e uma cotação do dólar e retorna o valor em dólares.</li>
 </ul>
-</div>
-<div id="reposta-do-segundo-item" class="section level2">
-<h2>Reposta do segundo item</h2>
-<pre class="r"><code>conversor_moeda &lt;- function(valor, cotacao){
-  dolares &lt;- valor / cotacao
-  return(dolares)
-}
-
-conversor_moeda(42, 3.2)</code></pre>
 </div>
 <div id="paramos-por-aqui" class="section level2">
 <h2>Paramos por aqui</h2>

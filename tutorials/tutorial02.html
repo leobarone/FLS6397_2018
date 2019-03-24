@@ -258,7 +258,7 @@ class(vetor_logico)</code></pre>
 <p>Detalhes para observarmos:</p>
 <ul>
 <li>No caso do vetor numérico, não importa se usamos números com casas decimais.</li>
-<li>Para vetores do tipo “character”, não importa o que há dentro dos parêntese. Tudo é texto.</li>
+<li>Para vetores do tipo “character”, não importa o que há dentro das aspas. Tudo é texto.</li>
 <li>Você pode usar TRUE ou T, FALSE ou F, alternadamente. O R entende o que você quer dizer. Lembre-se de sempre usar maiúsculas.</li>
 </ul>
 </div>
@@ -331,7 +331,7 @@ print(soma_semanas)</code></pre>
 <h2>Subconjunto de um vetor - parte 1</h2>
 <p>E se quisermos extrair elementos em apenas uma ou algumas posições de um vetor?</p>
 <p>(Ei, esta é uma parte bem importante da linguagem R! Faça com calma, por mais boba que pareça).</p>
-<p>Quando queremos selecionar elementos de um vetor (ou, no futuro, de uma matriz ou de um <em>data frame</em>) usamos colchetes [] ao final do objeto. Vetores são objetos com uma única dimensão, então tudo que precisamos fazer é colocar o número da posição que queremos dentro dos colchetes. Chamamos esse procedimento em inglês de “subset” (no português, “selecionar um subconjunto”).</p>
+<p>Quando queremos selecionar elementos de um vetor (ou, no futuro, de uma matriz ou de um <em>data frame</em>) usamos colchetes [, ] ao final do objeto. Vetores são objetos com uma única dimensão, então tudo que precisamos fazer é colocar o número da posição que queremos dentro dos colchetes. Chamamos esse procedimento em inglês de “subset” (no português, “selecionar um subconjunto”).</p>
 <p>Para extrair o primeiro dia do vetor com dados da semana 1 (domingo):</p>
 <pre class="r"><code>semana_1[1]</code></pre>
 <p>Ou, para extrair o final de semana (domingo na posição 1 e sábado na posição 7):</p>
@@ -349,9 +349,10 @@ semana_1[dias_uteis]</code></pre>
 <h2>Exercício:</h2>
 <ul>
 <li>Crie dois novos vetores. No primeiro, anote (invente) o número de palavras que você escreveu para sua tese/dissertação/pesquisa em cada mês, considerando os últimos seis meses (setembro a fevereiro). No segundo, anote (chute, novamente) quantos litros de café você tomou em cada mês.</li>
-<li>Nomeie os elementos dos 2 vetores.</li>
+<li>Nomeie os elementos dos 2 vetores com o mês apropriado.</li>
 <li>Calcule sua produtividade em “palavras por Litro de café”. Atribua o resultado a um novo vetor</li>
-<li>Gere um subcojunto do novo vetor com a produtividade no final 2016 e outro com a produtividade no começo de 2017.</li>
+<li>Gere um subconjunto do novo vetor com a produtividade em setembro, outubro, novembro, e dezembro, e outro com a produtividade em janeiro e fevereiro.</li>
+<li>Calcule a diferença entre a sua produtividade em setembro e janeiro.</li>
 </ul>
 </div>
 <div id="soma-media-e-estatisticas-descritivas-dos-elementos-de-um-vetor" class="section level2">
@@ -371,7 +372,7 @@ quantile(litros_cafe, probs = c(0, 0.25, 0.5, 0.75, 1))</code></pre>
 </div>
 <div id="exercicio-1" class="section level2">
 <h2>Exercício</h2>
-<p>Com os seus próprios exemplos do exercício acima (palavras e litros de café por mês), use 6 funções acima.</p>
+<p>Com os seus próprios exemplos do exercício acima (palavras e litros de café por mês), aplique 6 funções acima.</p>
 </div>
 <div id="subconjunto-de-um-vetor---parte-2" class="section level2">
 <h2>Subconjunto de um vetor - parte 2</h2>
@@ -404,7 +405,7 @@ print(f_yes_no)</code></pre>
 <p>Se tentamos transformar em números o vetor de fatores, veja o que obtemos:</p>
 <pre class="r"><code>as.numeric(f_yes_no)</code></pre>
 <p>1 e 2 são os códigos numéricos gerados autormaticamente para “nao” e “sim”, respectivamente. O critério para atribuir valores foi a ordem alfabética dos textos transformados em fatores.</p>
-<p>Podemos investigar os níveis de um vetor de fatores com a função <em>levels</em>:</p>
+<p>Podemos investigar os níveis possíveis de um vetor de fatores com a função <em>levels</em>:</p>
 <pre class="r"><code>levels(f_yes_no)</code></pre>
 <p>E também podemos alterá-los, tal como fazemos com os nomes dos elementos de um vetor:</p>
 <pre class="r"><code>levels(f_yes_no) &lt;- c(&quot;No&quot;, &quot;Sim&quot;)
@@ -419,7 +420,7 @@ print(f_tamanho)</code></pre>
 f_tamanho[2]
 f_tamanho[1] &gt; f_tamanho[2]</code></pre>
 <p>Sem ordenarmos, não podemos comparar os níveis e estamos assumindo a variável como sendo nominal.</p>
-<p>Para ordernar os níveis de um vetor de fatores, temos que informar alguns parâmetros adicionais – <em>order</em> e <em>levels</em> – ao criá-lo:</p>
+<p>Para ordernar os níveis de um vetor de fatores, temos que informar alguns parâmetros adicionais – <em>ordered</em> e <em>levels</em> – ao criá-lo:</p>
 <pre class="r"><code>f_tamanho &lt;- factor(tamanho, ordered = T, levels &lt;- c(&quot;baixo&quot;, &quot;medio&quot;, &quot;alto&quot;))
 print(f_tamanho)</code></pre>
 <p>Note que a informação sobre os “levels” acompanha a ordem informada, que, neste caso, é diferente da alfabética. Comparações entre os níveis fazem sentido se a variável for ordinal:</p>
@@ -427,22 +428,22 @@ print(f_tamanho)</code></pre>
 f_tamanho[2]
 f_tamanho[1] &gt; f_tamanho[2]
 f_tamanho &gt; &quot;medio&quot;</code></pre>
-<p>Voltaremos aos “factors” em momento adequado. O importante agora é saber que eles existem e que é uma classe de vetores em R. Atenção especial deve ser dada ao fato de que diversas vezes, ao importarmos bases de dados para o “workspace”, o R considera variáveis de texto como sendo “factors”, mesmo de maneira inadequada. Para evitar este problema, devemos adotar o argumento “stringAsFactors = F” em diversas funções de importação. Como avisei no início deste tópico, “factors” é um dos aspectos mais confusos em R (em conjunto com “missing values”, que vamos adiar até um momento adequado).</p>
+<p>Voltaremos aos “factors” em momento adequado. O importante agora é saber que eles existem e que é uma classe de vetores em R. Ao importarmos bases de dados para o “Environment”, verifique se sua variável fosse importada como uma variável de caractere ou fator. Como avisei no início deste tópico, “factors” é um dos aspectos mais confusos em R (em conjunto com “missing values”, que vamos adiar até um momento adequado).</p>
 </div>
 <div id="exercicio-2" class="section level2">
 <h2>Exercício</h2>
 <ul>
-<li>Crie um vetor de texto com categorias não ordenáveis.</li>
+<li>Crie um vetor de texto (string/caracter) com categorias não ordenáveis.</li>
 <li>Crie um vetor de fatores a partir do vetor do item anterior.</li>
 <li>Traduza os níveis para o inglês (ou para o português se já estiverem em inglês)</li>
-<li>Crie um vetor de texto com categorias ordenáveis.</li>
-<li>Crie um vetor de fatores a partir do vetor do item anterior.</li>
-<li>Compare dois elementos do vetor criado no item anterior</li>
+<li>Crie um vetor de texto (string/caracter) com categorias ordenáveis.</li>
+<li>Crie um vetor de fatores a partir do vetor do item anterior, especificando o ordem.</li>
+<li>Identificar os elementos do vetor que são “maiores que” a categoria intermediária.</li>
 </ul>
 </div>
 <div id="matrizes-em-r" class="section level2">
 <h2>Matrizes em R</h2>
-<p>Durante o curso, utilizaremos poucas ou nenhuma vez matrizes. Há uma razão para isso: estamos <a href="mailto:interessad@s">interessad@s</a> sorbetudo em dados no formato de <em>data frame</em>, que é um caso específico de matriz. Ainda assim, convém rapidamente aprender sobre matrizes para, advinhe, entender um pouco mais sobre <em>data frames</em>.</p>
+<p>Durante o curso, utilizaremos poucas ou nenhuma vez matrizes. Há uma razão para isso: estamos <a href="mailto:interessad@s">interessad@s</a> sorbetudo em dados no formato de <em>data frame</em>, que é um caso mais flexível de uma matriz. Ainda assim, convém rapidamente aprender sobre matrizes para, advinhe, entender um pouco mais sobre <em>data frames</em>.</p>
 <p>Para matemáticos, matrizes são objetos com uma álgebra própria e parte de uma área denominada Álgebra Linear. Por exemplo, a multiplicação de matrizes, se você lembra dela de seu período de escola ou graduação, segue regras e tem propriedades diferentes da multiplicação de números. Apesar do R ter uma “gramática” para Álgebra Linear (que lembra o MATLAB e Octave), ela não nos interessa agora e a deixaremos de lado.</p>
 <p>Para criarmos uma matriz, precisamos de um vetor que contenha o número de elementos a serem inseridos em uma matriz. Para uma matriz de 3 linhas e 3 colunas, precisamos de um vetor de 9 elementos, a exemplo do vetor gerado pelo comando “1:9”.</p>
 <p>Há duas maneiras de “preencher” a matriz: pelas linhas (“byrow = T”) ou pelas colunas (“byrow = F”). Veja os exemplos abaixo e tente compreender o funcionamento de <em>matrix</em>:</p>
@@ -468,7 +469,7 @@ print(cafe)</code></pre>
 <p>O processo de nomear as linhas e colunas poderia ser realizado no momento em que a matriz foi gerada com o uso do argumento <em>dimnames</em>, como no exemplo:</p>
 <pre class="r"><code>cafe &lt;- matrix(vetor_cafe, byrow = FALSE, nrow = 5,
                dimnames = list(dias_uteis, fregueses))</code></pre>
-<p>E se quisermos trocar as linhas pelas colunas – processo conhecido como transposição da matriz? Usamos a função <em>t</em>. Dica: <em>c</em> e <em>t</em> são funções em R. Evite criar objetos com esse nome.</p>
+<p>E se quisermos trocar as linhas pelas colunas – processo conhecido como transposição da matriz? Usamos a função <em>t</em>. Dica: <em>c</em> e <em>t</em> são funções em R. Evite criar objetos com esses nomes.</p>
 <pre class="r"><code>t(cafe)</code></pre>
 <p>Se quisermos juntar os três vetores originais como se fossem colunas, podemos usar a função <em>cbind</em>.</p>
 <pre class="r"><code>cbind(beatriz, pedro, mateus)</code></pre>
