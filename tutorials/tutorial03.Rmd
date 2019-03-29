@@ -113,7 +113,7 @@ Veja que, na comparação entre dois vetores, os elementos são comparados par a
 | Ou       | \|      |
 | Não      | !       |
 
-Por exemplo, se queremos verificar todos os candidatos que obtivaram acima de 500 (exclusive) __E__ abaixo de 1500 (inclusive) votos, fazemos:
+Por exemplo, se queremos verificar todos os candidatos que obtiveram acima de 500 (exclusive) __E__ abaixo de 1500 (inclusive) votos, fazemos:
 
 ```{r}
 votos16 > 500 & votos16 <= 1500
@@ -128,7 +128,7 @@ Veja a tabela de possibilidades de combinação de duas proposições com a conj
 | FALSE        | TRUE         | FALSE      |
 | FALSE        | FALSE        | FALSE      |
 
-Se o valor atende às duas condições, então o resultado é TRUE. Se ao menos uma proposição é falsa, sob a conjunção é, então a combinação das proposições também é.
+Se o valor atende às duas condições, então o resultado é TRUE. Se ao menos uma proposição é falsa, sob a conjunção "e", então a combinação das proposições também é.
 
 Com o operador "Ou", a combinação de proposições é verdadeira se pelo menos uma delas for verdadeira.
 
@@ -145,7 +145,7 @@ Veja a tabela de possibilidades de combinação de duas proposições com a conj
 | FALSE        | TRUE         | TRUE       |
 | FALSE        | FALSE        | FALSE      |
 
-Finalmente, o operador lógico "não" tem a única função de reverter um proposição:
+Finalmente, o operador lógico "não" tem a função de reverter um proposição:
 
 ```{r}
 !TRUE
@@ -184,7 +184,7 @@ print(x)
 
 ```
 
-A condição que o _if_ deve atender vem entre parênteses. A instrução a ser atendida caso a cláusula seja verdadeira, vem dentro das chaves. Aliás, é boa prática (na maioria dos casos) abrir as chaves em uma linha, escrever as instruções em outra, e fechar as chaves na linha seguinte ao fim das instruções, como no exemplo. Também é boa prática "identar", ou seja, desalinhar as instruções do restante do código. Falaremos sobre "estilo" em algum momento do curso, Por enquanto, apenas observe e não se assuste. Diferentemente de outras linguagens, R não requer identação para funcionar.
+A condição que o _if_ deve atender vem entre parênteses. A instrução a ser atendida caso a cláusula seja verdadeira vem dentro das chaves. Aliás, é boa prática (na maioria dos casos) abrir as chaves em uma linha, escrever as instruções em outra, e fechar as chaves na linha seguinte ao final das instruções, como no exemplo. Também é boa prática "identar", ou seja, desalinhar as instruções do restante do código. Falaremos sobre "estilo" em algum momento do curso. Por enquanto, apenas observe e não se assuste. Diferentemente de outras linguagens, R não requer identação para funcionar.
 
 Vamos supor que um candidato teve determinada quantia de votos. Ele precisava de 700 para ser eleito. Vamos criar uma nova variável, "status", que receberá valor "eleito" se "votos" for maior que 700. Supondo que o candidato recebeu 800 votos, fazemos:
 
@@ -239,7 +239,7 @@ if (partido == "PMDB" | partido == "PSD" | partido == "DEM") {
 }
 ```
 
-É possível complicar bastante o uso dos condicionais "aninhando" uma cláusula dentro da outra e criando "labirintos" de condições. Fazer isso, porém, é mais uma questão de lógica do que de uso da linguagem. Não há variações relevantes do uso em relação aos exemplos simples apresentados acima. Se você consegue fazer os condicionais em papel e caneta, então consegue fazê-los em R se os exemplos anteriores tiverem ficado claro.
+É possível complicar bastante o uso dos condicionais "aninhando" uma cláusula dentro da outra e criando "labirintos" de condições. Fazer isso, porém, é mais uma questão de lógica do que de uso da linguagem. Não há variações relevantes do uso em relação aos exemplos simples apresentados acima. Se você consegue fazer os condicionais em papel e caneta e se os exemplos anteriores tiverem ficado claros, então consegue fazê-los em R.
 
 ## Exercício
 
@@ -264,7 +264,7 @@ print(contador)
 
 ```
 
-Traduzindo para o português: "enquanto o contador for menor ou igual a 42, imprima e some um". A estrutura de um _while_ loop é sempre: "enquanto" (condição), "faça".
+Traduzindo para o português: "enquanto o contador for menor ou igual a 42, imprima e some um". A estrutura de um _while_ loop é sempre: "enquanto" (condição), "faça" (instrução).
 
 Veja que precisamos planejar muito bem o _while_ loop. Se, por exemplo, esquecermos de pensar como a condição inicial será alterada a cada __iteração__ (sem o "n" mesmo, pois é diferente de "interação"), corremos o risco de criar um "loop infinito". O critério de parada (condição entre parênteses) deve ser atendido em algum ponto do programa para que ele seja interrompido.
 
@@ -285,11 +285,11 @@ while (contador <= 42) {
 print(contador)
 ```
 
-Veja que temos agora um código "aninhado", pois colocamos um condicional dentro de um loop. Novamente, combinar estruturas de código são mais um problema de lógica do que de linguagem e, se você consegue fazer no papel, consegue traduzir para o R.
+Veja que temos agora um código "aninhado", pois colocamos um condicional dentro de um loop. Novamente, combinar estruturas de código é mais um problema de lógica do que de linguagem e, se você consegue fazer no papel, consegue traduzir para o R.
 
 ## Repetindo tarefas - for loop
 
-E se em vez de repetir uma tarefa até atingir uma condição já soubermos quantas vezes queremos repetí-la? Neste caso, podemos usar o _for_ loop. O loop não será mais do tipo "enquanto x faça y" mas "para todo i em a até b". Veja como o exemplo de contar até 42 ficaria com _for_ loop:
+E se em vez de repetir uma tarefa até atingir uma condição já soubermos quantas vezes queremos repetí-la? Neste caso, podemos usar o _for_ loop. O loop não será mais do tipo "enquanto x faça y" mas "para todo i 'em' a até b". Veja como o exemplo de contar até 42 ficaria com _for_ loop:
 
 ```{r}
 for (i in 1:42){
@@ -297,7 +297,7 @@ for (i in 1:42){
 }
 ```
 
-Neste caso, lemos "para cada i em 1 até 42, faça". O que o _for_ loop faz é variar o i a cada iteração de acordo com a sequência estabelecida. Outro exemplo, agora na ordem reversa:
+Neste caso, lemos "para cada i 'em' 1 até 42, faça". O que o _for_ loop faz é variar o i a cada iteração de acordo com a sequência estabelecida. Outro exemplo, agora na ordem reversa:
 
 ```{r}
 for (i in 10:-10){
@@ -325,13 +325,13 @@ for (regiao in vetor_regioes){
 }
 ```
 
-Se você já trabalhou com dados eleitorais brasileiros, você certamente teve de abrir diversos arquivos semelhantes, cada um contendo informações de um estado brasileiro. Ou ainda, se você já obteve informações na internet, talvez tenha precisado "passar" por diversas páginas semelhantes. Loops resolvem problemas desse tipo: eles repetem procedimentos variando apenas um índice. Aprender a usar loops economiza um tempo enorme, pois conseguimos automatizar tarefas ou, pelo menos, escrever um código mais curto para aplicar o mesmo comando inúmeras vezes.
+Se você já trabalhou com dados eleitorais brasileiros, você certamente teve de abrir diversos arquivos semelhantes, cada um contendo informações de um estado brasileiro. Ou ainda, se você já obteve informações na internet talvez tenha precisado "passar" por diversas páginas semelhantes. Loops resolvem problemas desse tipo: eles repetem procedimentos variando apenas um índice. Aprender a usar loops economiza um tempo enorme, pois conseguimos automatizar tarefas ou, pelo menos, escrever um código mais curto para aplicar o mesmo comando inúmeras vezes.
 
-Vamos para por aqui com _loops_ e voltaremos a eles para fazermos exercícios.
+Vamos parar por aqui com _loops_ e voltaremos a eles para fazermos exercícios.
 
 ## Escrevendo funções
 
-Ao longo dos três tutorais que fizemos, usamos diversas funções e já estamos acostumados com elas. Vamos agora aprender a construir funções simples. Vamos do exemplo à aplicação e nosso exemplo será um conversor de farenheit para celsius:
+Ao longo dos três tutorais que fizemos usamos diversas funções e já estamos acostumados com elas. Vamos agora aprender a construir funções simples. Vamos do exemplo à aplicação. E nosso exemplo será, novamente, um conversor de farenheit para celsius:
 
 ```{r}
 conversor <- function(farenheit){
@@ -366,7 +366,7 @@ quadrado(17)
 ## Exercício
 
 - Crie uma função que recebe um valor em reais e retorna o valor em dólares (use a 3.9 como cotação do dólar)
-- Crie uma função que recebe um valor em reais e uma cotação do dólar e retorna o valor em dólares.
+- Crie uma função que recebe um valor em reais e uma cotação do dólar e retorna o valor em dólares (ou seja, que contém 2 parâmetros).
 
 ## Paramos por aqui
 
