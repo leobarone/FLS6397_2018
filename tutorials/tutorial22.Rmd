@@ -59,6 +59,12 @@ A função _get\_map_ requer como argumento principal um par de coordenadas a pa
 
 ```{r}
 library(ggmap)
+
+#O Google exige uma chave para acessar a API. Tem um tutorial sobre como obter essa chave em https://www.youtube.com/watch?v=6geghMfohNk
+
+key <- "chave"
+register_google(key)
+
 se <- c(lon = -46.6362714, lat = -23.5500806)
 ```
 
